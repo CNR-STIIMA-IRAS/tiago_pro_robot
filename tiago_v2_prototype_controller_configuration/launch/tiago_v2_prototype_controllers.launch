@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!--arg name="laser_model"  default="sick-571"/-->
+
+    <!-- Joint state controllers -->
+    <include file="$(find tiago_v2_prototype_controller_configuration)/launch/joint_state_controller.launch"/>
+    <!-- Default controllers -->
+    <include file="$(find tiago_v2_prototype_controller_configuration)/launch/default_controllers.launch"/>
+</launch>
+

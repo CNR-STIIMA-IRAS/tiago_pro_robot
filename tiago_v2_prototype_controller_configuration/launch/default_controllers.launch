@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <rosparam command="load" file="$(find tiago_v2_prototype_controller_configuration)/config/current_limit_controllers.yaml"/>
+
+  <arg name="controller_list"
+       value="mobile_base_controller
+              wheels_current_limit_controller"/>
+
+  <node name="default_controllers_spawner"
+        pkg="controller_manager" type="spawner" output="screen"
+        args="--timeout 120 $(arg controller_list)" />
+
+</launch>
+
+
