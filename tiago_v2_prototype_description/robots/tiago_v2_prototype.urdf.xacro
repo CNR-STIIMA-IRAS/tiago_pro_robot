@@ -21,6 +21,7 @@
 <xacro:property name="laser_model" value="$(arg laser_model)" />
 
 <!-- Includes -->
+<xacro:include filename="$(find tiago_v2_prototype_description)/gazebo/gazebo.urdf.xacro" />
 <xacro:include filename="$(find omni_base_description)/urdf/base/base_sensors.urdf.xacro" />
 <xacro:include filename="$(find tiago_dual_description)/urdf/torso/torso_dual.urdf.xacro" />
 <xacro:include filename="$(find tiago_sea_arm_description)/urdf/arm.urdf.xacro" />
