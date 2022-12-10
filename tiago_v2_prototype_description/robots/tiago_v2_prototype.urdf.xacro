@@ -31,8 +31,8 @@
 <!-- Torso. TODO: change for custom torso -->
 <xacro:tiago_dual_torso name="torso" parent="base_link" has_screen="false"/>
 <!-- Arms -->
-<xacro:tiago_sea_arm name="arm_left" parent="torso_lift_link" reflect="1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
-  <origin xyz="0.13445 0.09 -0.156" rpy="1.0668 0 2.9933"/>
+<xacro:tiago_sea_arm name="arm_left" parent="torso_lift_link" reflect="-1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
+  <origin xyz="0.13445 0.09 -0.156" rpy="-1.0668 0 -0.14829"/>
 </xacro:tiago_sea_arm>
 
 <xacro:tiago_sea_arm name="arm_right" parent="torso_lift_link" reflect="1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
