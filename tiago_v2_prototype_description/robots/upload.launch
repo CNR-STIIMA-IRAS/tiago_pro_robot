@@ -15,12 +15,12 @@
 <launch>
   <arg name="robot_description" default="robot_description"/>
   <arg name="laser_model"  default="sick-571"/>
-  <arg name="arm_x"  default="0.13445"/>
-  <arg name="arm_y" default="0.09" />
-  <arg name="arm_z" default="-0.156" />
-  <arg name="arm_roll" default="-1.0668" />
+  <arg name="arm_x"  default="0.18072"/>
+  <arg name="arm_y" default="0.120" />
+  <arg name="arm_z" default="-0.120" />
+  <arg name="arm_roll" default="-2.62" />
   <arg name="arm_pitch" default="0.0" />
-  <arg name="arm_yaw" default="-0.14829" />
+  <arg name="arm_yaw" default="-0.6" />
   
   <!-- robot description -->
   <param name="$(arg robot_description)" 

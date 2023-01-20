@@ -40,12 +40,17 @@
 <!-- Torso. TODO: change for custom torso -->
 <xacro:tiago_dual_torso name="torso" parent="base_link" has_screen="false"/>
 
-<xacro:arg name="arm_x" default="0.13445" />
-<xacro:arg name="arm_y" default="0.09" />
-<xacro:arg name="arm_z" default="-0.156" />
-<xacro:arg name="arm_roll" default="-1.0668" />
+<!--
+ xyz="0.13672 0.089185 -0.14357"
+      rpy="0.84402 0 2.812" />
+-->
+<xacro:arg name="arm_x" default="0.180" />
+<xacro:arg name="arm_y" default="0.120" />
+<xacro:arg name="arm_z" default="-0.120" />
+<xacro:arg name="arm_roll" default="-2.62" />
 <xacro:arg name="arm_pitch" default="0.0" />
-<xacro:arg name="arm_yaw" default="-0.14829" />
+<xacro:arg name="arm_yaw" default="-0.6" />
+
 <!-- Arms -->
 <xacro:tiago_sea_arm name="arm_left" parent="torso_lift_link" reflect="-1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
   <origin xyz="$(arg arm_x) $(arg arm_y) $(arg arm_z)" 
@@ -54,7 +59,7 @@
 
 <xacro:tiago_sea_arm name="arm_right" parent="torso_lift_link" reflect="1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
   <origin xyz="$(arg arm_x) ${-1.0*$(arg arm_y)} $(arg arm_z)" 
-          rpy="$(arg arm_roll) $(arg arm_pitch) ${-3.1415-$(arg arm_yaw)}"/>
+	  rpy="$(arg arm_roll) ${-1.0*$(arg arm_pitch)} ${-3.14159 -$(arg arm_yaw)}"/>
 </xacro:tiago_sea_arm>
 
 </robot>
