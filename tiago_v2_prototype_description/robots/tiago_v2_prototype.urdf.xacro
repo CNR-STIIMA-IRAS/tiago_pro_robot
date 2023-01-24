@@ -44,12 +44,12 @@
  xyz="0.13672 0.089185 -0.14357"
       rpy="0.84402 0 2.812" />
 -->
-<xacro:arg name="arm_x" default="0.180" />
-<xacro:arg name="arm_y" default="0.120" />
-<xacro:arg name="arm_z" default="-0.120" />
-<xacro:arg name="arm_roll" default="-2.62" />
-<xacro:arg name="arm_pitch" default="0.0" />
-<xacro:arg name="arm_yaw" default="-0.6" />
+<xacro:arg name="arm_x" default="0.11049" />
+<xacro:arg name="arm_y" default="0.16261" />
+<xacro:arg name="arm_z" default="-0.12217" />
+<xacro:arg name="arm_roll" default="-2.0487" />
+<xacro:arg name="arm_pitch" default="0.019356" />
+<xacro:arg name="arm_yaw" default="-1.11659" />
 
 <!-- Arms -->
 <xacro:tiago_sea_arm name="arm_left" parent="torso_lift_link" reflect="-1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
