@@ -14,12 +14,12 @@
 -->
 <launch>
 
-  <arg name="arm_x" default="0.11049" />
-  <arg name="arm_y" default="0.16261" />
-  <arg name="arm_z" default="-0.12217" />
-  <arg name="arm_roll" default="-2.0487" />
-  <arg name="arm_pitch" default="0.019356" />
-  <arg name="arm_yaw" default="-1.11659" />
+  <arg name="arm_x" default="0.10529" />
+  <arg name="arm_y" default="0.15915" />
+  <arg name="arm_z" default="-0.11927" />
+  <arg name="arm_roll" default="-2.0679" />
+  <arg name="arm_pitch" default="0.0" />
+  <arg name="arm_yaw" default="-1.2217" />
 
   <arg name="rvizconfig" default="$(find tiago_v2_prototype_description)/config/show.rviz" />
 
