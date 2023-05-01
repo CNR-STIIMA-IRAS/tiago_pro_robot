@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="play_motion" type="play_motion" name="play_motion">
+  </node>
+
+  <node pkg="play_motion" type="is_already_there.py" name="is_already_there" />
+</launch>
