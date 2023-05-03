@@ -8,12 +8,11 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
-        - /RobotModel1/Links1/arm_left_2_link1
-        - /RobotModel1/Links1/arm_left_3_link1
-        - /RobotModel1/Links1/arm_left_4_link1
+        - /RobotModel1/Links1/arm_left_1_link1
+        - /RobotModel1/Links1/base_link1
         - /TF1
         - /TF1/Frames1
-      Splitter Ratio: 0.5
+      Splitter Ratio: 0.6117647290229797
     Tree Height: 752
   - Class: rviz/Selection
     Name: Selection
@@ -59,7 +58,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.25
+    - Alpha: 0.5
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -71,7 +70,7 @@ Visualization Manager:
         Link Tree Style: Links in Alphabetic Order
         arm_left_1_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         arm_left_2_link:
@@ -91,15 +90,10 @@ Visualization Manager:
           Value: true
         arm_left_5_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         arm_left_6_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm_left_7_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -134,11 +128,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_right_7_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_antenna_left_link:
           Alpha: 1
           Show Axes: false
@@ -169,10 +158,20 @@ Visualization Manager:
           Show Trail: false
         base_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         base_rear_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        head_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        head_2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -204,12 +203,12 @@ Visualization Manager:
           Value: true
         torso_fixed_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         torso_lift_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         virtual_base_laser_link:
@@ -284,25 +283,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.3882251977920532
+      Distance: 0.7004824876785278
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.08122960478067398
-        Y: 0.22368144989013672
-        Z: 0.4233973026275635
+        X: 0.00847622100263834
+        Y: 0.2655651569366455
+        Z: 0.8051932454109192
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7799999713897705
+      Pitch: 0.36479783058166504
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.283182144165039
+      Yaw: 1.2849891185760498
     Saved: ~
 Window Geometry:
   Displays:
