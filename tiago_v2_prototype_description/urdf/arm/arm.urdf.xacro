@@ -153,7 +153,7 @@
           <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.89412 0.91373 0.92941 1" />
+           <color rgba="0.29804 0.29804 0.29804 1" />
         </material>
       </visual>
       <collision>
@@ -199,7 +199,7 @@
           <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.89412 0.91373 0.92941 1" />
+           <color rgba="0.29804 0.29804 0.29804 1" />
         </material>
       </visual>
       <collision>
@@ -241,7 +241,7 @@
           <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.75294 0.75294 0.75294 1" />
+           <color rgba="0.29804 0.29804 0.29804 1" />
         </material>
       </visual>
       <collision>
@@ -288,7 +288,7 @@
           <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.75294 0.75294 0.75294 1" />
+           <color rgba="0.29804 0.29804 0.29804 1" />
         </material>
       </visual>
       <collision>
@@ -313,27 +313,28 @@
     </joint>
   
     <!-- ARM 7 LINK -->
-
-<!--
     <link name="${name}_7_link">
-      <inertial>
-        <origin xyz="-4.9961E-13 1.8172E-12 -0.030946" rpy="0 0 0" />
-        <mass value="0.20434" />
-        <inertia
-          ixx="0.00011401"
-          ixy="-2.6547E-15"
-          ixz="-1.9524E-16"
-          iyy="0.00011401"
-          iyz="7.1031E-16"
-          izz="0.00010539" />
-      </inertial>
+       <inertial>
+      <origin
+        xyz="-6.764E-18 -1.4549E-16 0.018549"
+        rpy="0 0 0" />
+      <mass
+        value="0.10189" />
+      <inertia
+        ixx="5.1076E-05"
+        ixy="-1.0899E-21"
+        ixz="-5.93E-21"
+        iyy="5.0882E-05"
+        iyz="-8.5344E-21"
+        izz="9.705E-05" />
+    </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.75294 0.75294 0.75294 1" />
+           <color rgba="0.29804 0.29804 0.29804 1" />
         </material>
       </visual>
       <collision>
@@ -343,34 +344,44 @@
         </geometry>
       </collision>
     </link>
-  -->
-    <!-- ARM 7 JOINT -->
 
-<!--
+    <!-- ARM 7 JOINT -->
     <joint name="${name}_7_joint" type="revolute">
-      <origin xyz="0 0.135 -0.0431" rpy="1.5708 1.5708 0" />
+      <origin
+      xyz="-0.1166 0 0"
+      rpy="0 -1.5708 0" />
       <parent link="${name}_6_link" />
       <child link="${name}_7_link" />
       <axis xyz="0 0 1" />
       <limit lower="${arm_7_joint_lb}" upper="${arm_7_joint_ub}" effort="${arm_7_max_effort}" velocity="${arm_7_max_velocity}" />
     </joint>
--->
+
  <!--***********************-->
     <!--        TOOL           -->
     <!--***********************-->
-
-<!--
     <link name="${name}_tool_link">
-      <inertial>
-        <mass value="0.1" />
-        <inertia ixx="8.33E-07" ixy="0.0" ixz="0.0" iyy="8.33E-07" iyz="0.0" izz="1.25E-06" />
-      </inertial>
+     <inertial>
+      <origin
+        xyz="5.0493E-18 -4.4892E-17 -0.0068514"
+        rpy="0 0 0" />
+      <mass
+        value="0.10189" />
+      <inertia
+        ixx="5.1076E-05"
+        ixy="-1.0374E-21"
+        ixz="-5.9164E-21"
+        iyy="5.0882E-05"
+        iyz="-8.5211E-21"
+        izz="9.705E-05" />
+    </inertial>
       <visual>
         <origin xyz="0.001 0 0" rpy="0 1.5708 0" />
         <geometry>
           <cylinder radius="0.005" length="0.005"/>
         </geometry>
-        <material name="LightGrey" />
+        <material name="">
+          <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
       </visual>
       <collision>
         <origin xyz="0.001 0 0" rpy="0 1.5708 0" />
@@ -383,10 +394,9 @@
     <joint name="${name}_tool_joint" type="fixed">
       <parent link="${name}_7_link" />
       <child link="${name}_tool_link" />
-        <origin xyz="0 0 -0.07" rpy="3.1415 0 0" />
+        <origin xyz="0 0 0.0254" rpy="3.1415 0 0" />
     </joint>
 
-  -->
     <!-- TRANSMISSIONS -->
     <xacro:arm_simple_transmission name="${name}" number="1" reduction="1.0" offset_value="${arm_1_offset}"/>
     <xacro:arm_simple_transmission name="${name}" number="2" reduction="1.0" offset_value="${arm_2_offset}"/>

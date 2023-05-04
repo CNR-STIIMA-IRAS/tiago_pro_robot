@@ -24,17 +24,17 @@
   <link name="${name}_fixed_link">
      <inertial>
       <origin
-        xyz="0.0012723 -0.007076 0.14739"
+        xyz="0.0014857 -0.0077054 0.14693"
         rpy="0 0 0" />
       <mass
-        value="15.476" />
+        value="15.527" />
       <inertia
-        ixx="0.179"
-        ixy="0.00019166"
-        ixz="-0.004948"
-        iyy="0.20071"
-        iyz="0.00016524"
-        izz="0.084001" />
+        ixx="0.17904"
+        ixy="0.00019412"
+        ixz="-0.0049479"
+        iyy="0.20082"
+        iyz="0.00015981"
+        izz="0.084141" />
     </inertial>
     <visual>
       <origin
@@ -44,10 +44,8 @@
         <mesh
           filename="package://tiago_v2_prototype_description/meshes/torso/torso_fixed_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      <material name="">
+        <color rgba="0.29804 0.29804 0.29804 1" />
       </material>
     </visual>
     <collision>

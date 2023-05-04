@@ -16,7 +16,7 @@
 <robot  xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_v2_prototype">
 
 <!-- Parameters -->
-<xacro:arg name="laser_model" default="sick-571"/> <!-- false, hokuyo, sick-551, sick-561, sick-571-->
+<xacro:arg name="laser_model" default="hokuyo"/> <!-- false, hokuyo, sick-551, sick-561, sick-571-->
 
 <xacro:property name="laser_model" value="$(arg laser_model)" />
 
