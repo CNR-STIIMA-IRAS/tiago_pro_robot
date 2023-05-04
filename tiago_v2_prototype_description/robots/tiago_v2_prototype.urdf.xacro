@@ -32,18 +32,6 @@
 <!-- Torso. TODO: change for custom torso -->
 <xacro:tiago_v2_torso name="torso" parent="base_link"/>
 <xacro:tiago_v2_head name="head" parent="torso_lift_link"/>
-<!--
-<origin
-      xyz="0.10529 0.15915 -0.11927"
-      rpy="-2.0679 0 -1.2217" />
-
-<xacro:arg name="arm_x" default="0.10529" />
-<xacro:arg name="arm_y" default="0.15915" />
-<xacro:arg name="arm_z" default="-0.11927" />
-<xacro:arg name="arm_roll" default="-2.0679" />
-<xacro:arg name="arm_pitch" default="0.0" />
-<xacro:arg name="arm_yaw" default="-1.2217" />
--->
 
 <xacro:arg name="arm_x" default="0.08976" />
 <xacro:arg name="arm_y" default="0.15918" />

@@ -38,11 +38,15 @@
   <xacro:macro name="tiago_v2_head" params="name parent">
     <link name="${name}_1_link">
       <inertial>
-        <origin xyz="-0.00508 0.00237 0.07229" rpy="0.00000 0.00000 0.00000"/>
-        <mass value="0.62220"/>
-        <inertia ixx="0.00119200000" ixy="-0.00000700000" ixz="0.00009600000"
-                 iyy="0.00140200000" iyz="0.00000400000"
-                 izz="0.00088900000"/>
+        <origin xyz="0.013723 0.0015288 0.091095" rpy="0 0 0" />
+        <mass value="0.50253" />
+        <inertia
+          ixx="0.00073252"
+          ixy="-1.0801E-06"
+          ixz="-6.3715E-05"
+          iyy="0.0005861"
+          iyz="4.157E-10"
+          izz="0.00060232" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -91,11 +95,11 @@
 
     <link name="${name}_2_link">
       <inertial>
-        <origin xyz="0.04700 0.05542 0.00022" rpy="0.00000 0.00000 0.00000"/>
-        <mass value="0.66123"/>
-        <inertia ixx="0.00462000000" ixy="0.00068900000" ixz="0.00000600000"
-                 iyy="0.00486100000" iyz="0.00000600000"
-                 izz="0.00313200000"/>
+        <origin xyz="0.0025967 0.11474 0.00021233" rpy="0 0 0" />
+        <mass value="1.2093"/>
+        <inertia ixx="0.0063697" ixy="0.00052067" ixz="-8.4666E-06"
+                 iyy="0.0045958" iyz="9.6501E-06"
+                 izz="0.0031995" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />

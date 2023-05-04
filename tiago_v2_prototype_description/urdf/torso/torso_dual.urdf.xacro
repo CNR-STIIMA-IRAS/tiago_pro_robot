@@ -22,19 +22,12 @@
 
   <!-- Bottom fixed part of column -->
   <link name="${name}_fixed_link">
-     <inertial>
-      <origin
-        xyz="0.0014857 -0.0077054 0.14693"
-        rpy="0 0 0" />
+    <inertial>
+      <origin  xyz="0.0014857 -0.0077054 0.14693" rpy="0 0 0" />
       <mass
         value="15.527" />
-      <inertia
-        ixx="0.17904"
-        ixy="0.00019412"
-        ixz="-0.0049479"
-        iyy="0.20082"
-        iyz="0.00015981"
-        izz="0.084141" />
+      <inertia ixx="0.17904" ixy="0.00019412" ixz="-0.0049479" 
+               iyy="0.20082" iyz="0.00015981" izz="0.084141" />
     </inertial>
     <visual>
       <origin
@@ -106,17 +99,17 @@
     name="${name}_lift_link">
     <inertial>
       <origin
-        xyz="0.0072742 0.015983 -0.19528"
+        xyz="0.0014742 0.0065278 -0.20301"
         rpy="0 0 0" />
       <mass
-        value="10.027" />
+        value="9.547" />
       <inertia
-        ixx="0.042393"
-        ixy="5.0892E-05"
-        ixz="0.00016162"
-        iyy="0.031426"
-        iyz="-4.1547E-05"
-        izz="0.018869" />
+        ixx="0.042078"
+        ixy="5.6766E-05"
+        ixz="0.00014731"
+        iyy="0.031115"
+        iyz="-5.0165E-05"
+        izz="0.018659" />
     </inertial>
     <visual>
       <origin

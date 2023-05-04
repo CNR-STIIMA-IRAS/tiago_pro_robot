@@ -15,25 +15,12 @@
 <launch>
   <arg name="robot_description" default="robot_description"/>
   <arg name="laser_model"  default="sick-571"/>
-
-  <arg name="arm_x" default="0.08976" />
-  <arg name="arm_y" default="0.15918" />
-  <arg name="arm_z" default="-0.092008" />
-  <arg name="arm_roll" default="-2.0679" />
-  <arg name="arm_pitch" default="0.0" />
-  <arg name="arm_yaw" default="-1.2217" />
   
   <!-- robot description -->
   <param name="$(arg robot_description)" 
          command="rosrun xacro xacro --inorder 
          '$(find tiago_v2_prototype_description)/robots/tiago_v2_prototype.urdf.xacro' 
-         laser_model:=$(arg laser_model) 
-         arm_x:=$(arg arm_x)
-         arm_y:=$(arg arm_y)
-         arm_z:=$(arg arm_z)
-         arm_roll:=$(arg arm_roll)
-         arm_pitch:=$(arg arm_pitch)
-         arm_yaw:=$(arg arm_yaw)"/>
+         laser_model:=$(arg laser_model)"/>
 
   <!--rosparam command="load" file="$(find tiago_v2:)/config/collision/collision_parameters.yaml" /-->
 </launch>

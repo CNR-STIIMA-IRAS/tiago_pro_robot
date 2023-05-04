@@ -48,19 +48,12 @@
     <!-- ARM 1 LINK -->
     <link name="${name}_1_link">
       <inertial>
-      <origin
-        xyz="0.0023924 0.015901 0.1545"
-        rpy="0 0 0" />
-      <mass
-        value="1.0815" />
-      <inertia
-        ixx="0.0024428"
-        ixy="2.3301E-05"
-        ixz="5.9516E-05"
-        iyy="0.0023092"
-        iyz="-0.00020371"
-        izz="0.00092851" />
-    </inertial>
+        <origin xyz="0.0023924 0.015901 0.1545" rpy="0 0 0" />
+        <mass value="1.0815" />
+        <inertia ixx="0.0024428" ixy="2.3301E-05" ixz="5.9516E-05"
+                 iyy="0.0023092" iyz="-0.00020371"
+                 izz="0.00092851" />
+      </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -88,20 +81,13 @@
   
     <!-- ARM 2 LINK -->
     <link name="${name}_2_link">
-       <inertial>
-      <origin
-        xyz="-0.11649 -0.017864 0.0053781"
-        rpy="0 0 0" />
-      <mass
-        value="0.99205" />
-      <inertia
-        ixx="0.00077291"
-        ixy="-0.00011001"
-        ixz="-0.00016133"
-        iyy="0.0014605"
-        iyz="-1.3237E-05"
-        izz="0.0015605" />
-    </inertial>
+      <inertial>
+        <origin xyz="-0.11649 -0.017864 0.0053781" rpy="0 0 0" />
+        <mass value="0.99205" />
+        <inertia ixx="0.00077291" ixy="-0.00011001" ixz="-0.00016133"
+                 iyy="0.0014605" iyz="-1.3237E-05"
+                 izz="0.0015605" />
+      </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -121,32 +107,22 @@
   
     <!-- ARM 2 JOINT -->
     <joint name="${name}_2_joint" type="revolute">
-      <origin
-      xyz="0.0 0.02 0.18"
-      rpy="0 1.5708 0" />
-
+      <origin xyz="0.0 0.02 0.18" rpy="0 1.5708 0" />
       <parent link="${name}_1_link" />
       <child link="${name}_2_link" />
-      <axis xyz="0 0 -1" />
+      <axis xyz="0 0 1" />
       <limit lower="${arm_2_joint_lb}" upper="${arm_2_joint_ub}" effort="${arm_2_max_effort}" velocity="${arm_2_max_velocity}" />
     </joint>
   
     <!-- ARM 3 LINK -->
     <link name="${name}_3_link">
       <inertial>
-      <origin
-        xyz="0.0023924 0.015901 0.1545"
-        rpy="0 0 0" />
-      <mass
-        value="1.0815" />
-      <inertia
-        ixx="0.0024428"
-        ixy="2.3301E-05"
-        ixz="5.9516E-05"
-        iyy="0.0023092"
-        iyz="-0.00020371"
-        izz="0.00092851" />
-    </inertial>
+        <origin xyz="0.0023924 0.015901 0.1545" rpy="0 0 0" />
+        <mass value="1.0816" />
+        <inertia ixx="0.0024426" ixy="2.3307E-05" ixz="5.9333E-05"
+                 iyy="0.0023089" iyz="-0.00020369" 
+                 izz="0.00092843" />
+      </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -166,8 +142,6 @@
   
     <!-- ARM 3 JOINT -->
     <joint name="${name}_3_joint" type="revolute">
-      <!-- <origin xyz="-0.02 0.16991 -0.04491" 
-           rpy="${reflect * 1.5707} 1.5707 ${(reflect + 1) * 0.5 * 3.1415}" /> -->
       <origin
       xyz="-0.15 -0.02 0"
       rpy="0 -1.5707 0" />
@@ -180,19 +154,19 @@
     <!-- ARM 4 LINK -->
     <link name="${name}_4_link">
       <inertial>
-      <origin
-        xyz="-0.11649 -0.017864 0.0053781"
-        rpy="0 0 0" />
-      <mass
-        value="0.99205" />
-      <inertia
-        ixx="0.00077291"
-        ixy="-0.00011001"
-        ixz="-0.00016133"
-        iyy="0.0014605"
-        iyz="-1.3237E-05"
-        izz="0.0015605" />
-    </inertial>
+        <origin
+          xyz="-0.11649 -0.017864 0.0053781"
+          rpy="0 0 0" />
+        <mass
+          value="0.99204" />
+        <inertia
+          ixx="0.00077294"
+          ixy="-0.00011001"
+          ixz="-0.00016136"
+          iyy="0.0014605"
+          iyz="-1.3224E-05"
+          izz="0.0015605" />
+      </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -212,10 +186,7 @@
   
     <!-- ARM 4 JOINT -->
     <joint name="${name}_4_joint" type="revolute">
-      <!--<origin xyz="-0.04491 -0.02 0.16009" rpy="1.5708 0 -1.5708" />-->
-     <origin
-      xyz="0 0.02 0.18"
-      rpy="0 1.5708 0" />
+      <origin xyz="0 0.02 0.18" rpy="0 1.5708 0" />
       <parent link="${name}_3_link" />
       <child link="${name}_4_link" />
       <axis xyz="0 0 -1" />
@@ -225,15 +196,11 @@
     <!-- ARM 5 LINK -->
     <link name="${name}_5_link">
       <inertial>
-        <origin xyz="-0.0034877 0.0007088 0.10161" rpy="0 0 0" />
-        <mass value="0.65" /> <!--1.3606-->
-        <inertia
-          ixx="0.0042327"
-          ixy="-1.4778E-06"
-          ixz="-0.00015838"
-          iyy="0.0039855"
-          iyz="-6.3812E-05"
-          izz="0.00090574" />
+        <origin xyz="0.0004859 0.00014289 0.129" rpy="0 0 0" />
+        <mass value="0.52538" />
+        <inertia ixx="0.0019111" ixy="-1.4245E-08" ixz="3.8663E-05"
+                 iyy="0.0018565" iyz="1.1356E-06"
+                 izz="0.00046496" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -254,12 +221,7 @@
   
     <!-- ARM 5 JOINT -->
     <joint name="${name}_5_joint" type="revolute">
-    <!--
-      <origin xyz="-0.02 0.16991 -0.04491" rpy="-1.5708 1.5707 0" />
-    -->
-      <origin
-      xyz="-0.15 -0.02 0"
-      rpy="0 -1.5708 0" />
+      <origin xyz="-0.15 -0.02 0" rpy="0 -1.5708 0" />
       <parent link="${name}_4_link" />
       <child link="${name}_5_link" />
       <axis xyz="0 0 1" />
@@ -270,17 +232,17 @@
     <link name="${name}_6_link">
       <inertial>
         <origin
-        xyz="-0.0868246191017208 -7.20863653169701E-06 0.00452526175178974"
+        xyz="-0.086822 -7.7905E-06 0.0045258"
         rpy="0 0 0" />
-      <mass
-        value="0.667219281811054" />
-      <inertia
-        ixx="0.000356949168188171"
-        ixy="1.64330351077636E-07"
-        ixz="-9.5157761444025E-05"
-        iyy="0.000738465753656827"
-        iyz="1.21140041540438E-10"
-        izz="0.000753196424392043" />
+        <mass
+          value="0.66725" />
+        <inertia
+          ixx="0.00035696"
+          ixy="1.6019E-07"
+          ixz="-9.5191E-05"
+          iyy="0.00073846"
+          iyz="2.118E-08"
+          izz="0.00075321" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -301,11 +263,7 @@
   
     <!-- ARM 6 JOINT -->
     <joint name="${name}_6_joint" type="revolute">
-      <!-- <origin xyz="-0.0431 0 0.16509" rpy="1.5708 0 -1.5708" /> -->
-      <origin
-      xyz="0 0 0.185"
-      rpy="1.4161 1.5708 1.4127" />
- 
+      <origin xyz="0 0 0.185" rpy="0 1.5708 0" />
       <parent link="${name}_5_link" />
       <child link="${name}_6_link" />
       <axis xyz="0 0 1" />
@@ -404,8 +362,6 @@
     <xacro:arm_simple_transmission name="${name}" number="4" reduction="1.0" offset_value="${arm_4_offset}"/>
     <xacro:arm_simple_transmission name="${name}" number="5" reduction="1.0" offset_value="${arm_5_offset}"/>
     <xacro:arm_simple_transmission name="${name}" number="6" reduction="1.0" offset_value="${arm_6_offset}"/>
-    
-<!--<xacro:arm_simple_transmission name="${name}" number="7" reduction="1.0" offset_value="${arm_7_offset}"/>
--->
+    <xacro:arm_simple_transmission name="${name}" number="7" reduction="1.0" offset_value="${arm_7_offset}"/>
   </xacro:macro>
 </robot>

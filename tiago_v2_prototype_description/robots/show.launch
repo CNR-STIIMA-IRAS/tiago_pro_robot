@@ -14,22 +14,9 @@
 -->
 <launch>
 
-  <arg name="arm_x" default="0.08976" />
-  <arg name="arm_y" default="0.15918" />
-  <arg name="arm_z" default="-0.092008" />
-  <arg name="arm_roll" default="-2.0679" />
-  <arg name="arm_pitch" default="0.0" />
-  <arg name="arm_yaw" default="-1.2217" />
-
   <arg name="rvizconfig" default="$(find tiago_v2_prototype_description)/config/show.rviz" />
 
   <include file="$(find tiago_v2_prototype_description)/robots/upload.launch">
-    <arg name="arm_x" value="$(arg arm_x)"/>
-    <arg name="arm_y" value="$(arg arm_y)"/>
-    <arg name="arm_z" value="$(arg arm_z)"/>
-    <arg name="arm_roll" value="$(arg arm_roll)"/>
-    <arg name="arm_pitch" value="$(arg arm_pitch)"/>
-    <arg name="arm_yaw" value="$(arg arm_yaw)"/>
   </include>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
