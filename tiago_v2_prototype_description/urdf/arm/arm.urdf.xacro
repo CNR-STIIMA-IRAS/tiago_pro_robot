@@ -58,7 +58,7 @@
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh
-            filename="package://tiago_v2_prototype_description/meshes/arm/arm_1_link.STL" />
+            filename="package://tiago_v2_prototype_description/meshes/arm/arm_1_link.stl" />
         </geometry>
         <material name="">
           <color rgba="0.29804 0.29804 0.29804 1" />
@@ -67,7 +67,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_1_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_1_link_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -91,7 +91,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_2_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_2_link.stl" />
         </geometry>
         <material name="">
           <color rgba="0.29804 0.29804 0.29804 1" />
@@ -100,7 +100,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_2_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_2_link_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -126,7 +126,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link.stl" />
         </geometry>
         <material name="">
            <color rgba="0.29804 0.29804 0.29804 1" />
@@ -135,7 +135,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -170,7 +170,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link.stl" />
         </geometry>
         <material name="">
            <color rgba="0.29804 0.29804 0.29804 1" />
@@ -179,7 +179,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -205,7 +205,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link.stl" />
         </geometry>
         <material name="">
            <color rgba="0.29804 0.29804 0.29804 1" />
@@ -214,7 +214,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -247,7 +247,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link.stl" />
         </geometry>
         <material name="">
            <color rgba="0.29804 0.29804 0.29804 1" />
@@ -256,7 +256,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -289,7 +289,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link.stl" />
         </geometry>
         <material name="">
            <color rgba="0.29804 0.29804 0.29804 1" />
@@ -298,7 +298,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link.STL" />
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link_collision.stl" />
         </geometry>
       </collision>
     </link>

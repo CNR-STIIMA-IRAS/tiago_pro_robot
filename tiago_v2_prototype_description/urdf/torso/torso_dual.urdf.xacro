@@ -35,20 +35,40 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tiago_v2_prototype_description/meshes/torso/torso_fixed_link.STL" />
+          filename="package://tiago_v2_prototype_description/meshes/torso/torso_fixed_link.stl" />
       </geometry>
       <material name="">
         <color rgba="0.29804 0.29804 0.29804 1" />
       </material>
     </visual>
     <collision>
-      <origin
+   <!--   <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tiago_v2_prototype_description/meshes/torso/torso_fixed_link.STL" />
+          filename="package://tiago_v2_prototype_description/meshes/torso/torso_fixed_link.stl" />
       </geometry>
+   -->
+      <origin rpy="0 0 0" xyz="0 0 0.1" />
+      <geometry>
+        <box size="0.23 0.253 0.2"/>
+      </geometry>
+      <material name="DarkGrey"/>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.18 0 0.03" />
+      <geometry>
+        <box size="0.15 0.253 0.06"/>
+      </geometry>
+      <material name="DarkGrey"/>
+    </collision>
+     <collision>
+      <origin rpy="0 0 0" xyz="-0.09 0 0.0" />
+      <geometry>
+        <box size="0.47 0.5 0.02"/>
+      </geometry>
+      <material name="DarkGrey"/>
     </collision>
   </link>
 
@@ -117,7 +137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tiago_v2_prototype_description/meshes/torso/torso_lift_link.STL" />
+          filename="package://tiago_v2_prototype_description/meshes/torso/torso_lift_link.stl" />
       </geometry>
       <material
         name="">
@@ -131,7 +151,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tiago_v2_prototype_description/meshes/torso/torso_lift_link.STL" />
+          filename="package://tiago_v2_prototype_description/meshes/torso/torso_lift_link_collision.stl" />
       </geometry>
     </collision>
   </link>

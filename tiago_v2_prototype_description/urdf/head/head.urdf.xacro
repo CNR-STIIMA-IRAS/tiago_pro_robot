@@ -51,7 +51,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_1_link.STL" scale="1 1 1"/>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_1_link.stl" scale="1 1 1"/>
         </geometry>
         <material name="">
           <color rgba="0.29804 0.29804 0.29804 1" />
@@ -60,7 +60,7 @@
       <collision>
         <origin xyz="0.0 0 0" rpy="0 0 0.0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_1_link.STL" scale="1 1 1"/>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_1_link_collision.stl" scale="1 1 1"/>
         </geometry>
         <material name="White" />
       </collision>
@@ -104,7 +104,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_2_link.STL" scale="1 1 1"/>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_2_link.stl" scale="1 1 1"/>
         </geometry>
         <material name="">
           <color rgba="0.29804 0.29804 0.29804 1" />
@@ -113,7 +113,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_2_link.STL" scale="1 1 1"/>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_2_link_collision.stl" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
