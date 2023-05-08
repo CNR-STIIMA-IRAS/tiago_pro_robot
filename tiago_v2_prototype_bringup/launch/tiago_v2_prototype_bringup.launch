@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="robot_namespace" default=""/>
-   
+
+  <rosparam command="load" file="$(find tiago_v2_prototype_bringup)/config/tiago2_pids.yaml" ns="actuator_pid_command_controller"/>
+
+  <node name="actuator_pid_command_controller_spawner" pkg="controller_manager" type="spawner" output="screen" 
+        args="--timeout 300 actuator_pid_command_controller" />
+
   <!-- Load default controllers -->
   <include file="$(find tiago_v2_prototype_controller_configuration)/launch/tiago_v2_prototype_controllers.launch"/>
 
