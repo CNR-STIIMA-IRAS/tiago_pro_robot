@@ -26,6 +26,14 @@
 <xacro:include filename="$(find tiago_v2_prototype_description)/urdf/head/head.urdf.xacro" />
 <xacro:include filename="$(find omni_base_description)/urdf/base/base_sensors.urdf.xacro" />
 <xacro:include filename="$(find tiago_v2_prototype_description)/urdf/arm/arm.urdf.xacro" />
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/end_effector/end_effector.urdf.xacro" />
+
+<!-- End effector -->
+<xacro:arg name="end_effector" default="robotiq-2f-85"/> <!-- for now only robotiq-2f-85 is available -->
+<xacro:property name="end_effector" value="$(arg end_effector)" />
+<xacro:property name="end_effector_name" value="gripper"/>
+<xacro:property name="end_effector_left_link" value="arm_left_tool_link"/>
+<xacro:property name="end_effector_right_link" value="arm_right_tool_link"/>
 
 <!-- Base -->
 <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
@@ -52,6 +60,7 @@
 	  rpy="$(arg arm_roll) ${-1.0*$(arg arm_pitch)} ${-3.14159 -$(arg arm_yaw)}"/>
 </xacro:tiago_v2_arm>
 
-
+ <xacro:tiago_v2_prototype_end_effector name="${end_effector_name}_left" parent="${end_effector_left_link}" type="${end_effector}"/>
+ <xacro:tiago_v2_prototype_end_effector name="${end_effector_name}_right" parent="${end_effector_right_link}" type="${end_effector}"/>
 
 </robot>
