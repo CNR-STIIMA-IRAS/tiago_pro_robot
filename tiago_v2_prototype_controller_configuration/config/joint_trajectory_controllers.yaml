@@ -45,7 +45,7 @@ arm_right_controller:
     - arm_right_4_joint
     - arm_right_5_joint
     - arm_right_6_joint
-      #    - arm_right_7_joint
+    - arm_right_7_joint
   constraints:
     goal_time: 0.6
     stopped_velocity_tolerance: 5.0
