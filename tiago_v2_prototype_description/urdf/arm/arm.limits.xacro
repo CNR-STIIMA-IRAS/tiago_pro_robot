@@ -18,8 +18,8 @@
   <xacro:property name="arm_1_joint_ub" value="2.6" />
   <xacro:property name="arm_1_joint_lb" value="-2.6" />
 
-  <xacro:property name="arm_2_joint_ub" value="2.44" />
-  <xacro:property name="arm_2_joint_lb" value="-1.10" />
+  <xacro:property name="arm_2_joint_ub" value="1.10" />
+  <xacro:property name="arm_2_joint_lb" value="-2.44" />
 
   <xacro:property name="arm_3_joint_ub" value="2.6" />
   <xacro:property name="arm_3_joint_lb" value="-2.6" />
