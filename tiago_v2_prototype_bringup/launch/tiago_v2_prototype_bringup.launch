@@ -29,4 +29,6 @@
   <!-- Joystick controller -->
   <include file="$(find tiago_v2_prototype_bringup)/launch/joystick_teleop.launch"/>
 
+  <!-- Launch play motion -->
+  <include file="$(find tiago_v2_prototype_bringup)/launch/play_motion.launch"/>
 </launch>
