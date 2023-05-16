@@ -42,14 +42,6 @@
       </material>
     </visual>
     <collision>
-   <!--   <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://tiago_v2_prototype_description/meshes/torso/torso_fixed_link.stl" />
-      </geometry>
-   -->
       <origin rpy="0 0 0" xyz="0 0 0.1" />
       <geometry>
         <box size="0.23 0.253 0.2"/>
@@ -63,7 +55,7 @@
       </geometry>
       <material name="DarkGrey"/>
     </collision>
-     <collision>
+    <collision>
       <origin rpy="0 0 0" xyz="-0.09 0 0.0" />
       <geometry>
         <box size="0.47 0.5 0.02"/>
@@ -79,7 +71,7 @@
     <axis xyz="0 0 0" />
   </joint>
 
- <!-- Middle extending  -->
+  <!-- Middle extending  -->
   <link name="${name}_fixed_column_link">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0" />
@@ -173,7 +165,9 @@
   </joint>
 
   <xacro:torso_simple_transmission name="torso_lift" reduction="1.0"/>
-
- </xacro:macro>
-
+ 
+  <gazebo reference="${name}_lift_joint">
+     <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  </xacro:macro>
 </robot>

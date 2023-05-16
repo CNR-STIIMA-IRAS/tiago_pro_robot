@@ -48,11 +48,18 @@
     <!-- ARM 1 LINK -->
     <link name="${name}_1_link">
       <inertial>
-        <origin xyz="0.0023924 0.015901 0.1545" rpy="0 0 0" />
-        <mass value="1.0815" />
-        <inertia ixx="0.0024428" ixy="2.3301E-05" ixz="5.9516E-05"
-                 iyy="0.0023092" iyz="-0.00020371"
-                 izz="0.00092851" />
+        <origin
+          xyz="0.0023908 0.015901 0.1545"
+          rpy="0 0 0" />
+        <mass
+          value="1.0816" />
+        <inertia
+          ixx="0.0024426"
+          ixy="2.3307E-05"
+          ixz="5.9333E-05"
+          iyy="0.0023089"
+          iyz="-0.00020369"
+          izz="0.00092843" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -82,11 +89,18 @@
     <!-- ARM 2 LINK -->
     <link name="${name}_2_link">
       <inertial>
-        <origin xyz="-0.11649 -0.017864 0.0053781" rpy="0 0 0" />
-        <mass value="0.99205" />
-        <inertia ixx="0.00077291" ixy="-0.00011001" ixz="-0.00016133"
-                 iyy="0.0014605" iyz="-1.3237E-05"
-                 izz="0.0015605" />
+        <origin
+          xyz="-0.11649 -0.017864 0.0053772"
+          rpy="0 0 0" />
+        <mass
+          value="0.99204" />
+        <inertia
+          ixx="0.00077294"
+          ixy="-0.00011001"
+          ixz="-0.00016136"
+          iyy="0.0014605"
+          iyz="-1.3224E-05"
+          izz="0.0015605" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -117,11 +131,18 @@
     <!-- ARM 3 LINK -->
     <link name="${name}_3_link">
       <inertial>
-        <origin xyz="0.0023924 0.015901 0.1545" rpy="0 0 0" />
-        <mass value="1.0816" />
-        <inertia ixx="0.0024426" ixy="2.3307E-05" ixz="5.9333E-05"
-                 iyy="0.0023089" iyz="-0.00020369" 
-                 izz="0.00092843" />
+        <origin
+          xyz="0.0023908 0.015901 0.1545"
+          rpy="0 0 0" />
+        <mass
+          value="1.0816" />
+        <inertia
+          ixx="0.0024426"
+          ixy="2.3307E-05"
+          ixz="5.9333E-05"
+          iyy="0.0023089"
+          iyz="-0.00020369"
+          izz="0.00092843" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -155,7 +176,7 @@
     <link name="${name}_4_link">
       <inertial>
         <origin
-          xyz="-0.11649 -0.017864 0.0053781"
+          xyz="-0.11649 -0.017864 0.0053772"
           rpy="0 0 0" />
         <mass
           value="0.99204" />
@@ -196,11 +217,18 @@
     <!-- ARM 5 LINK -->
     <link name="${name}_5_link">
       <inertial>
-        <origin xyz="0.0004859 0.00014289 0.129" rpy="0 0 0" />
-        <mass value="0.52538" />
-        <inertia ixx="0.0019111" ixy="-1.4245E-08" ixz="3.8663E-05"
-                 iyy="0.0018565" iyz="1.1356E-06"
-                 izz="0.00046496" />
+        <origin
+          xyz="0.0004859 0.00014289 0.129"
+          rpy="0 0 0" />
+        <mass
+          value="0.52538" />
+        <inertia
+          ixx="0.0019111"
+          ixy="-1.4245E-08"
+          ixz="3.8663E-05"
+          iyy="0.0018565"
+          iyz="1.1356E-06"
+          izz="0.00046496" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -232,8 +260,8 @@
     <link name="${name}_6_link">
       <inertial>
         <origin
-        xyz="-0.086822 -7.7905E-06 0.0045258"
-        rpy="0 0 0" />
+          xyz="-0.086822 -7.7905E-06 0.0045258"
+          rpy="0 0 0" />
         <mass
           value="0.66725" />
         <inertia
@@ -272,20 +300,20 @@
   
     <!-- ARM 7 LINK -->
     <link name="${name}_7_link">
-       <inertial>
-      <origin
-        xyz="-6.764E-18 -1.4549E-16 0.018549"
-        rpy="0 0 0" />
-      <mass
-        value="0.10189" />
-      <inertia
-        ixx="5.1076E-05"
-        ixy="-1.0899E-21"
-        ixz="-5.93E-21"
-        iyy="5.0882E-05"
-        iyz="-8.5344E-21"
-        izz="9.705E-05" />
-    </inertial>
+      <inertial>
+        <origin
+          xyz="-6.764E-18 -1.4549E-16 0.018549"
+          rpy="0 0 0" />
+        <mass
+          value="0.10189" />
+        <inertia
+          ixx="5.1076E-05"
+          ixy="-1.0899E-21"
+          ixz="-5.93E-21"
+          iyy="5.0882E-05"
+          iyz="-8.5344E-21"
+          izz="9.705E-05" />
+      </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -313,6 +341,58 @@
       <axis xyz="0 0 1" />
       <limit lower="${arm_7_joint_lb}" upper="${arm_7_joint_ub}" effort="${arm_7_max_effort}" velocity="${arm_7_max_velocity}" />
     </joint>
+
+   <gazebo reference="${name}_1_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_2_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_3_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_4_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_5_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_6_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_7_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   
+   <gazebo reference="${name}_1_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_2_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_3_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_4_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_5_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_6_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_7_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+
 
  <!--***********************-->
     <!--        TOOL           -->
