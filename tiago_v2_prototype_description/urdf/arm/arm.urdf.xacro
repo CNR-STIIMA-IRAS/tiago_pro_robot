@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright (c) 2022 PAL Robotics S.L. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- Transmissions file -->
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/arm/arm.transmission.xacro"/>
+
+<!-- Joint Limits file -->
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/arm/arm.limits.xacro"/>
+
+
+<!-- Constant parameters -->
+<xacro:property name="arm_friction"       value="1.0" />
+<xacro:property name="arm_damping"        value="1.0" />
+
+<xacro:property name="arm_1_max_velocity"      value="1.95" />
+<xacro:property name="arm_2_max_velocity"      value="1.95" />
+<xacro:property name="arm_3_max_velocity"      value="2.35" />
+<xacro:property name="arm_4_max_velocity"      value="2.35" />
+<xacro:property name="arm_5_max_velocity"      value="2.35" />
+<xacro:property name="arm_6_max_velocity"      value="2.35" />
+<xacro:property name="arm_7_max_velocity"      value="2.35" />
+
+<xacro:property name="arm_1_max_effort"   value="43.0" />
+<xacro:property name="arm_2_max_effort"   value="43.0" />
+<xacro:property name="arm_3_max_effort"   value="26" />
+<xacro:property name="arm_4_max_effort"   value="26" />
+<xacro:property name="arm_5_max_effort"   value="26" />
+<xacro:property name="arm_6_max_effort"   value="26" />
+<xacro:property name="arm_7_max_effort"   value="26" />
+
+<xacro:macro name="tiago_v2_arm" params="name parent reflect *origin arm_1_offset arm_2_offset arm_3_offset arm_4_offset arm_5_offset arm_6_offset arm_7_offset no_safety_eps:=False">
+  <xacro:property name="arm_eps"       value="${0.00 if no_safety_eps else 0.07}"/>
+
+    <!-- ARM 1 LINK -->
+    <link name="${name}_1_link">
+      <inertial>
+        <origin
+          xyz="0.0023908 0.015901 0.1545"
+          rpy="0 0 0" />
+        <mass
+          value="1.0816" />
+        <inertia
+          ixx="0.0024426"
+          ixy="2.3307E-05"
+          ixz="5.9333E-05"
+          iyy="0.0023089"
+          iyz="-0.00020369"
+          izz="0.00092843" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://tiago_v2_prototype_description/meshes/arm/arm_1_link.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_1_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${name}_1_joint" type="revolute">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}" />
+      <child link="${name}_1_link" />
+      <axis xyz="0 0 1" />
+      <limit lower="${arm_1_joint_lb}" upper="${arm_1_joint_ub}" effort="${arm_1_max_effort}" velocity="${arm_1_max_velocity}" />
+    </joint>
+  
+    <!-- ARM 2 LINK -->
+    <link name="${name}_2_link">
+      <inertial>
+        <origin
+          xyz="-0.11649 -0.017864 0.0053772"
+          rpy="0 0 0" />
+        <mass
+          value="0.99204" />
+        <inertia
+          ixx="0.00077294"
+          ixy="-0.00011001"
+          ixz="-0.00016136"
+          iyy="0.0014605"
+          iyz="-1.3224E-05"
+          izz="0.0015605" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_2_link.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_2_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+  
+    <!-- ARM 2 JOINT -->
+    <joint name="${name}_2_joint" type="revolute">
+      <origin xyz="0.0 0.02 0.18" rpy="0 1.5708 0" />
+      <parent link="${name}_1_link" />
+      <child link="${name}_2_link" />
+      <axis xyz="0 0 1" />
+      <limit lower="${arm_2_joint_lb}" upper="${arm_2_joint_ub}" effort="${arm_2_max_effort}" velocity="${arm_2_max_velocity}" />
+    </joint>
+  
+    <!-- ARM 3 LINK -->
+    <link name="${name}_3_link">
+      <inertial>
+        <origin
+          xyz="0.0023908 0.015901 0.1545"
+          rpy="0 0 0" />
+        <mass
+          value="1.0816" />
+        <inertia
+          ixx="0.0024426"
+          ixy="2.3307E-05"
+          ixz="5.9333E-05"
+          iyy="0.0023089"
+          iyz="-0.00020369"
+          izz="0.00092843" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link.stl" />
+        </geometry>
+        <material name="">
+           <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_3_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+  
+    <!-- ARM 3 JOINT -->
+    <joint name="${name}_3_joint" type="revolute">
+      <origin
+      xyz="-0.15 -0.02 0"
+      rpy="0 -1.5707 0" />
+      <parent link="${name}_2_link" />
+      <child link="${name}_3_link" />
+      <axis xyz="0 0 1" />
+      <limit lower="${arm_3_joint_lb}" upper="${arm_3_joint_ub}" effort="${arm_3_max_effort}" velocity="${arm_3_max_velocity}" />
+    </joint>
+  
+    <!-- ARM 4 LINK -->
+    <link name="${name}_4_link">
+      <inertial>
+        <origin
+          xyz="-0.11649 -0.017864 0.0053772"
+          rpy="0 0 0" />
+        <mass
+          value="0.99204" />
+        <inertia
+          ixx="0.00077294"
+          ixy="-0.00011001"
+          ixz="-0.00016136"
+          iyy="0.0014605"
+          iyz="-1.3224E-05"
+          izz="0.0015605" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link.stl" />
+        </geometry>
+        <material name="">
+           <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_4_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+  
+    <!-- ARM 4 JOINT -->
+    <joint name="${name}_4_joint" type="revolute">
+      <origin xyz="0 0.02 0.18" rpy="0 1.5708 0" />
+      <parent link="${name}_3_link" />
+      <child link="${name}_4_link" />
+      <axis xyz="0 0 -1" />
+      <limit lower="${arm_4_joint_lb}" upper="${arm_4_joint_ub}" effort="${arm_4_max_effort}" velocity="${arm_4_max_velocity}" />
+    </joint>
+  
+    <!-- ARM 5 LINK -->
+    <link name="${name}_5_link">
+      <inertial>
+        <origin
+          xyz="0.0004859 0.00014289 0.129"
+          rpy="0 0 0" />
+        <mass
+          value="0.52538" />
+        <inertia
+          ixx="0.0019111"
+          ixy="-1.4245E-08"
+          ixz="3.8663E-05"
+          iyy="0.0018565"
+          iyz="1.1356E-06"
+          izz="0.00046496" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link.stl" />
+        </geometry>
+        <material name="">
+           <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_5_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+  
+    <!-- ARM 5 JOINT -->
+    <joint name="${name}_5_joint" type="revolute">
+      <origin xyz="-0.15 -0.02 0" rpy="0 -1.5708 0" />
+      <parent link="${name}_4_link" />
+      <child link="${name}_5_link" />
+      <axis xyz="0 0 1" />
+      <limit lower="${arm_5_joint_lb}" upper="${arm_5_joint_ub}" effort="${arm_5_max_effort}" velocity="${arm_5_max_velocity}" />
+    </joint>
+  
+    <!-- ARM 6 LINK -->
+    <link name="${name}_6_link">
+      <inertial>
+        <origin
+          xyz="-0.086822 -7.7905E-06 0.0045258"
+          rpy="0 0 0" />
+        <mass
+          value="0.66725" />
+        <inertia
+          ixx="0.00035696"
+          ixy="1.6019E-07"
+          ixz="-9.5191E-05"
+          iyy="0.00073846"
+          iyz="2.118E-08"
+          izz="0.00075321" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link.stl" />
+        </geometry>
+        <material name="">
+           <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_6_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+  
+    <!-- ARM 6 JOINT -->
+    <joint name="${name}_6_joint" type="revolute">
+      <origin xyz="0 0 0.185" rpy="0 1.5708 0" />
+      <parent link="${name}_5_link" />
+      <child link="${name}_6_link" />
+      <axis xyz="0 0 1" />
+      <limit lower="${arm_6_joint_lb}" upper="${arm_6_joint_ub}" effort="${arm_6_max_effort}" velocity="${arm_6_max_velocity}" />
+    </joint>
+  
+    <!-- ARM 7 LINK -->
+    <link name="${name}_7_link">
+      <inertial>
+        <origin
+          xyz="-6.764E-18 -1.4549E-16 0.018549"
+          rpy="0 0 0" />
+        <mass
+          value="0.10189" />
+        <inertia
+          ixx="5.1076E-05"
+          ixy="-1.0899E-21"
+          ixz="-5.93E-21"
+          iyy="5.0882E-05"
+          iyz="-8.5344E-21"
+          izz="9.705E-05" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link.stl" />
+        </geometry>
+        <material name="">
+           <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://tiago_v2_prototype_description/meshes/arm/arm_7_link_collision.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- ARM 7 JOINT -->
+    <joint name="${name}_7_joint" type="revolute">
+      <origin
+      xyz="-0.1166 0 0"
+      rpy="0 -1.5708 0" />
+      <parent link="${name}_6_link" />
+      <child link="${name}_7_link" />
+      <axis xyz="0 0 1" />
+      <limit lower="${arm_7_joint_lb}" upper="${arm_7_joint_ub}" effort="${arm_7_max_effort}" velocity="${arm_7_max_velocity}" />
+    </joint>
+
+   <gazebo reference="${name}_1_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_2_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_3_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_4_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_5_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_6_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   <gazebo reference="${name}_7_link">
+     <mu1>0.9</mu1>
+     <mu2>0.9</mu2>
+   </gazebo>
+   
+   <gazebo reference="${name}_1_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_2_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_3_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_4_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_5_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_6_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+   <gazebo reference="${name}_7_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+   </gazebo>
+
+
+ <!--***********************-->
+    <!--        TOOL           -->
+    <!--***********************-->
+    <link name="${name}_tool_link">
+     <inertial>
+      <origin
+        xyz="5.0493E-18 -4.4892E-17 -0.0068514"
+        rpy="0 0 0" />
+      <mass
+        value="0.10189" />
+      <inertia
+        ixx="5.1076E-05"
+        ixy="-1.0374E-21"
+        ixz="-5.9164E-21"
+        iyy="5.0882E-05"
+        iyz="-8.5211E-21"
+        izz="9.705E-05" />
+    </inertial>
+      <visual>
+        <origin xyz="0.001 0 0" rpy="0 1.5708 0" />
+        <geometry>
+          <cylinder radius="0.005" length="0.005"/>
+        </geometry>
+        <material name="">
+          <color rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0.001 0 0" rpy="0 1.5708 0" />
+        <geometry>
+          <cylinder radius="0.005" length="0.005"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${name}_tool_joint" type="fixed">
+      <parent link="${name}_7_link" />
+      <child link="${name}_tool_link" />
+        <origin xyz="0 0 0.0254" rpy="3.1415 0 0" />
+    </joint>
+
+    <!-- TRANSMISSIONS -->
+    <xacro:arm_simple_transmission name="${name}" number="1" reduction="1.0" offset_value="${arm_1_offset}"/>
+    <xacro:arm_simple_transmission name="${name}" number="2" reduction="1.0" offset_value="${arm_2_offset}"/>
+    <xacro:arm_simple_transmission name="${name}" number="3" reduction="1.0" offset_value="${arm_3_offset}"/>
+    <xacro:arm_simple_transmission name="${name}" number="4" reduction="1.0" offset_value="${arm_4_offset}"/>
+    <xacro:arm_simple_transmission name="${name}" number="5" reduction="1.0" offset_value="${arm_5_offset}"/>
+    <xacro:arm_simple_transmission name="${name}" number="6" reduction="1.0" offset_value="${arm_6_offset}"/>
+    <xacro:arm_simple_transmission name="${name}" number="7" reduction="1.0" offset_value="${arm_7_offset}"/>
+  </xacro:macro>
+</robot>

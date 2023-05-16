@@ -16,36 +16,51 @@
 <robot  xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_v2_prototype">
 
 <!-- Parameters -->
-<xacro:arg name="laser_model" default="sick-571"/> <!-- false, hokuyo, sick-551, sick-561, sick-571-->
+<xacro:arg name="laser_model" default="hokuyo"/> <!-- false, hokuyo, sick-551, sick-561, sick-571-->
 
 <xacro:property name="laser_model" value="$(arg laser_model)" />
 
 <!-- Includes -->
 <xacro:include filename="$(find tiago_v2_prototype_description)/gazebo/gazebo.urdf.xacro" />
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/torso/torso_dual.urdf.xacro" />
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/head/head.urdf.xacro" />
 <xacro:include filename="$(find omni_base_description)/urdf/base/base_sensors.urdf.xacro" />
-<xacro:include filename="$(find tiago_dual_description)/urdf/torso/torso_dual.urdf.xacro" />
-<xacro:include filename="$(find tiago_sea_arm_description)/urdf/arm.urdf.xacro" />
-<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/arm.mounting.xacro" />
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/arm/arm.urdf.xacro" />
+<xacro:include filename="$(find tiago_v2_prototype_description)/urdf/end_effector/end_effector.urdf.xacro" />
 
-<xacro:property name="arm_left_xyz" value="${mounting_x + mounting_offset_x} ${mounting_y + mounting_offset_y} ${mounting_z + mounting_offset_z}" />
-
-<xacro:property name="arm_right_xyz" value="${mounting_x + mounting_offset_x} ${-(mounting_y + mounting_offset_y)} ${mounting_z + mounting_offset_z}" />
-
-<xacro:property name="arm_left_rpy" value="${-(mounting_roll + mounting_offset_roll)} ${-(mounting_pitch + mounting_offset_pitch)} ${-3.1415 + (mounting_yaw + mounting_offset_yaw)}" />
-
-<xacro:property name="arm_right_rpy" value="${-(mounting_roll + mounting_offset_roll)} ${-(mounting_pitch + mounting_offset_pitch)} ${-(mounting_yaw + mounting_offset_yaw)}" />
+<!-- End effector -->
+<xacro:arg name="end_effector" default="robotiq-2f-85"/> <!-- for now only robotiq-2f-85 is available -->
+<xacro:property name="end_effector" value="$(arg end_effector)" />
+<xacro:property name="end_effector_name" value="gripper"/>
+<xacro:property name="end_effector_left_link" value="arm_left_tool_link"/>
+<xacro:property name="end_effector_right_link" value="arm_right_tool_link"/>
 
 <!-- Base -->
 <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
 <!-- Torso. TODO: change for custom torso -->
-<xacro:tiago_dual_torso name="torso" parent="base_link" has_screen="false"/>
-<!-- Arms -->
-<xacro:tiago_sea_arm name="arm_left" parent="torso_lift_link" reflect="-1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
-  <origin xyz="${arm_left_xyz}" rpy="${arm_left_rpy}"/>
-</xacro:tiago_sea_arm>
+<xacro:tiago_v2_torso name="torso" parent="base_link"/>
+<xacro:tiago_v2_head name="head" parent="torso_lift_link"/>
 
-<xacro:tiago_sea_arm name="arm_right" parent="torso_lift_link" reflect="1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
-  <origin xyz="${arm_right_xyz}" rpy="${arm_right_rpy}"/>
-</xacro:tiago_sea_arm>
+<xacro:arg name="arm_x" default="0.08976" />
+<xacro:arg name="arm_y" default="0.15918" />
+<xacro:arg name="arm_z" default="-0.092008" />
+<xacro:arg name="arm_roll" default="-2.0679" />
+<xacro:arg name="arm_pitch" default="0.0" />
+<xacro:arg name="arm_yaw" default="-1.2217" />
+
+<!-- Arms -->
+<xacro:tiago_v2_arm name="arm_left" parent="torso_lift_link" reflect="-1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
+  <origin xyz="$(arg arm_x) $(arg arm_y) $(arg arm_z)" 
+          rpy="$(arg arm_roll) $(arg arm_pitch) $(arg arm_yaw)"/>
+</xacro:tiago_v2_arm>
+
+
+<xacro:tiago_v2_arm name="arm_right" parent="torso_lift_link" reflect="1" arm_1_offset="0" arm_2_offset="0" arm_3_offset="0" arm_4_offset="0" arm_5_offset="0" arm_6_offset="0" arm_7_offset="0">
+  <origin xyz="$(arg arm_x) ${-1.0*$(arg arm_y)} $(arg arm_z)" 
+	  rpy="$(arg arm_roll) ${-1.0*$(arg arm_pitch)} ${-3.14159 -$(arg arm_yaw)}"/>
+</xacro:tiago_v2_arm>
+
+ <xacro:tiago_v2_prototype_end_effector name="${end_effector_name}_left" parent="${end_effector_left_link}" type="${end_effector}"/>
+ <xacro:tiago_v2_prototype_end_effector name="${end_effector_name}_right" parent="${end_effector_right_link}" type="${end_effector}"/>
 
 </robot>

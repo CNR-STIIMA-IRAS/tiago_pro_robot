@@ -13,9 +13,11 @@
   limitations under the License.
 -->
 <launch>
+
   <arg name="rvizconfig" default="$(find tiago_v2_prototype_description)/config/show.rviz" />
 
-  <include file="$(find tiago_v2_prototype_description)/robots/upload.launch"/>
+  <include file="$(find tiago_v2_prototype_description)/robots/upload.launch">
+  </include>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"  />
