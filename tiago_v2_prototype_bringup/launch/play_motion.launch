@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<launch>
+<launch> 
   <node pkg="play_motion" type="play_motion" name="play_motion">
+    <rosparam file="$(find tiago_v2_prototype_bringup)/config/approach_planner/approach_planner_common.yaml" command="load" />
   </node>
 
   <node pkg="play_motion" type="is_already_there.py" name="is_already_there" />
