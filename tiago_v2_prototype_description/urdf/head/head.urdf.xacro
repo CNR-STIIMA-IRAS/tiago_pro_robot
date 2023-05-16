@@ -23,10 +23,10 @@
   <xacro:property name="head_friction" value="1.0" />
   <xacro:property name="head_damping"  value="0.5" />
   <xacro:property name="head_max_vel"  value="3.0" />
-  <xacro:property name="head_1_lower_limit" value="-75"/>
-  <xacro:property name="head_1_upper_limit" value="75"/>
-  <xacro:property name="head_2_lower_limit" value="-60"/>
-  <xacro:property name="head_2_upper_limit" value="45"/>
+  <xacro:property name="head_1_lower_limit" value="-55"/>
+  <xacro:property name="head_1_upper_limit" value="55"/>
+  <xacro:property name="head_2_lower_limit" value="-55"/>
+  <xacro:property name="head_2_upper_limit" value="20"/>
 
   <xacro:property name="head_eps"      value="${0.07}" />
   <xacro:property name="head_1_joint_offset"      value="${0.0}" />
@@ -38,15 +38,17 @@
   <xacro:macro name="tiago_v2_head" params="name parent">
     <link name="${name}_1_link">
       <inertial>
-        <origin xyz="0.013723 0.0015288 0.091095" rpy="0 0 0" />
-        <mass value="0.50253" />
+        <origin
+          xyz="0.0151529168350566 0.00114213181417127 0.0915264960362224"
+          rpy="0 0 0" />
+        <mass value="0.5232442430173" />
         <inertia
-          ixx="0.00073252"
-          ixy="-1.0801E-06"
-          ixz="-6.3715E-05"
-          iyy="0.0005861"
-          iyz="4.157E-10"
-          izz="0.00060232" />
+          ixx="0.000735269995053842"
+          ixy="-1.08043527376587E-06"
+          ixz="-6.37152476586251E-05"
+          iyy="0.000591525160132652"
+          iyz="-7.68106728600967E-12"
+          izz="0.000605065517138752" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -62,7 +64,6 @@
         <geometry>
           <mesh filename="package://tiago_v2_prototype_description/meshes/head/head_1_link_collision.stl" scale="1 1 1"/>
         </geometry>
-        <material name="White" />
       </collision>
     </link>
 
@@ -95,11 +96,18 @@
 
     <link name="${name}_2_link">
       <inertial>
-        <origin xyz="0.0025967 0.11474 0.00021233" rpy="0 0 0" />
-        <mass value="1.2093"/>
-        <inertia ixx="0.0063697" ixy="0.00052067" ixz="-8.4666E-06"
-                 iyy="0.0045958" iyz="9.6501E-06"
-                 izz="0.0031995" />
+        <origin
+          xyz="0.00277337961585723 0.115101831131133 4.87500103012104E-05"
+          rpy="0 0 0" />
+        <mass
+          value="1.24570092574607" />
+        <inertia
+          ixx="0.00635908800181593"
+          ixy="0.000520891211224051"
+          ixz="-8.48824527287752E-06"
+          iyy="0.00458972596146156"
+          iyz="9.69834634769094E-06"
+          izz="0.00320064764172765" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
