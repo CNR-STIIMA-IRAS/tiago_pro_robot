@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2023-05-16)
+------------------
 * Merge branch 'play_motion_fixes' into 'master'
   play motion fixes
   See merge request robots/tiago_v2_prototype_robot!4
