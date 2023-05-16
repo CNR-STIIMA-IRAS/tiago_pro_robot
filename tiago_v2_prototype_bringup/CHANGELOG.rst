@@ -2,6 +2,9 @@
 Changelog for package tiago_v2_prototype_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.1 (2023-05-16)
 ------------------
 * Merge branch 'new_v2_bringup' into 'master'
