@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2023-05-16)
+------------------
 * remove unused tiago_sea_arm_description dependency
 * Contributors: Sai Kishor Kothakota
 
