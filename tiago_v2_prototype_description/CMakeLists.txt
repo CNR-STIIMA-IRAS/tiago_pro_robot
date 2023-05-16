@@ -6,7 +6,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES tiago_v2_prototype_description
-#  CATKIN_DEPENDS joint_state_publisher_gui tiago_sea_arm_description xacro
+#  CATKIN_DEPENDS joint_state_publisher_gui xacro
 #  DEPENDS system_lib
 )
 
