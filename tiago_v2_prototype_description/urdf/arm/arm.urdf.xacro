@@ -83,7 +83,11 @@
       <parent link="${parent}" />
       <child link="${name}_1_link" />
       <axis xyz="0 0 1" />
-      <limit lower="${arm_1_joint_lb}" upper="${arm_1_joint_ub}" effort="${arm_1_max_effort}" velocity="${arm_1_max_velocity}" />
+      <limit lower="${arm_1_joint_lb}" upper="${arm_1_joint_ub}" effort="${arm_1_max_effort}" velocity="${arm_1_max_velocity}" /> 
+      <!-- <limit lower="${-0.5*(reflect-1)*arm_1_joint_lb - 0.5*(reflect+1)*arm_1_joint_ub}" 
+             upper="${-0.5*(reflect-1)*arm_1_joint_ub - 0.5*(reflect+1)*arm_1_joint_lb}" effort="${arm_1_max_effort}" velocity="${arm_1_max_velocity}" />
+      -->
+
     </joint>
   
     <!-- ARM 2 LINK -->
@@ -165,7 +169,7 @@
     <joint name="${name}_3_joint" type="revolute">
       <origin
       xyz="-0.15 -0.02 0"
-      rpy="0 -1.5707 0" />
+      rpy="3.1415 1.5707 0" />
       <parent link="${name}_2_link" />
       <child link="${name}_3_link" />
       <axis xyz="0 0 1" />
