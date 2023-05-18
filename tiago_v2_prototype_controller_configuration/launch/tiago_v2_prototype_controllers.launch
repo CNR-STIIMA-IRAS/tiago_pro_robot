@@ -6,7 +6,6 @@
     <include file="$(find tiago_v2_prototype_controller_configuration)/launch/joint_state_controller.launch"/>
     <!-- Default controllers -->
     <include file="$(find tiago_v2_prototype_controller_configuration)/launch/default_controllers.launch"/>
-
    
    <!-- Gripper controllers -->
     <include file="$(find tiago_v2_prototype_controller_configuration)/launch/gripper_controllers.launch">
@@ -17,5 +16,7 @@
       <arg name="side" value="left"/>
     </include>
 
+    <!-- Impedance controllers loaded as stopped -->
+    <include file="$(find tiago_v2_prototype_controller_configuration)/launch/impedance_controllers.launch"/>
 </launch>
 
