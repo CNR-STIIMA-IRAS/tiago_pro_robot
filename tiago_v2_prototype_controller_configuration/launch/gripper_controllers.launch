@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="side"/>
+
+    <rosparam command="load" file="$(find tiago_v2_prototype_controller_configuration)/config/gripper_joint_trajectory_controllers.yaml" />
+    <include file="$(find pal_robotiq_controller_configuration)/launch/gripper_controller.launch">
+       <arg name="model" value="robotiq-2f-85" />
+       <arg name="side" value="$(arg side)"/>
+    </include>
+    
+</launch>
+

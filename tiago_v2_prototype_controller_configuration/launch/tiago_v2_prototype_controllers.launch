@@ -7,9 +7,14 @@
     <!-- Default controllers -->
     <include file="$(find tiago_v2_prototype_controller_configuration)/launch/default_controllers.launch"/>
 
-    <rosparam command="load" file="$(find tiago_v2_prototype_controller_configuration)/config/gripper_joint_trajectory_controllers.yaml" />
-    <include file="$(find pal_robotiq_controller_configuration)/launch/gripper_controller.launch">
-       <arg name="model" value="robotiq-2f-85" />
+   
+   <!-- Gripper controllers -->
+    <include file="$(find tiago_v2_prototype_controller_configuration)/launch/gripper_controllers.launch">
+      <arg name="side" value="right"/>
+    </include>
+    
+    <include file="$(find tiago_v2_prototype_controller_configuration)/launch/gripper_controllers.launch">
+      <arg name="side" value="left"/>
     </include>
 
 </launch>
