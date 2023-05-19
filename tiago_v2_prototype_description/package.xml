@@ -15,5 +15,6 @@
   <exec_depend>tiago_dual_description</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>pal_robotiq_85_description</exec_depend>
+  <exec_depend>realsense2_description</exec_depend>
 
 </package>
