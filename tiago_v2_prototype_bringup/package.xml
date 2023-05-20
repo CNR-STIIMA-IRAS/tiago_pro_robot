@@ -16,4 +16,5 @@
   <exec_depend>head_action</exec_depend>
   <exec_depend>twist_mux</exec_depend>
   <exec_depend>robot_pose</exec_depend>
+  <exec_depend>get_out_of_collision</exec_depend>
 </package>
