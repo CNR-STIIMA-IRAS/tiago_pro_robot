@@ -2,6 +2,17 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'flip_arm_link_3' into 'master'
+  remove joy_teleop from bringup and use startup as the incrementer server is...
+  See merge request robots/tiago_v2_prototype_robot!6
+* added the missing head_action dependency
+* Don't start actuator pid controllers and position controllers by default, and handle it by an application
+* added the point head action to the default controllers launch file
+* load the mobile_base_controller and increase the timeout to 300 seconds
+* Contributors: Sai Kishor Kothakota
+
 0.0.3 (2023-05-16)
 ------------------
 

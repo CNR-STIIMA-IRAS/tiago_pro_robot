@@ -2,6 +2,20 @@
 Changelog for package tiago_v2_prototype_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'flip_arm_link_3' into 'master'
+  remove joy_teleop from bringup and use startup as the incrementer server is...
+  See merge request robots/tiago_v2_prototype_robot!6
+* added realsense2_description dependency
+* added head_screen_link to the URDF
+* Merge branch 'head-camera' into 'flip_arm_link_3'
+  Head camera integration
+  See merge request robots/tiago_v2_prototype_robot!5
+* intel d435 added
+* 180 degrees flip of link 3 to improve motion ranges
+* Contributors: Luca Marchionni, Sai Kishor Kothakota, ileniaperrella
+
 0.0.3 (2023-05-16)
 ------------------
 
