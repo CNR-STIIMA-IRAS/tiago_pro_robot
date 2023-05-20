@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.4 (2023-05-20)
+------------------
 * Merge branch 'flip_arm_link_3' into 'master'
   remove joy_teleop from bringup and use startup as the incrementer server is...
   See merge request robots/tiago_v2_prototype_robot!6
