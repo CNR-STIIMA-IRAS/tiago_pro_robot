@@ -14,6 +14,11 @@
 -->
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+ 
+  <!--
+  <xacro:property name="arm_1_joint_ub" value="3.67" />
+  <xacro:property name="arm_1_joint_lb" value="-1.57" />
+  -->
 
   <xacro:property name="arm_1_joint_ub" value="2.6" />
   <xacro:property name="arm_1_joint_lb" value="-2.6" />
