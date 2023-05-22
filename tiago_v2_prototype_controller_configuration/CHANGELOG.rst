@@ -2,6 +2,11 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added timeout to the joint_state_controller
+* Contributors: Sai Kishor Kothakota
+
 0.0.4 (2023-05-20)
 ------------------
 * Merge branch 'flip_arm_link_3' into 'master'
