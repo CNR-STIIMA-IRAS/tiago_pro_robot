@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.5 (2023-05-22)
+------------------
 * added timeout to the joint_state_controller
 * Contributors: Sai Kishor Kothakota
 
