@@ -6,5 +6,5 @@
   <!-- Controllers that come up started -->
   <node name="bringup_controllers_spawner_js"
         pkg="controller_manager" type="spawner" output="screen"
-        args="joint_state_controller" />
+        args="--timeout 700 joint_state_controller" />
 </launch>
