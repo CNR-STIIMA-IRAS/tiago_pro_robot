@@ -202,10 +202,6 @@ play_motion:
           positions: [-0.2125, -0.23023]
         - time_from_start: 9
           positions: [-5.0572e-06, -5.0572e-06]
-      meta:
-        name: alive_1
-        usage: demo
-        description: head movement
     alive_2:
       joints: [head_2_joint, head_1_joint]
       points:
@@ -219,10 +215,6 @@ play_motion:
           positions: [0.023133, 6.8401e-06]
         - time_from_start: 9.5
           positions: [0.00037433, -0.034051]
-      meta:
-        name: alive_2
-        usage: demo
-        description: head movement
     alive_3:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
       points:
@@ -234,10 +226,6 @@ play_motion:
           positions: [0.074058, 0.18057, -1.6012, 0.32413, 1.9889, 0.47483, -0.9665, 2.21, -0.1804, -1.6017, -0.32411, 2.0134, -0.10269, -1.5353, -1.56, -8.2959e-05, -6.9968e-06]
         - time_from_start: 11
           positions: [0.082039, 0.18023, -1.6008, 0.32811, 2.0315, 0.10103, -1.5105, 1.5605, -0.18024, -1.6008, -0.32699, 2.0317, -0.10136, -1.5434, -1.56, -8.3683e-05, -6.6882e-06]
-      meta:
-        name: alive_3
-        usage: demo
-        description: alive_3
     alive_4:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
       points:
@@ -251,10 +239,6 @@ play_motion:
           positions: [0.09, 0.17996, -1.5325, 0.19931, 2.0238, 0.10423, -1.5338, 1.56, -0.17991, -1.5323, -0.19718, 2.024, -0.10494, -1.5449, -1.56, 4.0915e-06, 0.19688]
         - time_from_start: 12
           positions: [0.09, 0.18046, -1.6016, 0.33558, 2.0636, 0.10197, -1.5413, 1.56, -0.18048, -1.6015, -0.33339, 2.0637, -0.10264, -1.5525, -1.56, -8.2986e-05, -6.6936e-06]
-      meta:
-        name: alive_4
-        usage: demo
-        description: alive_4
     alive_5:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
       points:
@@ -266,10 +250,6 @@ play_motion:
           positions: [0.09, 0.35776, -1.6007, 0.38682, 2.0013, 0.1126, -1.4852, 1.56, -0.36032, -1.6007, -0.35684, 2.0216, -0.11305, -1.5182, -1.56, -8.4002e-05, -6.3608e-06]
         - time_from_start: 9
           positions: [0.09, 0.18046, -1.6016, 0.33558, 2.0636, 0.10197, -1.5413, 1.56, -0.18048, -1.6015, -0.33339, 2.0637, -0.10264, -1.5525, -1.56, -8.2986e-05, -6.6936e-06]
-      meta:
-        name: alive_5
-        usage: demo
-        description: moving joint 2, opening arms and head up
     alive_6:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
       points:
@@ -279,10 +259,6 @@ play_motion:
           positions: [0.10206, 0.18046, -1.6016, 0.36233, 2.0216, -0.3046, -1.5219, 1.56, -0.17995, -1.6009, -0.33248, 2.0317, 0.30405, -1.5435, -1.56, -0.00023894, 1.8925e-05]
         - time_from_start: 10
           positions: [0.09, 0.18046, -1.6016, 0.33558, 2.0636, 0.10197, -1.5413, 1.56, -0.18048, -1.6015, -0.33339, 2.0637, -0.10264, -1.5525, -1.56, -0.00023901, 1.8885e-05]
-      meta:
-        name: alive_6
-        usage: demo
-        description: opening arms
     alive_7:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
       points:
@@ -298,10 +274,6 @@ play_motion:
           positions: [0.09, 0.18044, -1.2387, 0.33719, 2.0134, 0.10246, -1.5407, 1.56, -0.18017, -1.7322, -0.32411, 2.1384, -0.11105, -1.5318, -1.56, -0.00018186, 1.0871e-05]
         - time_from_start: 10 
           positions: [0.12, 0.18069, -1.6024, 0.33344, 2.0453, 0.10299, -1.5349, 1.56, -0.18072, -1.6023, -0.33022, 2.0454, -0.10402, -1.5468, -1.56, -0.00018252, 1.0827e-05]
-      meta:
-        name: alive_7
-        usage: demo
-        description: walking movement, moving arms and torso
     alive_8:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
       points:
@@ -311,10 +283,6 @@ play_motion:
           positions: [0.09, 0.18023, -1.6008, 0.33777, 2.0818, 0.10097, -1.5463, 0.52, -0.18024, -1.6007, -0.33665, 2.0819, -0.1013, -1.5569, -0.52]
         - time_from_start: 6
           positions: [0.09, 0.18023, -1.6008, 0.33777, 2.0818, 0.10097, -1.5463, 1.56, -0.18024, -1.6007, -0.33665, 2.0819, -0.1013, -1.5569, -1.56]
-      meta:
-        name: alive_8
-        usage: demo
-        description: moving joint 7, stretching grippers
     alive_9:
       joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
       points:
@@ -328,7 +296,3 @@ play_motion:
           positions: [0.12, 0.18088, -1.6032, 0.33129, 2.0268, 0.10397, -1.5271, 1.56, -0.18096, -1.6031, -0.32717, 2.027, -0.10544, -1.5396, -1.56, -0.0001828, 1.0831e-05]
         - time_from_start: 14
           positions: [0.09, 0.18069, -1.6024, 0.33344, 2.0453, 0.10299, -1.5349, 1.56, -0.18072, -1.6023, -0.33022, 2.0454, -0.10402, -1.5468, -1.56, -0.00018252, 1.0827e-05]
-      meta:
-        name: alive_9
-        usage: demo
-        description: torso up and down
