@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <rosparam command="load" file="$(find tiago_dual_controller_configuration)/config/joint_trajectory/joint_impedance_trajectory_controllers.yaml" />
+  <rosparam command="load" file="$(find tiago_v2_prototype_controller_configuration)/config/joint_impedance_trajectory_controllers.yaml" />
 
    <arg name="left_model_chains" value="['gripper_left_base_link']"/>
    <arg name="right_model_chains" value="['gripper_right_base_link']"/>
