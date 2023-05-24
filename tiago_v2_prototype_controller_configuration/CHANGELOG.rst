@@ -2,6 +2,11 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update the impedance gains on the robot
+* Contributors: Sai Kishor Kothakota
+
 0.0.6 (2023-05-24)
 ------------------
 * Merge branch 'gravity_compensation_per_arm' into 'master'
