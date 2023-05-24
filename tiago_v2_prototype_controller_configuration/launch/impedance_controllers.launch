@@ -15,6 +15,6 @@
 
     <!-- Controllers that come up started -->
     <node name="impedance_controllers_spawner" pkg="controller_manager" type="spawner" output="screen"
-        args="--timeout 120 --stopped $(arg controller_list)" />
+        args="--timeout 300 --stopped $(arg controller_list)" />
         
 </launch>
