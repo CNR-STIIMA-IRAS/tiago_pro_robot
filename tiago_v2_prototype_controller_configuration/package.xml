@@ -20,5 +20,6 @@
   <exec_depend>velocity_controllers</exec_depend>
   <exec_depend>pal_robotiq_controller_configuration</exec_depend>
   <exec_depend>gravity_compensation_controller</exec_depend>
+  <exec_depend>joint_impedance_trajectory_controller</exec_depend>
 
 </package>
