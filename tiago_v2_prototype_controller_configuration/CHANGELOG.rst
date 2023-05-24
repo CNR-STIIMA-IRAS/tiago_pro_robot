@@ -2,6 +2,30 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'gravity_compensation_per_arm' into 'master'
+  added another launch file for gravity compensation where with the arg side it...
+  See merge request robots/tiago_v2_prototype_robot!9
+* load the parameters of the gravity compnesation with ros_bringup
+* make gravity_compensation_controller per arm launch more generic
+* added another launch file for gravity compensation where with the arg side it is possible to 1 arm instead of both
+* Merge branch 'impedance-controllers' into 'master'
+  Impedance controllers
+  See merge request robots/tiago_v2_prototype_robot!8
+* increase the timeout of the imepdance controllers
+* remove the start of gripper controllers
+* impedance kp kd updated
+* fix config file directory
+* updated actuators params for gravity compensation
+* impedance controllers files for both arms
+* gripper controllers added
+* Merge branch 'fix_motions' into 'master'
+  Fix motions
+  See merge request robots/tiago_v2_prototype_robot!7
+* Update the acceleration and velocity limits for the mobile base controller
+* Contributors: Sai Kishor Kothakota, ileniaperrella
+
 0.0.5 (2023-05-22)
 ------------------
 * added timeout to the joint_state_controller

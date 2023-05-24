@@ -2,6 +2,18 @@
 Changelog for package tiago_v2_prototype_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_motions' into 'master'
+  Fix motions
+  See merge request robots/tiago_v2_prototype_robot!7
+* modified home motion so the arms won't need to support on base covers on poweroff
+* new home_right/left and gripper fixed on tiago_dancing
+* no meta descriptio
+* alie_fixed and home joint 7
+* offer and shake
+* Contributors: Aina, Sai Kishor Kothakota
+
 0.0.5 (2023-05-22)
 ------------------
 
