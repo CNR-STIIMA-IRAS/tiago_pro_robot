@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.8 (2023-05-24)
+------------------
 * Merge branch 'wbc_per_arm' into 'master'
   Wbc per arm
   See merge request robots/tiago_v2_prototype_robot!10
