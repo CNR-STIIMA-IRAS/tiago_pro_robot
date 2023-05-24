@@ -41,7 +41,7 @@ mobile_base_controller:
       max_velocity           :  1.0 # m/s
       min_velocity           : -1.0 # m/s
       has_acceleration_limits: true
-      max_acceleration       :  0.7 # m/s^2
+      max_acceleration       :  0.4 # m/s^2
       has_jerk_limits        : false
       max_jerk               :  5.0 # m/s^3
     y:
@@ -49,7 +49,7 @@ mobile_base_controller:
       max_velocity           :  1.0 # m/s
       min_velocity           : -1.0 # m/s
       has_acceleration_limits: true
-      max_acceleration       :  0.7 # m/s^2
+      max_acceleration       :  0.4 # m/s^2
       has_jerk_limits        : false
       max_jerk               :  5.0 # m/s^3
   angular:
@@ -62,9 +62,9 @@ mobile_base_controller:
       max_jerk               : !degrees 600.0
   space:
     xy:
-      max_velocity             : 0.7
-    xz:
-      max_velocity             : 0.5
-    xyz:
       max_velocity             : 0.4
+    xz:
+      max_velocity             : 0.4
+    xyz:
+      max_velocity             : 0.2
 
