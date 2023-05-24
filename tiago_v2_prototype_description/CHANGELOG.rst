@@ -2,6 +2,14 @@
 Changelog for package tiago_v2_prototype_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'wbc_per_arm' into 'master'
+  Wbc per arm
+  See merge request robots/tiago_v2_prototype_robot!10
+* Flipped the limits of the head
+* Contributors: Sai Kishor Kothakota
+
 0.0.7 (2023-05-24)
 ------------------
 

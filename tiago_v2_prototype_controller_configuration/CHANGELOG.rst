@@ -2,6 +2,16 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'wbc_per_arm' into 'master'
+  Wbc per arm
+  See merge request robots/tiago_v2_prototype_robot!10
+* added the wbc_controllers launch to controller configuration
+* fix direct_control adding more args to control separately arm left and arm right
+* moved the direct_control launch to launch folder
+* Contributors: Sai Kishor Kothakota, ileniaperrella
+
 0.0.7 (2023-05-24)
 ------------------
 * update the impedance gains on the robot
