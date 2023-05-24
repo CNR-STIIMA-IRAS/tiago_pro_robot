@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2023-05-24)
+------------------
 * Merge branch 'gravity_compensation_per_arm' into 'master'
   added another launch file for gravity compensation where with the arg side it...
   See merge request robots/tiago_v2_prototype_robot!9
