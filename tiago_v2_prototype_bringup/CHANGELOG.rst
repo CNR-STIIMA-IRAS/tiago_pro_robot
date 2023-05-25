@@ -2,8 +2,8 @@
 Changelog for package tiago_v2_prototype_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2023-05-25)
+------------------
 * Merge branch 'fix_home' into 'master'
   new home gripper 7
   See merge request robots/tiago_v2_prototype_robot!11
