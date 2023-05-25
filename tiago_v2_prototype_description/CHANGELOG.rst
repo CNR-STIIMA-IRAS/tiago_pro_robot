@@ -2,6 +2,9 @@
 Changelog for package tiago_v2_prototype_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.8 (2023-05-24)
 ------------------
 * Merge branch 'wbc_per_arm' into 'master'

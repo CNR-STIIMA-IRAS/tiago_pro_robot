@@ -2,6 +2,15 @@
 Changelog for package tiago_v2_prototype_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_home' into 'master'
+  new home gripper 7
+  See merge request robots/tiago_v2_prototype_robot!11
+* no alive motions
+* new home gripper 7
+* Contributors: Aina, Sai Kishor Kothakota
+
 0.0.8 (2023-05-24)
 ------------------
 * Merge branch 'wbc_per_arm' into 'master'
