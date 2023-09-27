@@ -12,7 +12,7 @@
 
   <exec_depend>joint_state_publisher_gui</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
-  <exec_depend>tiago_pro_arm_description</exec_depend>
+  <exec_depend>pal_sea_arm_description</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>pal_pro_gripper_description</exec_depend>
   <exec_depend>realsense2_description</exec_depend>
