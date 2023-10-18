@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright (c) 2022 PAL Robotics S.L. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<launch>
+  <arg name="robot_description" default="robot_description"/>
+  <arg name="laser_model"  default="sick-571"/>
+  <arg name="end_effector_left"  default="pal-pro-gripper"/>
+  <arg name="end_effector_right"  default="pal-pro-gripper"/>
+  <arg name="ft_sensor_left"  default="false"/>
+  <arg name="ft_sensor_right"  default="false"/>
+  <!-- robot description -->
+  <param name="$(arg robot_description)" 
+         command="rosrun xacro xacro --inorder 
+         '$(find tiago_pro_description)/robots/tiago_pro.urdf.xacro' 
+         laser_model:=$(arg laser_model)
+         end_effector_left:=$(arg end_effector_left)
+         end_effector_right:=$(arg end_effector_right)
+         ft_sensor_left:=$(arg ft_sensor_left)
+         ft_sensor_right:=$(arg ft_sensor_right)" />
+
+  <!--rosparam command="load" file="$(find tiago_pro:)/config/collision/collision_parameters.yaml" /-->
+</launch>

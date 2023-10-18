@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <rosparam command="load" file="$(find tiago_pro_controller_configuration)/config/joint_impedance_trajectory_controllers.yaml" />
+
+   <arg name="left_model_chains" value="['gripper_left_base_link']"/>
+   <arg name="right_model_chains" value="['gripper_right_base_link']"/>
+   <rosparam param="/arm_left_impedance_controller/robot_model_chains" subst_value="True">$(arg left_model_chains)</rosparam>
+   <rosparam param="/arm_right_impedance_controller/robot_model_chains" subst_value="True">$(arg right_model_chains)</rosparam>
+
+
+    <!-- Set up controllers depending of arm existance -->
+   <arg name="controller_list"
+      value="arm_left_impedance_controller
+             arm_right_impedance_controller"/>
+
+    <!-- Controllers that come up started -->
+    <node name="impedance_controllers_spawner" pkg="controller_manager" type="spawner" output="screen"
+        args="--timeout 300 --stopped $(arg controller_list)" />
+        
+</launch>

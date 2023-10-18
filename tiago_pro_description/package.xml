@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tiago_pro_description</name>
+  <version>0.0.9</version>
+  <description>The tiago_pro_description package</description>
+
+  <maintainer email="narcis.miguel@pal-robotics.com">Narcis Miguel</maintainer>
+
+  <license>Propietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>omni_base_description</exec_depend>
+  <exec_depend>pal_sea_arm_description</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>pal_pro_gripper_description</exec_depend>
+  <exec_depend>realsense2_description</exec_depend>
+
+</package>
