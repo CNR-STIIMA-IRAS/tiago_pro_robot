@@ -11,7 +11,6 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find tiago_pro_description)/urdf/deg_to_rad.xacro" />
   <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso.transmission.xacro" />
 
   <!--Constant parameters-->
@@ -37,32 +36,34 @@
         <mesh
           filename="package://tiago_pro_description/meshes/torso/torso_fixed_link.stl" />
       </geometry>
-      <material name="">
-        <color rgba="0.29804 0.29804 0.29804 1" />
-      </material>
+      <material name="pal/DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.1" />
       <geometry>
         <box size="0.23 0.253 0.2"/>
       </geometry>
-      <material name="DarkGrey"/>
+      <material name="pal/DarkGrey"/>
     </collision>
     <collision>
       <origin rpy="0 0 0" xyz="0.18 0 0.03" />
       <geometry>
         <box size="0.15 0.253 0.06"/>
       </geometry>
-      <material name="DarkGrey"/>
+      <material name="pal/DarkGrey"/>
     </collision>
     <collision>
       <origin rpy="0 0 0" xyz="-0.09 0 0.0" />
       <geometry>
         <box size="0.47 0.5 0.02"/>
       </geometry>
-      <material name="DarkGrey"/>
+      <material name="pal/DarkGrey"/>
     </collision>
   </link>
+
+  <gazebo reference="${name}_fixed_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
 
   <joint name="${name}_fixed_joint" type="fixed">
     <origin rpy="0 0 0" xyz="-0.0245 0 0.215" />
@@ -85,14 +86,14 @@
       <geometry>
         <box size="0.18 0.2 0.55"/>
       </geometry>
-      <material name="DarkGrey"/>
+      <material name="pal/DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.275" />
       <geometry>
         <box size="0.23 0.253 0.45"/>
       </geometry>
-      <material name="DarkGrey"/>
+      <material name="pal/DarkGrey"/>
     </collision>
   </link>
   <gazebo reference="${name}_fixed_column_link">
@@ -131,11 +132,7 @@
         <mesh
           filename="package://tiago_pro_description/meshes/torso/torso_lift_link.stl" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
+      <material name="White"/>
     </visual>
     <collision>
       <origin
