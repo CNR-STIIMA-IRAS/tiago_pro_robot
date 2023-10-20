@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.10 (2023-10-20)
+-------------------
 * Merge branch 'fix/ft_naming' into 'master'
   Change arm_ft\_ to wrist_ft to match TIAGo
   See merge request robots/tiago_pro_robot!19

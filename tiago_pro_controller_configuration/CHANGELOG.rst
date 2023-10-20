@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.10 (2023-10-20)
+-------------------
 * Merge branch 'change_name' into 'master'
   Change tiago_v2_prototype to tiago_pro + move arm to an external package
   See merge request robots/tiago_pro_robot!16
