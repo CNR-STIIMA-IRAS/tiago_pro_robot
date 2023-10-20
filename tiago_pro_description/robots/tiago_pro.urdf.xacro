@@ -62,12 +62,12 @@
 <xacro:property name="has_ft_sensor_right"    value="${ft_sensor_right in ['rokubi']}"/>
 <xacro:property name="has_end_effector_left"
   value="${end_effector_left not in ['false', 'False', 'no-ee']}" />
-<xacro:property name="end_effector_left_link" value="${'arm_left_ft_tool_link' if has_ft_sensor_left else 'arm_left_tool_link'}" />
+<xacro:property name="end_effector_left_link" value="${'wrist_left_ft_tool_link' if has_ft_sensor_left else 'arm_left_tool_link'}" />
 <xacro:property name="end_effector_left_name" value="gripper_left" />
 
 <xacro:property name="has_end_effector_right"
   value="${end_effector_right not in ['false', 'False', 'no-ee']}" />
-<xacro:property name="end_effector_right_link" value="${'arm_right_ft_tool_link' if has_ft_sensor_right else 'arm_right_tool_link'}" />
+<xacro:property name="end_effector_right_link" value="${'wrist_right_ft_tool_link' if has_ft_sensor_right else 'arm_right_tool_link'}" />
 <xacro:property name="end_effector_right_name" value="gripper_right" />
 
 <!-- Base -->
@@ -97,10 +97,10 @@
 
 <!-- FT sensors -->
 <xacro:if value="${has_ft_sensor_right}">
-    <xacro:ft_sensor name="arm_right" parent="arm_right_tool_link"/>
+    <xacro:ft_sensor name="wrist_right" parent="arm_right_tool_link"/>
 </xacro:if>
 <xacro:if value="${has_ft_sensor_left}">
-    <xacro:ft_sensor name="arm_left" parent="arm_left_tool_link"/>
+    <xacro:ft_sensor name="wrist_left" parent="arm_left_tool_link"/>
 </xacro:if>
 
 <!-- Grippers -->
