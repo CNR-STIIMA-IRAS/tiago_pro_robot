@@ -2,6 +2,20 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/ft_naming' into 'master'
+  Change arm_ft\_ to wrist_ft to match TIAGo
+  See merge request robots/tiago_pro_robot!19
+* Change arm_ft\_ to wrist_ft to match TIAGo
+* remove deg_to_rad to make use of pal_urdf_utils package
+* Merge branch 'change_name' into 'master'
+  Change tiago_v2_prototype to tiago_pro + move arm to an external package
+  See merge request robots/tiago_pro_robot!16
+* Update package.xml
+* Change tiago_v2_prototype to tiago_pro + move arm to an external package
+* Contributors: Jordan Palacios, thomaspeyrucain
+
 0.0.9 (2023-05-25)
 ------------------
 

@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'change_name' into 'master'
+  Change tiago_v2_prototype to tiago_pro + move arm to an external package
+  See merge request robots/tiago_pro_robot!16
+* Change tiago_v2_prototype to tiago_pro + move arm to an external package
+* Contributors: Jordan Palacios, thomaspeyrucain
+
 0.0.9 (2023-05-25)
 ------------------
 * Merge branch 'fix_home' into 'master'
