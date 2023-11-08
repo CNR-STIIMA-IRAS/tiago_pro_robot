@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'smooth_position_control' into 'master'
+  Smooth position control
+  See merge request robots/tiago_pro_robot!20
+* Modify parameters for direct_position_control
+* Add parameters for direct_position_control
+* Contributors: Adria Roig, Sai Kishor Kothakota
+
 0.0.10 (2023-10-20)
 -------------------
 * Merge branch 'change_name' into 'master'
