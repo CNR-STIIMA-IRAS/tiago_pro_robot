@@ -1,0 +1,15 @@
+play_motion2:
+  ros__parameters:
+    motions:
+      home:
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+        times_from_start: [0.0, 3.0, 4.5]
+        positions: [0.17202, -1.8557, 1.0, -0.35538, 1.9818, 0.0, -1.5976, 1.57, 1.8614, 1.008, -0.34892, 1.9818, 0.0, -1.5829, -1.57,
+                    0.2761, -0.36, 1.0, 0.3489, -1.9818, 0.0, -1.5829, 1.57, 0.36, 1.008, -0.3489, 1.9818, -0.0, -1.5829, -1.57,
+                    0.1, -0.36, 0.3, 0.47, -2.39, 0.0, -1.5463, 1.72, -0.36, 0.36, 0.47, 2.39, -0.0, -1.5569, -1.72]
+        meta:
+          name: Home
+          usage: demo
+          description: Go home
+
+#TODO MOTIONS

@@ -1,0 +1,17 @@
+robot_configurations:
+  arm:
+    description: "Arm"
+    values: [true, false]
+    default: true
+  laser_model:
+    description: "Base laser model"
+    values: ["no-laser", "sick-571", "sick-561", "sick-551", "hokuyo"]
+    default: sick-571
+  end_effector:
+    description: "End effector model"
+    values: ["pal-pro-gripper", 'no-ee']
+    default: "pal-pro-gripper"
+  ft_sensor:
+    description: "FT sensor model"
+    values: ["rokubi", 'no-ft-sensor']
+    default: "rokubi"
