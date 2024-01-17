@@ -13,128 +13,33 @@
 # limitations under the License.
 
 
-from typing import Dict
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch_pal.include_utils import include_scoped_launch_py_description
+from launch_pal.include_utils import include_launch_py_description
 
 
 def generate_launch_description():
 
-    ld = LaunchDescription()
-
-    launch_args = declare_launch_arguments()
-
-    for arg in launch_args.values():
-        ld.add_action(arg)
-
-    declare_actions(ld, launch_args)
-
-    return ld
-
-
-def declare_launch_arguments() -> Dict:
-
-    arg_dict = {}
-
-    sim_time_arg = DeclareLaunchArgument(
-        'use_sim_time', default_value='false',
-        description='Use sim time. ')
-
-    arg_dict[sim_time_arg.name] = sim_time_arg
-
-    robot_name = DeclareLaunchArgument(
-        'robot_name',
-        default_value='tiago_pro',
-        description='Name of the robot. ',
-        choices=['pmb2', 'tiago', 'pmb3', 'tiago_dual', 'tiago_pro'])
-
-    arg_dict[robot_name.name] = robot_name
-
-    end_effector_right = DeclareLaunchArgument(
-        'end_effector_right',
-        default_value='pal-pro-gripper',
-        description='End effector model of the right arm.',
-        choices=['pal-pro-gripper', 'no-ee'])
-
-    arg_dict[end_effector_right.name] = end_effector_right
-
-    end_effector_left = DeclareLaunchArgument(
-        'end_effector_left',
-        default_value='pal-pro-gripper',
-        description='End effector model of the left arm.',
-        choices=['pal-pro-gripper', 'no-ee'])
-
-    arg_dict[end_effector_left.name] = end_effector_left
-
-    ft_sensor_right = DeclareLaunchArgument(
-        'ft_sensor_right',
-        default_value='rokubi',
-        description='FT sensor model. ',
-        choices=['rokubi', 'no-ft-sensor'])
-
-    arg_dict[ft_sensor_right.name] = ft_sensor_right
-
-    ft_sensor_left = DeclareLaunchArgument(
-        'ft_sensor_left',
-        default_value='rokubi',
-        description='FT sensor model. ',
-        choices=['rokubi', 'no-ft-sensor'])
-
-    arg_dict[ft_sensor_left.name] = ft_sensor_left
-
-    laser_model = DeclareLaunchArgument(
-        'laser_model',
-        default_value='sick-571',
-        description='Base laser model. ',
-        choices=['no-laser', 'sick-571', 'sick-561', 'sick-551', 'hokuyo'])
-
-    arg_dict[laser_model.name] = laser_model
-
-    namespace = DeclareLaunchArgument(
-        'namespace',
-        default_value='',
-        description='Define namespace of the robot. ')
-
-    arg_dict[namespace.name] = namespace
-
-    return arg_dict
-
-
-def declare_actions(launch_description: LaunchDescription, launch_args: Dict):
-
-    default_controllers = include_scoped_launch_py_description(
+    default_controllers = include_launch_py_description(
         pkg_name='tiago_pro_controller_configuration',
         paths=['launch', 'default_controllers.launch.py'])
 
-    launch_description.add_action(default_controllers)
+    play_motion2 = include_launch_py_description(
+        "tiago_pro_bringup", ["launch", "tiago_pro_play_motion2.launch.py"]
+    )
 
-    play_motion2 = include_scoped_launch_py_description(
-        pkg_name='tiago_pro_bringup',
-        paths=['launch', 'tiago_pro_play_motion2.launch.py'],
-        launch_configurations={"robot_name": LaunchConfiguration("robot_name"),
-                               "end_effector_right": LaunchConfiguration("end_effector_right"),
-                               "end_effector_left": LaunchConfiguration("end_effector_left"),
-                               "ft_sensor_right": LaunchConfiguration("ft_sensor_right"),
-                               "ft_sensor_left": LaunchConfiguration("ft_sensor_left"),
-                               "use_sim_time": LaunchConfiguration("use_sim_time")})
+    twist_mux = include_launch_py_description(
+        "tiago_pro_bringup", ["launch", "twist_mux.launch.py"]
+    )
 
-    launch_description.add_action(play_motion2)
+    tiago_pro_state_publisher = include_launch_py_description(
+        "tiago_pro_description", ["launch", "robot_state_publisher.launch.py"]
+    )
 
-    robot_state_publisher = include_scoped_launch_py_description(
-        pkg_name='tiago_pro_description',
-        paths=['launch', 'robot_state_publisher.launch.py'],
-        launch_configurations={"robot_name": LaunchConfiguration("robot_name"),
-                               "end_effector_right": LaunchConfiguration("end_effector_right"),
-                               "end_effector_left": LaunchConfiguration("end_effector_left"),
-                               "ft_sensor_right": LaunchConfiguration("ft_sensor_right"),
-                               "ft_sensor_left": LaunchConfiguration("ft_sensor_left"),
-                               "laser_model": LaunchConfiguration("laser_model"),
-                               "namespace": LaunchConfiguration("namespace"),
-                               "use_sim_time": LaunchConfiguration("use_sim_time"),
-                               })
+    ld = LaunchDescription()
 
-    launch_description.add_action(robot_state_publisher)
+    ld.add_action(default_controllers)
+    ld.add_action(play_motion2)
+    ld.add_action(twist_mux)
+    ld.add_action(tiago_pro_state_publisher)
 
-    return
+    return ld
