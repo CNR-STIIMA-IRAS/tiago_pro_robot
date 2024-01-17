@@ -15,7 +15,6 @@
 import os
 from launch import LaunchDescription
 from launch.actions import GroupAction
-from launch.conditions import IfCondition
 
 from launch_pal.robot_utils import get_robot_name
 from ament_index_python.packages import get_package_share_directory
