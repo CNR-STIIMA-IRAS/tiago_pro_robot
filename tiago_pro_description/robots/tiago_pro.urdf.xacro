@@ -18,7 +18,7 @@
 <robot  xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_pro">
 
 <!-- Includes -->
-<xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.xacro" />
+<xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
 <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
 <xacro:include filename="$(find tiago_pro_description)/gazebo/gazebo.urdf.xacro" />
 <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso_dual.urdf.xacro" />
