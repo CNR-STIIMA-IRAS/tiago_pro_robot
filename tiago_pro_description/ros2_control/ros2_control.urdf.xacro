@@ -96,12 +96,12 @@
     
       <xacro:if value="${end_effector_left == 'pal-pro-gripper'}">
         <!-- pal-pro-gripper -->
-        <xacro:ros2_control_pal_pro_gripper name="gripper_left_finger" reduction="1.0" />
+        <xacro:ros2_control_pal_pro_gripper name="gripper_left" reduction="1.0" />
       </xacro:if>
     
       <xacro:if value="${end_effector_right == 'pal-pro-gripper'}">
         <!-- pal-pro-gripper -->
-        <xacro:ros2_control_pal_pro_gripper name="gripper_right_finger" reduction="1.0" />
+        <xacro:ros2_control_pal_pro_gripper name="gripper_right" reduction="1.0" />
       </xacro:if>
 
       <!-- Force Torque sensor -->
