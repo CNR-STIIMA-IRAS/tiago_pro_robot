@@ -1,5 +1,4 @@
 arm_left_impedance_controller:
-  type: "impedance_controllers/JointTrajectoryController"
   joints:
     - arm_left_1_joint
     - arm_left_2_joint
