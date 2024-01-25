@@ -27,7 +27,7 @@ def generate_launch_description():
     config_topics_file = os.path.join(
         pkg, "config", "twist_mux", "twist_mux_topics.yaml"
     )
-    joystick_file = os.path.join(pkg, "config", "twist_mux", "joystick.yaml")
+    joystick_file = os.path.join(pkg, "config", "twist_mux", "joystick_omni.yaml")
 
     twist_mux = include_launch_py_description(
         "twist_mux",
