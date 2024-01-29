@@ -1,21 +1,55 @@
 gravity_compensation:
   ros__parameters:
-    type: "force_control/GravityCompensation"
-
-    dt: 0.01
-
     command_joints: ['arm_right_1_joint', 'arm_right_2_joint', 'arm_right_3_joint', 'arm_right_4_joint', 'arm_right_5_joint', 'arm_right_6_joint', 'arm_right_7_joint', 'arm_left_1_joint', 'arm_left_2_joint', 'arm_left_3_joint', 'arm_left_4_joint', 'arm_left_5_joint', 'arm_left_6_joint', 'arm_left_7_joint']
 
-    control_type: ['ZERO_TORQUE', 'COMMAND', 'COMMAND', 'COMMAND', 'ZERO_TORQUE', 'ZERO_TORQUE', 'ZERO_TORQUE', 'ZERO_TORQUE', 'COMMAND', 'COMMAND', 'COMMAND', 'ZERO_TORQUE', 'ZERO_TORQUE', 'ZERO_TORQUE']
+    root_link: "base_link"
 
-    motor_torque_constants: [-0.05, -0.069, -0.035, 0.04, -0.17, -0.03, 0.103, -0.103, -0.061, -0.042, 0.032, -1.2, -0.038, 0.103]
-
-    reduction_ratios: [101.0, 121.0, 101.0, 101.0, 101.0, 101.0, 101.0, 101.0, 121.0, 101.0, 101.0, 101.0, 101.1, 101.1]
-
-    static_frictions: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-
-    viscous_frictions: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
-
-    velocity_tolerances: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-
+    tip_links: ["gripper_left_base_link", "gripper_right_base_link"]
+    
     torque_gain: 1.0
+
+    parameters:
+      arm_right_1_joint:
+        motor_torque_constant: -0.05
+        reduction_ration: 101.0
+      arm_right_2_joint:
+        motor_torque_constant: -0.069
+        reduction_ration: 121.0
+      arm_right_3_joint:
+        motor_torque_constant: -0.035
+        reduction_ration: 101.0
+      arm_right_4_joint:
+        motor_torque_constant: 0.04
+        reduction_ration: 101.0
+      arm_right_5_joint:
+        motor_torque_constant: -0.17
+        reduction_ration: 101.0
+      arm_right_6_joint:
+        motor_torque_constant: -0.03
+        reduction_ration: 101.0
+      arm_right_7_joint:
+        motor_torque_constant: 0.103
+        reduction_ration: 101.0
+      arm_left_1_joint:
+        motor_torque_constant: -0.103
+        reduction_ration: 101.0
+      arm_left_2_joint:
+        motor_torque_constant: -0.061
+        reduction_ration: 121.0
+      arm_left_3_joint:
+        motor_torque_constant: -0.042
+        reduction_ration: 101.0
+      arm_left_4_joint:
+        motor_torque_constant: 0.032
+        reduction_ration: 101.0
+      arm_left_5_joint:
+        motor_torque_constant: -1.2
+        reduction_ration: 101.0
+      arm_left_6_joint:
+        motor_torque_constant: -0.038
+        reduction_ration: 101.0
+      arm_left_7_joint:
+        motor_torque_constant: 0.103
+        reduction_ration: 101.0
+
+     
