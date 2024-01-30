@@ -2,6 +2,28 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'ros2-migration' into 'humble-devel'
+  Ros2 migration
+  See merge request robots/tiago_pro_robot!23
+* Fix lintern tests
+* remove files not used
+* fix misaligned
+* fix gripper name
+* delete extra choices for the robot_name
+* update to 3.8 the cmake_minimum_required Version
+* update deg_to_rad file extension
+* python module not needed
+* update launch files with launch_pal structure
+* migration launch files
+* urdf migration
+* meshes/ rviz config
+* CMakeLists and package files
+* config files
+* migration of CMakeLists.txt and package.xml to ros2
+* Contributors: Adria Roig, ileniaperrella
+
 0.0.11 (2023-11-08)
 -------------------
 

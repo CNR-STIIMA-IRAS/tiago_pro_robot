@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'ros2-migration' into 'humble-devel'
+  Ros2 migration
+  See merge request robots/tiago_pro_robot!23
+* Fix lintern tests
+* update to 3.8 the cmake_minimum_required Version
+* migration of CMakeLists.txt and package.xml to ros2
+* Contributors: Adria Roig, ileniaperrella
+
 0.0.11 (2023-11-08)
 -------------------
 

@@ -2,6 +2,23 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'ros2-migration' into 'humble-devel'
+  Ros2 migration
+  See merge request robots/tiago_pro_robot!23
+* fix twist_mux config name
+* simplify joy_telop launch file (as done for tiago and ari)
+* update to 3.8 the cmake_minimum_required Version
+* twist mux and joytelop added - to check
+* update launch files with launch_pal structure
+* update motions yaml file
+* migration launch files
+* CMakeLists and package files
+* config files
+* migration of CMakeLists.txt and package.xml to ros2
+* Contributors: Adria Roig, ileniaperrella
+
 0.0.11 (2023-11-08)
 -------------------
 

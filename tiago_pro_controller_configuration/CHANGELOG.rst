@@ -2,6 +2,26 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'ros2-migration' into 'humble-devel'
+  Ros2 migration
+  See merge request robots/tiago_pro_robot!23
+* Migrate to new version of gravity_compensation_controller
+* fix depend name
+* remote type of the controllers in the yaml (not necessary already in
+  the launch)
+* adding missing dep
+* duplicated file
+* update to 3.8 the cmake_minimum_required Version
+* delete export not needed
+* update launch files with launch_pal structure
+* migration launch files
+* CMakeLists and package files
+* config files
+* migration of CMakeLists.txt and package.xml to ros2
+* Contributors: Adria Roig, ileniaperrella
+
 0.0.11 (2023-11-08)
 -------------------
 * Merge branch 'smooth_position_control' into 'master'
