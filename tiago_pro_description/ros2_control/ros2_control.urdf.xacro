@@ -61,8 +61,10 @@
       </hardware>
 
       <!-- wheels -->
-      <xacro:ros2_control_wheel side="right" />
-      <xacro:ros2_control_wheel side="left" />
+      <xacro:ros2_control_wheel side="front_right" />
+      <xacro:ros2_control_wheel side="front_left" />
+      <xacro:ros2_control_wheel side="rear_right" />
+      <xacro:ros2_control_wheel side="rear_left" />
 
       <!-- IMU -->
       <xacro:if value="$(arg use_sim)">
