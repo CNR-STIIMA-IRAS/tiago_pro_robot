@@ -32,8 +32,8 @@
 <xacro:arg name="laser_model" default="hokuyo"/> <!-- no-laser, hokuyo, sick-551, sick-561, sick-571-->
 <xacro:arg name="end_effector_left" default="pal-pro-gripper" /> <!-- pal-pro-gripper custom-->
 <xacro:arg name="end_effector_right" default="pal-pro-gripper" /> <!-- pal-pro-gripper, custom-->
-<xacro:arg name="ft_sensor_left" default="false" /> <!-- no-ft-sensor, rokubi -->
-<xacro:arg name="ft_sensor_right" default="false" /> <!-- no-ft-sensor, rokubi -->
+<xacro:arg name="ft_sensor_left" default="no-ft-sensor" /> <!-- no-ft-sensor, rokubi -->
+<xacro:arg name="ft_sensor_right" default="no-ft-sensor" /> <!-- no-ft-sensor, rokubi -->
 <xacro:arg name="use_sim" default="false"/>
 <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
 <xacro:arg name="extrinsic_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
