@@ -74,7 +74,7 @@
 
 <!-- Base -->
 <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
-<!-- Torso. TODO: change for custom torso -->
+<!-- Torso. TODO:change for custom torso -->
 <xacro:tiago_pro_torso name="torso" parent="base_link"/>
 <xacro:tiago_pro_head name="head" parent="torso_lift_link"/>
 
