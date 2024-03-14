@@ -19,6 +19,7 @@ from launch_pal.param_utils import merge_param_files
 
 from launch_pal.robot_utils import get_robot_name
 from ament_index_python.packages import get_package_share_directory
+from launch.conditions import  LaunchConfigurationNotEquals
 from controller_manager.launch_utils import generate_load_controller_launch_description
 
 
@@ -46,6 +47,7 @@ def generate_launch_description():
                 controller_params_file=params_file,
             )
         ],
+        condition=LaunchConfigurationNotEquals('use_sim_time', 'True'),
         forwarding=False,
     )
 
