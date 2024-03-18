@@ -66,7 +66,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
             controller_params_file=params_file)
          ],
         forwarding=False,
-        condition=LaunchConfigurationNotEquals('use_sim_time', 'True'),
+        condition=LaunchConfigurationNotEquals('use_sim_time', 'True'))
 
     launch_description.add_action(mobile_base_controller)
 
