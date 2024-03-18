@@ -1,4 +1,4 @@
-# Copyright (c) 2023 PAL Robotics S.L. All rights reserved.
+# Copyright (c) 2022 PAL Robotics S.L. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,32 +14,97 @@
 
 
 from launch import LaunchDescription
-from launch_pal.include_utils import include_launch_py_description
+from launch.actions import DeclareLaunchArgument
+
+from launch_pal.include_utils import include_scoped_launch_py_description
+from launch_pal.arg_utils import LaunchArgumentsBase, CommonArgs
+from launch_pal.robot_arguments import TiagoProArgs
+
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class LaunchArguments(LaunchArgumentsBase):
+    base_type: DeclareLaunchArgument = TiagoProArgs.base_type
+    arm_type_right: DeclareLaunchArgument = TiagoProArgs.arm_type_right
+    arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
+    end_effector_right: DeclareLaunchArgument = TiagoProArgs.end_effector_right
+    end_effector_left: DeclareLaunchArgument = TiagoProArgs.end_effector_left
+    ft_sensor_right: DeclareLaunchArgument = TiagoProArgs.ft_sensor_right
+    ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
+    wrist_model_right: DeclareLaunchArgument = TiagoProArgs.wrist_model_right
+    wrist_model_left: DeclareLaunchArgument = TiagoProArgs.wrist_model_left
+    camera_model: DeclareLaunchArgument = TiagoProArgs.camera_model
+    laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
+    use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    namespace: DeclareLaunchArgument = CommonArgs.namespace
+
+
+def declare_actions(launch_description: LaunchDescription, launch_args: LaunchArguments):
+    default_controllers = include_scoped_launch_py_description(
+        pkg_name='tiago_pro_controller_configuration',
+        paths=['launch', 'default_controllers.launch.py'],
+        launch_arguments={"arm_type_right": launch_args.arm_type_right,
+                          "arm_type_left": launch_args.arm_type_left,
+                          "end_effector_right": launch_args.end_effector_right,
+                          "end_effector_left": launch_args.end_effector_left,
+                          "ft_sensor_right": launch_args.ft_sensor_right,
+                          "ft_sensor_left": launch_args.ft_sensor_left,
+                          })
+
+    launch_description.add_action(default_controllers)
+
+    play_motion2 = include_scoped_launch_py_description(
+        pkg_name='tiago_pro_bringup',
+        paths=['launch', 'tiago_pro_play_motion2.launch.py'],
+        launch_arguments={"arm_type_right": launch_args.arm_type_right,
+                          "arm_type_left": launch_args.arm_type_left,
+                          "end_effector_right": launch_args.end_effector_right,
+                          "end_effector_left": launch_args.end_effector_left,
+                          "ft_sensor_right": launch_args.ft_sensor_right,
+                          "ft_sensor_left": launch_args.ft_sensor_left,
+                          "use_sim_time": launch_args.use_sim_time})
+
+    launch_description.add_action(play_motion2)
+
+    twist_mux = include_scoped_launch_py_description(
+        "tiago_pro_bringup", ["launch", "twist_mux.launch.py"]
+    )
+
+    launch_description.add_action(twist_mux)
+
+    robot_state_publisher = include_scoped_launch_py_description(
+        pkg_name='tiago_pro_description',
+        paths=['launch', 'robot_state_publisher.launch.py'],
+        launch_arguments={"arm_type_right": launch_args.arm_type_right,
+                          "arm_type_left": launch_args.arm_type_left,
+                          "end_effector_right": launch_args.end_effector_right,
+                          "end_effector_left": launch_args.end_effector_left,
+                          "ft_sensor_right": launch_args.ft_sensor_right,
+                          "ft_sensor_left": launch_args.ft_sensor_left,
+                          "wrist_model_right": launch_args.wrist_model_right,
+                          "wrist_model_left": launch_args.wrist_model_left,
+                          "laser_model": launch_args.laser_model,
+                          "camera_model": launch_args.camera_model,
+                          "base_type": launch_args.base_type,
+                          "namespace": launch_args.namespace,
+                          "use_sim_time": launch_args.use_sim_time,
+                          })
+
+    launch_description.add_action(robot_state_publisher)
+
+    return
 
 
 def generate_launch_description():
 
-    default_controllers = include_launch_py_description(
-        pkg_name='tiago_pro_controller_configuration',
-        paths=['launch', 'default_controllers.launch.py'])
-
-    play_motion2 = include_launch_py_description(
-        "tiago_pro_bringup", ["launch", "tiago_pro_play_motion2.launch.py"]
-    )
-
-    twist_mux = include_launch_py_description(
-        "tiago_pro_bringup", ["launch", "twist_mux.launch.py"]
-    )
-
-    tiago_pro_state_publisher = include_launch_py_description(
-        "tiago_pro_description", ["launch", "robot_state_publisher.launch.py"]
-    )
-
+    # Create the launch description
     ld = LaunchDescription()
 
-    ld.add_action(default_controllers)
-    ld.add_action(play_motion2)
-    ld.add_action(twist_mux)
-    ld.add_action(tiago_pro_state_publisher)
+    launch_arguments = LaunchArguments()
+
+    launch_arguments.add_to_launch_description(ld)
+
+    declare_actions(ld, launch_arguments)
 
     return ld
