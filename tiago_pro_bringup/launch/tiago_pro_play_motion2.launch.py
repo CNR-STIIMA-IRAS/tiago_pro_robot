@@ -19,7 +19,7 @@ from launch.actions import DeclareLaunchArgument, SetLaunchConfiguration, Opaque
 
 from launch_pal.include_utils import include_scoped_launch_py_description
 from launch_pal.arg_utils import LaunchArgumentsBase, CommonArgs, read_launch_argument
-from launch_pal.param_utils import merge_param_files
+# from launch_pal.param_utils import merge_param_files
 
 from launch_pal.robot_arguments import TiagoProArgs
 from tiago_pro_description.tiago_pro_launch_utils import get_tiago_pro_hw_suffix
