@@ -21,7 +21,7 @@ from launch.actions import DeclareLaunchArgument, OpaqueFunction, SetLaunchConfi
 from launch_ros.actions import Node
 from launch.conditions import LaunchConfigurationEquals
 
-from tiago_pro_description.tiago_pro_launch_utils import get_tiago_pro_hw_suffix
+from tiago_pro_description.tiago_pro_launch_utils import get_single_arm_hw_suffix
 
 from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
 from launch_pal.robot_arguments import TiagoProArgs
@@ -96,13 +96,10 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
 
 def create_joy_teleop_filename(context):
-    hw_suffix = get_tiago_pro_hw_suffix(
+    hw_suffix = get_single_arm_hw_suffix(
         arm_right=read_launch_argument('arm_type_right', context),
-        arm_left=read_launch_argument('arm_type_left', context),
         end_effector_right=read_launch_argument('end_effector_right', context),
-        end_effector_left=read_launch_argument('end_effector_left', context),
         ft_sensor_right=read_launch_argument('ft_sensor_right', context),
-        ft_sensor_left=read_launch_argument('ft_sensor_left', context),
     )
 
     joy_teleop_file = f"joy_teleop_{hw_suffix}.yaml"
