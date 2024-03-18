@@ -69,11 +69,11 @@ def create_play_motion_filename(context):
         ft_sensor_left=read_launch_argument('ft_sensor_left', context),
     )
 
-    hw_config_specific_file = f"tiago_motions{hw_suffix}.yaml"
+    # hw_config_specific_file = f"tiago_motions{hw_suffix}.yaml"
 
-    hw_config_specific_yaml = PathJoinSubstitution(
-        [pkg_share_dir,
-         'config', 'motions', hw_config_specific_file])
+    # hw_config_specific_yaml = PathJoinSubstitution(
+    #     [pkg_share_dir,
+    #      'config', 'motions', hw_config_specific_file])
 
     base_motions_file = 'tiago_pro_motions_general.yaml'
 
@@ -86,8 +86,9 @@ def create_play_motion_filename(context):
     base_motions_yaml = PathJoinSubstitution(
         [pkg_share_dir, 'config', 'motions', base_motions_file])
 
-    combined_yaml = merge_param_files(
-        [base_motions_yaml.perform(context), hw_config_specific_yaml.perform(context)])
+    combined_yaml = base_motions_yaml
+    # combined_yaml = merge_param_files(
+    #     [base_motions_yaml.perform(context), hw_config_specific_yaml.perform(context)])
 
     motion_planner_file = f"motion_planner{hw_suffix}.yaml"
     motion_planner_config = PathJoinSubstitution([
