@@ -17,7 +17,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import OpaqueFunction, GroupAction
-from launch.conditions import LaunchConfigurationNotEquals, IfCondition
+from launch.conditions import LaunchConfigurationNotEquals, IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.param_utils import merge_param_files
 from launch.actions import DeclareLaunchArgument
@@ -66,7 +66,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
             controller_params_file=params_file)
          ],
         forwarding=False,
-        condition=LaunchConfigurationNotEquals('use_sim_time', 'True'))
+        condition=UnlessCondition(LaunchConfiguration('use_sim_time')))
 
     launch_description.add_action(mobile_base_controller)
 
