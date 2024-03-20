@@ -70,7 +70,7 @@
 <xacro:if value="${ft_sensor_right not in ['no-ft-sensor', 'rokubi']}">
   <xacro:wrong_ft_sensor_right />
 </xacro:if>
-<xacro:if value="${laser_model not in ['no-laser', 'sick-551', 'sick-561', 'sick-571', 'hokuyo']}">
+<xacro:if value="${laser_model not in ['no-laser', 'sick-571']}">
   <xacro:wrong_laser_model />
 </xacro:if>
 
