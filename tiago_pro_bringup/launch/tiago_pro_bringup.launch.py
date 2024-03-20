@@ -50,6 +50,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "end_effector_left": launch_args.end_effector_left,
                           "ft_sensor_right": launch_args.ft_sensor_right,
                           "ft_sensor_left": launch_args.ft_sensor_left,
+                          "use_sim_time": launch_args.use_sim_time
                           })
 
     launch_description.add_action(default_controllers)
