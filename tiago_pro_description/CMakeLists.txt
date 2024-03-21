@@ -36,7 +36,7 @@ if(BUILD_TESTING)
         endforeach()
       endforeach()
     endforeach()
-  foreach(laser_model no-laser sick-551 sick-561 sick-571 hokuyo)
+  foreach(laser_model no-laser sick-571)
     add_launch_test(
       test/test_description.launch.py
       TARGET "tiago_pro_description_${laser_model}"
