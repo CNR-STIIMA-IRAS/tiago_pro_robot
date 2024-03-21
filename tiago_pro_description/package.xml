@@ -12,6 +12,7 @@
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
   <buildtool_depend>ament_cmake_python</buildtool_depend>
 
+  <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
   <exec_depend>pal_sea_arm_description</exec_depend>
   <exec_depend>pal_urdf_utils</exec_depend>
