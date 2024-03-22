@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright (c) 2023 PAL Robotics S.L. All rights reserved.
+  Copyright (c) 2024 PAL Robotics S.L. All rights reserved.
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
@@ -36,7 +36,7 @@
   <gazebo reference="base_imu_link">
     <!-- this is expected to be reparented to pelvis with appropriate offset
          when imu_link is reduced by fixed joint reduction -->
-    <!-- todo: this is working with gazebo 1.4, need to write a unit test -->
+    <!-- todo:this is working with gazebo 1.4, need to write a unit test -->
     <sensor name="imu_sensor" type="imu">
       <always_on>1</always_on>
       <update_rate>10.0</update_rate>
@@ -44,11 +44,11 @@
         <noise>
           <type>gaussian</type>
           <!-- Noise parameters from Boston Dynamics
-               (http://gazebosim.org/wiki/Sensor_noise):
-                 rates (rad/s): mean=0, stddev=2e-4
-                 accels (m/s/s): mean=0, stddev=1.7e-2
-                 rate bias (rad/s): 5e-6 - 1e-5
-                 accel bias (m/s/s): 1e-1
+               (http://gazebosim.org/wiki/Sensor_noise)
+                 rates (rad/s):mean=0, stddev=2e-4
+                 accels (m/s/s):mean=0, stddev=1.7e-2
+                 rate bias (rad/s):5e-6 - 1e-5
+                 accel bias (m/s/s):1e-1
                Experimentally, simulation provide rates with noise of
                about 1e-3 rad/s and accels with noise of about 1e-1 m/s/s.
                So we don't expect to see the noise unless number of inner iterations

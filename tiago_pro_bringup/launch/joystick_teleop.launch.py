@@ -1,4 +1,4 @@
-# Copyright (c) 2022 PAL Robotics S.L. All rights reserved.
+# Copyright (c) 2024 PAL Robotics S.L. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,47 +13,59 @@
 # limitations under the License.
 
 import os
-
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, OpaqueFunction
-from launch.conditions import LaunchConfigurationEquals
 from launch.substitutions import LaunchConfiguration
-
+from launch.actions import DeclareLaunchArgument, OpaqueFunction, SetLaunchConfiguration
 from launch_ros.actions import Node
+from launch.conditions import LaunchConfigurationEquals
+
+from tiago_pro_description.tiago_pro_launch_utils import get_single_arm_hw_suffix
+
+from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
+from launch_pal.robot_arguments import TiagoProArgs
+
+from dataclasses import dataclass
 
 
-def launch_setup(context, *args, **kwargs):
+@dataclass(frozen=True)
+class LaunchArguments(LaunchArgumentsBase):
+    arm_type_right: DeclareLaunchArgument = TiagoProArgs.arm_type_right
+    arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
+    end_effector_right: DeclareLaunchArgument = TiagoProArgs.end_effector_right
+    end_effector_left: DeclareLaunchArgument = TiagoProArgs.end_effector_left
+    ft_sensor_right: DeclareLaunchArgument = TiagoProArgs.ft_sensor_right
+    ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
 
-    joy_teleop_path = os.path.join(
-        get_package_share_directory('tiago_pro_bringup'), 'config', 'joy_teleop.yaml')
+    cmd_vel: DeclareLaunchArgument = DeclareLaunchArgument(
+        name='cmd_vel',
+        default_value='input_joy/cmd_vel',
+        description='Joystick cmd_vel topic')
 
-    declare_teleop_config = DeclareLaunchArgument(
-       'teleop_config', default_value=joy_teleop_path,
-       description='Joystick teleop configuration file')
+
+def declare_actions(launch_description: LaunchDescription, launch_args: LaunchArguments):
+
+    launch_description.add_action(OpaqueFunction(
+        function=create_joy_teleop_filename))
 
     joy_teleop_node = Node(
-       package='joy_teleop',
-       executable='joy_teleop',
-       parameters=[LaunchConfiguration('teleop_config')],
-       remappings=[('cmd_vel', LaunchConfiguration('cmd_vel'))])
+        package='joy_teleop',
+        executable='joy_teleop',
+        parameters=[LaunchConfiguration('teleop_config')],
+        remappings=[('cmd_vel', LaunchConfiguration('cmd_vel'))])
 
-    return [declare_teleop_config, joy_teleop_node]
+    launch_description.add_action(joy_teleop_node)
 
-
-def generate_launch_description():
     pkg_dir = get_package_share_directory('tiago_pro_bringup')
-
-    declare_cmd_vel = DeclareLaunchArgument(
-        'cmd_vel', default_value='input_joy/cmd_vel',
-        description='Joystick cmd_vel topic')
 
     joy_node = Node(
         package='joy',
         executable='joy_node',
         name='joystick',
-        parameters=[os.path.join(pkg_dir, 'config', 'joy_config.yaml')])
+        parameters=[os.path.join(pkg_dir, 'config', 'joy_teleop', 'joy_config.yaml')])
+
+    launch_description.add_action(joy_node)
 
     torso_incrementer_server = Node(
         package='joy_teleop',
@@ -61,30 +73,54 @@ def generate_launch_description():
         name='incrementer',
         namespace='torso_controller')
 
+    launch_description.add_action(torso_incrementer_server)
+
     head_incrementer_server = Node(
         package='joy_teleop',
         executable='incrementer_server',
         name='incrementer',
         namespace='head_controller')
 
+    launch_description.add_action(head_incrementer_server)
+
     gripper_incrementer_server = Node(
         package='joy_teleop',
         executable='incrementer_server',
         name='incrementer',
-        namespace='gripper_controller',
-        condition=LaunchConfigurationEquals('end_effector_left', 'pal-pro-gripper'))
+        namespace='gripper_right_controller',
+        condition=LaunchConfigurationEquals('end_effector_right', 'pal-pro-gripper'))
 
+    launch_description.add_action(gripper_incrementer_server)
+
+    return
+
+
+def create_joy_teleop_filename(context):
+    hw_suffix = get_single_arm_hw_suffix(
+        arm_right=read_launch_argument('arm_type_right', context),
+        end_effector_right=read_launch_argument('end_effector_right', context),
+        ft_sensor_right=read_launch_argument('ft_sensor_right', context),
+    )
+
+    joy_teleop_file = f"joy_teleop_{hw_suffix}.yaml"
+
+    joy_teleop_path = os.path.join(
+        get_package_share_directory('tiago_pro_bringup'), 'config', 'joy_teleop', joy_teleop_file)
+
+    joy_teleop_config = SetLaunchConfiguration(
+        'teleop_config', joy_teleop_path)
+    return [joy_teleop_config]
+
+
+def generate_launch_description():
+
+    # Create the launch description
     ld = LaunchDescription()
 
-    # Declare arguments
-    ld.add_action(declare_cmd_vel)
+    launch_arguments = LaunchArguments()
 
-    # Launch joy_teleop_node with the proper config
-    ld.add_action(OpaqueFunction(function=launch_setup))
-    ld.add_action(joy_node)
+    launch_arguments.add_to_launch_description(ld)
 
-    ld.add_action(torso_incrementer_server)
-    ld.add_action(head_incrementer_server)
-    ld.add_action(gripper_incrementer_server)
+    declare_actions(ld, launch_arguments)
 
     return ld
