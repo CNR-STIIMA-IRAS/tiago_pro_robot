@@ -2,6 +2,38 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/fix/restructure' into 'humble-devel'
+  Dtk/fix/restructure
+  See merge request robots/tiago_pro_robot!28
+* update copyright year
+* Remove unsupported lidars from test
+* Add missing realsense2_description dependency
+* Add missing robot_state_publisher dependency
+* Add missing controller_configuration dependency
+* Update supported lasers in urdf
+* Add hw_suffix python module for tiago-pro-description
+* Add URDF tests
+* Restructure URDF
+* Choose to spawn the arms or not in the urdf
+* Avoid bug that is unable to parse colon with spac ein urdf
+* Remove arm meshes
+* Merge branch 'dtk/fix/add-hector-gazebo-plugin' into 'humble-devel'
+  Add force_based_move gazebo plugin for omni base
+  See merge request robots/tiago_pro_robot!27
+* Create a pal_distro dependency to not break humble ci untill pr gets accepted
+* added hector_gazebo_plugin dep and disabled mobile base controller in simulation
+* Add force_based_move gazebo plugin for omni base
+* Merge branch 'dtk/fix/camera-simulation' into 'humble-devel'
+  Dtk/fix/camera simulation
+  See merge request robots/tiago_pro_robot!26
+* Add realsense camera in head
+* integrate mobile_base_controller
+* fix gripper name
+* fix on the ft_sensor type
+* Contributors: David ter Kuile, andreacapodacqua, davidterkuile, ileniaperrella
+
 1.0.0 (2024-01-30)
 ------------------
 * Merge branch 'ros2-migration' into 'humble-devel'

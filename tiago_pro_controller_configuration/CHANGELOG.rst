@@ -2,6 +2,28 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/fix/restructure' into 'humble-devel'
+  Dtk/fix/restructure
+  See merge request robots/tiago_pro_robot!28
+* update copyright year
+* Add conditional launch for mobile base controller
+* Remove unused imports for flake test
+* Add missing bracked
+* Restructure launch files controller_configuration
+* Merge branch 'dtk/fix/add-hector-gazebo-plugin' into 'humble-devel'
+  Add force_based_move gazebo plugin for omni base
+  See merge request robots/tiago_pro_robot!27
+* fix linters
+* added hector_gazebo_plugin dep and disabled mobile base controller in simulation
+* Merge branch 'dtk/fix/camera-simulation' into 'humble-devel'
+  Dtk/fix/camera simulation
+  See merge request robots/tiago_pro_robot!26
+* Update linter issues
+* integrate mobile_base_controller
+* Contributors: David ter Kuile, andreacapodacqua, davidterkuile, ileniaperrella
+
 1.0.0 (2024-01-30)
 ------------------
 * Merge branch 'ros2-migration' into 'humble-devel'

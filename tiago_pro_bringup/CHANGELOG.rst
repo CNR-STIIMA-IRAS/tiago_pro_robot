@@ -2,6 +2,28 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/fix/restructure' into 'humble-devel'
+  Dtk/fix/restructure
+  See merge request robots/tiago_pro_robot!28
+* update copyright year
+* Add missnig use sim time arg
+* Update motion name
+* Disable gripper specific motions
+* update config files
+* Add regen_em script
+* Restructure launch file tiago_pro_bringup
+* Merge branch 'fix/rename_approach_planner' into 'humble-devel'
+  Rename approach_planner config to motion_planner
+  See merge request robots/tiago_pro_robot!25
+* Rename approach_planner config to motion_planner
+* Merge branch 'fix/update_approach_planner_config' into 'humble-devel'
+  Update approach_planner configuration
+  See merge request robots/tiago_pro_robot!24
+* Update approach_planner configuration
+* Contributors: David ter Kuile, Jordan Palacios, Noel Jimenez, davidterkuile
+
 1.0.0 (2024-01-30)
 ------------------
 * Merge branch 'ros2-migration' into 'humble-devel'
