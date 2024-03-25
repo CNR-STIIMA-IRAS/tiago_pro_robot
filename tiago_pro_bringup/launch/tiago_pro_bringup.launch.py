@@ -69,7 +69,9 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     launch_description.add_action(play_motion2)
 
     twist_mux = include_scoped_launch_py_description(
-        "tiago_pro_bringup", ["launch", "twist_mux.launch.py"]
+        pkg_name="tiago_pro_bringup",
+        paths=["launch", "twist_mux.launch.py"],
+        launch_arguments={"use_sim_time": launch_args.use_sim_time}
     )
 
     launch_description.add_action(twist_mux)
