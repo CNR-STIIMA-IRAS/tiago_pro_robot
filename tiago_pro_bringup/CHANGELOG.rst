@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2024-03-26)
+------------------
 * Merge branch 'dtk/fix/fix-nav-topic' into 'humble-devel'
   Dtk/fix/fix nav topic
   See merge request robots/tiago_pro_robot!29
