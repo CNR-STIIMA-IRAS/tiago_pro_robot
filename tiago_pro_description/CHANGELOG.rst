@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing realsense simulation dependency
+* Contributors: David ter Kuile
+
 1.0.2 (2024-03-26)
 ------------------
 
