@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/fix/fix-nav-topic' into 'humble-devel'
+  Dtk/fix/fix nav topic
+  See merge request robots/tiago_pro_robot!29
+* Change twist mux navigation topic
+* Add missing sim time to twist mux
+* Contributors: David ter Kuile, andreacapodacqua
+
 1.0.1 (2024-03-22)
 ------------------
 * Merge branch 'dtk/fix/restructure' into 'humble-devel'
