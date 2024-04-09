@@ -97,9 +97,9 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
 def create_joy_teleop_filename(context):
     hw_suffix = get_single_arm_hw_suffix(
-        arm_right=read_launch_argument('arm_type_right', context),
-        end_effector_right=read_launch_argument('end_effector_right', context),
-        ft_sensor_right=read_launch_argument('ft_sensor_right', context),
+        arm=read_launch_argument('arm_type_right', context),
+        end_effector=read_launch_argument('end_effector_right', context),
+        ft_sensor=read_launch_argument('ft_sensor_right', context),
     )
 
     joy_teleop_file = f"joy_teleop_{hw_suffix}.yaml"
