@@ -11,6 +11,8 @@
   
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
+  <build_depend condition="$PAL_DISTRO >= alum">pal_module_cmake</build_depend>
+
   <exec_depend>omni_drive_controller</exec_depend>
   <exec_depend>pal_pro_gripper_controller_configuration</exec_depend>
   <exec_depend>pal_sea_arm_controller_configuration</exec_depend>
