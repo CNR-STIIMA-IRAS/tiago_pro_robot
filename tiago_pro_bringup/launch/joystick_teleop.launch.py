@@ -63,7 +63,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         package='joy',
         executable='joy_node',
         name='joystick',
-        parameters=[os.path.join(pkg_dir, 'config', 'joy_teleop', 'joy_config.yaml')])
+        parameters=[os.path.join(pkg_dir, 'config', 'joy_config.yaml')])
 
     launch_description.add_action(joy_node)
 
@@ -102,7 +102,7 @@ def create_joy_teleop_filename(context):
         ft_sensor=read_launch_argument('ft_sensor_right', context),
     )
 
-    joy_teleop_file = f"joy_teleop_{hw_suffix}.yaml"
+    joy_teleop_file = f"joy_teleop{hw_suffix}.yaml"
 
     joy_teleop_path = os.path.join(
         get_package_share_directory('tiago_pro_bringup'), 'config', 'joy_teleop', joy_teleop_file)
