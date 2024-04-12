@@ -3,6 +3,13 @@ project(tiago_pro_bringup)
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
 
+if(pal_module_cmake_FOUND)
+  pal_register_modules(
+    module/joystick.yaml
+    module/twist_mux.yaml
+  )
+endif()
+
 
 install(
   PROGRAMS scripts/regen_em_file.py
