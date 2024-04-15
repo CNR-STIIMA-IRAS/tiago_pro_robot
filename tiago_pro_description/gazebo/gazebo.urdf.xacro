@@ -26,8 +26,8 @@
         <remapping>cmd_vel:=mobile_base_controller/cmd_vel_unstamped</remapping>
         <remapping>odom:=mobile_base_controller/odom</remapping>
       </ros>
-      <update_rate>100</update_rate>
-      <publish_rate>1000</publish_rate>
+      <update_rate>50</update_rate>
+      <publish_rate>50</publish_rate>
       <publish_odom>true</publish_odom>
       <publish_odom_tf>false</publish_odom_tf>
       <odometry_frame>odom</odometry_frame>
