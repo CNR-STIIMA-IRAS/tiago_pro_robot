@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.5 (2024-04-16)
+------------------
 * Merge branch 'dtk/feat/add-modules' into 'humble-devel'
   Dtk/feat/add modules
   See merge request robots/tiago_pro_robot!32

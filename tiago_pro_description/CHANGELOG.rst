@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.5 (2024-04-16)
+------------------
 * Merge branch 'fix/ros-planar-move-rate' into 'humble-devel'
   modified gazebo ros_planar_move rate
   See merge request robots/tiago_pro_robot!33
