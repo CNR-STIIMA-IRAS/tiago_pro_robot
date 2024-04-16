@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/feat/add-modules' into 'humble-devel'
+  Dtk/feat/add modules
+  See merge request robots/tiago_pro_robot!32
+* fix teleop config file paths and names
+* Fix argument typo in joy_teleop
+* Add modules
+* Contributors: David ter Kuile, Noel Jimenez
+
 1.0.4 (2024-04-10)
 ------------------
 

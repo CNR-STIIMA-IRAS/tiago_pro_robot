@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/feat/add-modules' into 'humble-devel'
+  Dtk/feat/add modules
+  See merge request robots/tiago_pro_robot!32
+* Remove gravity_compensation_controller
+* Change module number prefix to 10
+* Add modules
+* Contributors: David ter Kuile, Noel Jimenez, davidterkuile
+
 1.0.4 (2024-04-10)
 ------------------
 * Add ros2controlcli dependency

@@ -2,6 +2,23 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/ros-planar-move-rate' into 'humble-devel'
+  modified gazebo ros_planar_move rate
+  See merge request robots/tiago_pro_robot!33
+* modified gazebo ros_planar_move rate
+* Merge branch 'dtk/feat/add-modules' into 'humble-devel'
+  Dtk/feat/add modules
+  See merge request robots/tiago_pro_robot!32
+* Change module number prefix to 10
+* Add modules
+* Merge branch 'omm/fix/spinning_tiago' into 'humble-devel'
+  Restored ros_planar_move plugin
+  See merge request robots/tiago_pro_robot!31
+* Restored ros_planar_move plugin
+* Contributors: David ter Kuile, Noel Jimenez, Oscar, andreacapodacqua, davidterkuile
+
 1.0.4 (2024-04-10)
 ------------------
 
