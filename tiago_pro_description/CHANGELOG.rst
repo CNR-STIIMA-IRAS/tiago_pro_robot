@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'omm/fix/default_laser' into 'humble-devel'
+  Fixed default laser value
+  See merge request robots/tiago_pro_robot!34
+* Small reorganization of the urdf
+* Changed default laser
+* Applying autoformater
+* Contributors: Oscar, davidterkuile
+
 1.0.5 (2024-04-16)
 ------------------
 * Merge branch 'fix/ros-planar-move-rate' into 'humble-devel'
