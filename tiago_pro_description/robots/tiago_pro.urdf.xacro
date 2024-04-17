@@ -17,37 +17,41 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_pro">
 
-  <!-- INCLUDES -->
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
-  <xacro:include filename="$(find tiago_pro_description)/gazebo/gazebo.urdf.xacro" />
-  <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso_dual.urdf.xacro" />
-  <xacro:include filename="$(find tiago_pro_description)/urdf/head/head.urdf.xacro" />
-  <xacro:include filename="$(find omni_base_description)/urdf/base/base_sensors.urdf.xacro" />
-  <xacro:include filename="$(find pal_sea_arm_description)/urdf/arm/arm.urdf.xacro" />
-  <xacro:include filename="$(find pal_sea_arm_description)/urdf/end_effector/end_effector.urdf.xacro" />
-  <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.urdf.xacro" />
-
   <!-- ARGUMENTS -->
+
   <!-- no-laser, sick-571-->
   <xacro:arg name="laser_model" default="sick-571"/>
+
   <!-- tiago-pro, no-arm -->
   <xacro:arg name="arm_model_left" default="tiago-pro" />
+
   <!-- tiago-pro, no-arm -->
   <xacro:arg name="arm_model_right" default="tiago-pro" />
+
   <!-- pal-pro-gripper custom-->
   <xacro:arg name="end_effector_left" default="pal-pro-gripper" />
+
   <!-- pal-pro-gripper, custom-->
   <xacro:arg name="end_effector_right" default="pal-pro-gripper" />
+
   <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_left" default="no-ft-sensor" />
+
   <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_right" default="no-ft-sensor" />
+
   <xacro:arg name="use_sim" default="false"/>
   <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
   <xacro:arg name="extrinsic_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
+  <xacro:arg name="arm_x" default="0.08976" />
+  <xacro:arg name="arm_y" default="0.15918" />
+  <xacro:arg name="arm_z" default="-0.092008" />
+  <xacro:arg name="arm_roll" default="-2.0679" />
+  <xacro:arg name="arm_pitch" default="0.0" />
+  <xacro:arg name="arm_yaw" default="-1.2217" />
 
   <!-- PROPERTIES -->
+
   <xacro:property name="laser_model" value="$(arg laser_model)" />
   <xacro:property name="arm_model_left" value="$(arg arm_model_left)" />
   <xacro:property name="arm_model_right" value="$(arg arm_model_right)" />
@@ -58,6 +62,19 @@
   <xacro:property name="arm_model" value="tiago-pro" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
 
+  <xacro:property name="has_arm_left" value="${arm_model_left not in ['no-arm']}"/>
+  <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['no-ft-sensor']}"/>
+  <xacro:property name="has_end_effector_left" value="${end_effector_left not in ['no-end-effector']}" />
+  <xacro:property name="end_effector_left_link" value="${'wrist_left_ft_tool_link' if has_ft_sensor_left else 'arm_left_tool_link'}" />
+  <xacro:property name="end_effector_left_name" value="gripper_left" />
+
+  <xacro:property name="has_arm_right" value="${arm_model_right not in ['no-arm']}"/>
+  <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right not in ['no-ft-sensor']}"/>
+  <xacro:property name="has_end_effector_right" value="${end_effector_right not in ['no-end-effector']}" />
+  <xacro:property name="end_effector_right_link" value="${'wrist_right_ft_tool_link' if has_ft_sensor_right else 'arm_right_tool_link'}" />
+  <xacro:property name="end_effector_right_name" value="gripper_right" />
+
+  <!-- Properties check -->
   <xacro:if value="${arm_model_left not in ['tiago-pro', 'no-arm']}">
     <xacro:wrong_arm_model_left />
   </xacro:if>
@@ -80,64 +97,100 @@
     <xacro:wrong_laser_model />
   </xacro:if>
 
-  <xacro:property name="has_arm_left" value="${arm_model_left not in ['no-arm']}"/>
-  <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['no-ft-sensor']}"/>
-  <xacro:property name="has_end_effector_left" value="${end_effector_left not in ['no-end-effector']}" />
-  <xacro:property name="end_effector_left_link" value="${'wrist_left_ft_tool_link' if has_ft_sensor_left else 'arm_left_tool_link'}" />
-  <xacro:property name="end_effector_left_name" value="gripper_left" />
+  <!-- INCLUDES -->
 
-  <xacro:property name="has_arm_right" value="${arm_model_right not in ['no-arm']}"/>
-  <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right not in ['no-ft-sensor']}"/>
-  <xacro:property name="has_end_effector_right" value="${end_effector_right not in ['no-end-effector']}" />
-  <xacro:property name="end_effector_right_link" value="${'wrist_right_ft_tool_link' if has_ft_sensor_right else 'arm_right_tool_link'}" />
-  <xacro:property name="end_effector_right_name" value="gripper_right" />
+  <!-- Tools -->
+  <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
 
-  <!-- ROBOT DEFINITION -->
   <!-- Base -->
-  <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
-  <!-- Torso. TODO:change for custom torso -->
-  <xacro:tiago_pro_torso name="torso" parent="base_link"/>
-  <xacro:tiago_pro_head name="head" parent="torso_lift_link"/>
+  <xacro:include filename="$(find omni_base_description)/urdf/base/base_sensors.urdf.xacro" />
 
-  <xacro:arg name="arm_x" default="0.08976" />
-  <xacro:arg name="arm_y" default="0.15918" />
-  <xacro:arg name="arm_z" default="-0.092008" />
-  <xacro:arg name="arm_roll" default="-2.0679" />
-  <xacro:arg name="arm_pitch" default="0.0" />
-  <xacro:arg name="arm_yaw" default="-1.2217" />
+  <!-- Torso -->
+  <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso_dual.urdf.xacro" />
 
-  <!-- Arms -->
+  <!-- Calibration constants -->
   <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
 
+  <!-- Arm -->
+  <xacro:if value="${has_arm_right or has_arm_left}">
+    <xacro:include filename="$(find pal_sea_arm_description)/urdf/arm/arm.urdf.xacro" />
+  </xacro:if>
+
+  <!-- End effector -->
+  <xacro:if value="${(has_arm_right or has_arm_left) and (has_end_effector_right or has_end_effector_left)}">
+    <xacro:include filename="$(find pal_sea_arm_description)/urdf/end_effector/end_effector.urdf.xacro" />
+  </xacro:if>
+
+  <!-- Force Torque sensor -->
+  <xacro:if value="${has_ft_sensor_right or has_ft_sensor_left}">
+    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.urdf.xacro" />
+    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.gazebo.xacro" />
+  </xacro:if>
+
+  <!-- Head -->
+  <xacro:include filename="$(find tiago_pro_description)/urdf/head/head.urdf.xacro" />
+
+  <!-- Materials for visualization -->
+  <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
+
+  <!-- Generic simulator_gazebo plugins -->
+  <xacro:include filename="$(find tiago_pro_description)/gazebo/gazebo.urdf.xacro" />
+
+  <!-- ROS 2 Control -->
+  <xacro:include filename="$(find tiago_pro_description)/ros2_control/ros2_control.urdf.xacro" />
+
+  <!-- ROBOT DEFINITION -->
+
+  <!-- Base -->
+  <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
+
+  <!-- Torso. TODO:change for custom torso -->
+  <xacro:tiago_pro_torso name="torso" parent="base_link"/>
+
+  <!-- Head -->
+  <xacro:tiago_pro_head name="head" parent="torso_lift_link"/>
+
+  <!-- Left arm -->
   <xacro:if value="${has_arm_left}">
+
+    <!-- Arm -->
     <xacro:pal_sea_arm name="arm_left" parent="torso_lift_link" arm_model="${arm_model_left}" reflect="1" arm_1_offset="${arm_left_1_joint_offset}" arm_2_offset="${arm_left_2_joint_offset}" arm_3_offset="${arm_left_3_joint_offset}" arm_4_offset="${arm_left_4_joint_offset}" arm_5_offset="${arm_left_5_joint_offset}" arm_6_offset="${arm_left_6_joint_offset}" arm_7_offset="${arm_left_7_joint_offset}">
       <origin xyz="$(arg arm_x) $(arg arm_y) $(arg arm_z)" rpy="$(arg arm_roll) $(arg arm_pitch) $(arg arm_yaw)"/>
     </xacro:pal_sea_arm>
+
+    <!-- End effector -->
+    <xacro:if value="${has_end_effector_left}">
+      <xacro:pal_sea_arm_end_effector name="gripper_left" parent="${end_effector_left_link}" type="${end_effector_left}" has_end_effector="${has_end_effector_left}" reflect="-1" is_dual="true"/>
+    </xacro:if>
 
     <!-- FT sensors -->
     <xacro:if value="${has_ft_sensor_left}">
       <xacro:ft_sensor name="wrist_left" parent="arm_left_tool_link"/>
     </xacro:if>
-    <xacro:pal_sea_arm_end_effector name="gripper_left" parent="${end_effector_left_link}" type="${end_effector_left}" has_end_effector="${has_end_effector_left}" reflect="-1" is_dual="true"/>
 
   </xacro:if>
 
+  <!-- Right arm -->
   <xacro:if value="${has_arm_right}">
+
+    <!-- Arm -->
     <xacro:pal_sea_arm name="arm_right" parent="torso_lift_link" arm_model="${arm_model_right}" reflect="1" arm_1_offset="${arm_right_1_joint_offset}" arm_2_offset="${arm_right_2_joint_offset}" arm_3_offset="${arm_right_3_joint_offset}" arm_4_offset="${arm_right_4_joint_offset}" arm_5_offset="${arm_right_5_joint_offset}" arm_6_offset="${arm_right_6_joint_offset}" arm_7_offset="${arm_right_7_joint_offset}">
       <origin xyz="$(arg arm_x) ${-1.0*$(arg arm_y)} $(arg arm_z)" rpy="$(arg arm_roll) ${-1.0*$(arg arm_pitch)} ${-3.14159 -$(arg arm_yaw)}"/>
     </xacro:pal_sea_arm>
+
+    <!-- End effector -->
+    <xacro:if value="${has_end_effector_right}">
+      <xacro:pal_sea_arm_end_effector name="gripper_right" parent="${end_effector_right_link}" type="${end_effector_right}" has_end_effector="${has_end_effector_right}" reflect="1" is_dual="true"/>
+    </xacro:if>
 
     <!-- FT sensors -->
     <xacro:if value="${has_ft_sensor_right}">
       <xacro:ft_sensor name="wrist_right" parent="arm_right_tool_link"/>
     </xacro:if>
 
-    <xacro:pal_sea_arm_end_effector name="gripper_right" parent="${end_effector_right_link}" type="${end_effector_right}" has_end_effector="${has_end_effector_right}" reflect="1" is_dual="true"/>
-
   </xacro:if>
 
   <!-- ROS 2 Control -->
-  <xacro:include filename="$(find tiago_pro_description)/ros2_control/ros2_control.urdf.xacro" />
   <xacro:tiago_pro_ros2_control use_sim="$(arg use_sim)" />
 
 </robot>
