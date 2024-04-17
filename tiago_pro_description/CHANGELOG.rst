@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.6 (2024-04-17)
+------------------
 * Merge branch 'omm/fix/default_laser' into 'humble-devel'
   Fixed default laser value
   See merge request robots/tiago_pro_robot!34
