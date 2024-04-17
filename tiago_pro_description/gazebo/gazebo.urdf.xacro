@@ -29,7 +29,12 @@
       <update_rate>50</update_rate>
       <publish_rate>50</publish_rate>
       <publish_odom>true</publish_odom>
-      <publish_odom_tf>false</publish_odom_tf>
+      <xacro:if value="${is_public_sim}">
+        <publish_odom_tf>true</publish_odom_tf>
+      </xacro:if>
+      <xacro:unless value="${is_public_sim}">
+        <publish_odom_tf>false</publish_odom_tf>
+      </xacro:unless>
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
       <covariance_x>0.0001</covariance_x>

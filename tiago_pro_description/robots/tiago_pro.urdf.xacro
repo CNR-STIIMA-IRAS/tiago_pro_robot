@@ -41,6 +41,7 @@
   <xacro:arg name="ft_sensor_right" default="no-ft-sensor" />
 
   <xacro:arg name="use_sim" default="false"/>
+  <xacro:arg name="is_public_sim" default="false"/>
   <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
   <xacro:arg name="extrinsic_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
   <xacro:arg name="arm_x" default="0.08976" />
@@ -61,6 +62,7 @@
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
   <xacro:property name="arm_model" value="tiago-pro" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
+  <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
 
   <xacro:property name="has_arm_left" value="${arm_model_left not in ['no-arm']}"/>
   <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['no-ft-sensor']}"/>

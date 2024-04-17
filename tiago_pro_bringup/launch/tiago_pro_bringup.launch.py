@@ -38,6 +38,7 @@ class LaunchArguments(LaunchArgumentsBase):
     laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     namespace: DeclareLaunchArgument = CommonArgs.namespace
+    is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
 
 
 def declare_actions(launch_description: LaunchDescription, launch_args: LaunchArguments):
@@ -92,6 +93,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "base_type": launch_args.base_type,
                           "namespace": launch_args.namespace,
                           "use_sim_time": launch_args.use_sim_time,
+                          "is_public_sim": launch_args.is_public_sim
                           })
 
     launch_description.add_action(robot_state_publisher)
