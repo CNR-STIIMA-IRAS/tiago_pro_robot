@@ -29,8 +29,8 @@
   <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.urdf.xacro" />
 
   <!-- Parameters -->
-  <xacro:arg name="laser_model" default="hokuyo"/>
-  <!-- no-laser, hokuyo, sick-551, sick-561, sick-571-->
+  <xacro:arg name="laser_model" default="sick-571"/>
+  <!-- no-laser, sick-571-->
   <xacro:arg name="arm_model_left" default="tiago-pro" />
   <!-- tiago-pro, no-arm -->
   <xacro:arg name="arm_model_right" default="tiago-pro" />
