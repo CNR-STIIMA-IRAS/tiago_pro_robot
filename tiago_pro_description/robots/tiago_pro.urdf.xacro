@@ -17,7 +17,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_pro">
 
-  <!-- Includes -->
+  <!-- INCLUDES -->
   <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
   <xacro:include filename="$(find tiago_pro_description)/gazebo/gazebo.urdf.xacro" />
@@ -28,25 +28,26 @@
   <xacro:include filename="$(find pal_sea_arm_description)/urdf/end_effector/end_effector.urdf.xacro" />
   <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.urdf.xacro" />
 
-  <!-- Parameters -->
-  <xacro:arg name="laser_model" default="sick-571"/>
+  <!-- ARGUMENTS -->
   <!-- no-laser, sick-571-->
+  <xacro:arg name="laser_model" default="sick-571"/>
+  <!-- tiago-pro, no-arm -->
   <xacro:arg name="arm_model_left" default="tiago-pro" />
   <!-- tiago-pro, no-arm -->
   <xacro:arg name="arm_model_right" default="tiago-pro" />
-  <!-- tiago-pro, no-arm -->
-  <xacro:arg name="end_effector_left" default="pal-pro-gripper" />
   <!-- pal-pro-gripper custom-->
-  <xacro:arg name="end_effector_right" default="pal-pro-gripper" />
+  <xacro:arg name="end_effector_left" default="pal-pro-gripper" />
   <!-- pal-pro-gripper, custom-->
+  <xacro:arg name="end_effector_right" default="pal-pro-gripper" />
+  <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_left" default="no-ft-sensor" />
   <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_right" default="no-ft-sensor" />
-  <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="use_sim" default="false"/>
   <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
   <xacro:arg name="extrinsic_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
 
+  <!-- PROPERTIES -->
   <xacro:property name="laser_model" value="$(arg laser_model)" />
   <xacro:property name="arm_model_left" value="$(arg arm_model_left)" />
   <xacro:property name="arm_model_right" value="$(arg arm_model_right)" />
@@ -55,7 +56,6 @@
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
   <xacro:property name="arm_model" value="tiago-pro" />
-
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
 
   <xacro:if value="${arm_model_left not in ['tiago-pro', 'no-arm']}">
@@ -64,7 +64,6 @@
   <xacro:if value="${arm_model_right not in ['tiago-pro', 'no-arm']}">
     <xacro:wrong_arm_model_right />
   </xacro:if>
-
   <xacro:if value="${end_effector_left not in ['pal-pro-gripper', 'custom', 'no-end-effector']}">
     <xacro:wrong_end_effector_left />
   </xacro:if>
@@ -93,6 +92,7 @@
   <xacro:property name="end_effector_right_link" value="${'wrist_right_ft_tool_link' if has_ft_sensor_right else 'arm_right_tool_link'}" />
   <xacro:property name="end_effector_right_name" value="gripper_right" />
 
+  <!-- ROBOT DEFINITION -->
   <!-- Base -->
   <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
   <!-- Torso. TODO:change for custom torso -->
