@@ -108,9 +108,11 @@
   <!-- Torso -->
   <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso_dual.urdf.xacro" />
 
+  <!-- Calibration constants -->
+  <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
+
   <!-- Arm -->
   <xacro:if value="${has_arm_right or has_arm_left}">
-    <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
     <xacro:include filename="$(find pal_sea_arm_description)/urdf/arm/arm.urdf.xacro" />
   </xacro:if>
 
