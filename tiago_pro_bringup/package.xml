@@ -17,6 +17,9 @@
   <exec_depend>joy</exec_depend>
   <exec_depend>joy_teleop</exec_depend>
   <exec_depend>twist_mux</exec_depend>
+  <exec_depend>play_motion2</exec_depend>
+
+
 <!--  <exec_depend>robot_pose</exec_depend>-->
 
   <test_depend>ament_lint_auto</test_depend>
