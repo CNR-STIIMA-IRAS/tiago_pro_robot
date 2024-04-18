@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.7 (2024-04-18)
+------------------
 * Merge branch 'omm/feat/public_sim_check' into 'humble-devel'
   Public Sim check
   See merge request robots/tiago_pro_robot!36
