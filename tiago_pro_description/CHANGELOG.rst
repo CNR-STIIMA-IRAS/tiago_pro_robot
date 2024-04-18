@@ -2,6 +2,20 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'omm/feat/public_sim_check' into 'humble-devel'
+  Public Sim check
+  See merge request robots/tiago_pro_robot!36
+* is_public_sim support in launch files
+* urdf support for is_public_sim
+* Merge branch 'omm/fix/urdf_proper_structure' into 'humble-devel'
+  Robot urdf reestructured
+  See merge request robots/tiago_pro_robot!35
+* Loading calibration constants properly
+* Robot urdf reestructured
+* Contributors: Oscar, davidterkuile
+
 1.0.6 (2024-04-17)
 ------------------
 * Merge branch 'omm/fix/default_laser' into 'humble-devel'
