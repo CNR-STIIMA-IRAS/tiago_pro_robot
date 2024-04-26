@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.8 (2024-04-26)
+------------------
 * Fix typo
 * Contributors: davidterkuile
 
