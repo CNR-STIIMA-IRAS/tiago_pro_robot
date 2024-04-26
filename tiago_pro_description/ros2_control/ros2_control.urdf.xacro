@@ -114,7 +114,7 @@
 
         <xacro:if value="${has_ft_sensor_right}">
           <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
-          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>s
+          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>
         </xacro:if>
 
 
