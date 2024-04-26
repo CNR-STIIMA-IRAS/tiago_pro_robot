@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.7 (2024-04-18)
 ------------------
 * Merge branch 'dtk/fix/play-motion2-dependency' into 'humble-devel'

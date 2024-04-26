@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix typo
+* Contributors: davidterkuile
+
 1.0.7 (2024-04-18)
 ------------------
 * Merge branch 'omm/feat/public_sim_check' into 'humble-devel'
