@@ -23,10 +23,10 @@
   <xacro:arg name="laser_model" default="sick-571"/>
 
   <!-- tiago-pro, no-arm -->
-  <xacro:arg name="arm_model_left" default="tiago-pro" />
+  <xacro:arg name="arm_type_left" default="tiago-pro" />
 
   <!-- tiago-pro, no-arm -->
-  <xacro:arg name="arm_model_right" default="tiago-pro" />
+  <xacro:arg name="arm_type_right" default="tiago-pro" />
 
   <!-- pal-pro-gripper custom-->
   <xacro:arg name="end_effector_left" default="pal-pro-gripper" />
@@ -54,34 +54,34 @@
   <!-- PROPERTIES -->
 
   <xacro:property name="laser_model" value="$(arg laser_model)" />
-  <xacro:property name="arm_model_left" value="$(arg arm_model_left)" />
-  <xacro:property name="arm_model_right" value="$(arg arm_model_right)" />
+  <xacro:property name="arm_type_left" value="$(arg arm_type_left)" />
+  <xacro:property name="arm_type_right" value="$(arg arm_type_right)" />
   <xacro:property name="end_effector_left" value="$(arg end_effector_left)" />
   <xacro:property name="end_effector_right" value="$(arg end_effector_right)" />
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
-  <xacro:property name="arm_model" value="tiago-pro" />
+  <xacro:property name="arm_type" value="tiago-pro" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
   <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
 
-  <xacro:property name="has_arm_left" value="${arm_model_left not in ['no-arm']}"/>
+  <xacro:property name="has_arm_left" value="${arm_type_left not in ['no-arm']}"/>
   <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['no-ft-sensor']}"/>
   <xacro:property name="has_end_effector_left" value="${end_effector_left not in ['no-end-effector']}" />
   <xacro:property name="end_effector_left_link" value="${'wrist_left_ft_tool_link' if has_ft_sensor_left else 'arm_left_tool_link'}" />
   <xacro:property name="end_effector_left_name" value="gripper_left" />
 
-  <xacro:property name="has_arm_right" value="${arm_model_right not in ['no-arm']}"/>
+  <xacro:property name="has_arm_right" value="${arm_type_right not in ['no-arm']}"/>
   <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right not in ['no-ft-sensor']}"/>
   <xacro:property name="has_end_effector_right" value="${end_effector_right not in ['no-end-effector']}" />
   <xacro:property name="end_effector_right_link" value="${'wrist_right_ft_tool_link' if has_ft_sensor_right else 'arm_right_tool_link'}" />
   <xacro:property name="end_effector_right_name" value="gripper_right" />
 
   <!-- Properties check -->
-  <xacro:if value="${arm_model_left not in ['tiago-pro', 'no-arm']}">
-    <xacro:wrong_arm_model_left />
+  <xacro:if value="${arm_type_left not in ['tiago-pro', 'no-arm']}">
+    <xacro:wrong_arm_type_left />
   </xacro:if>
-  <xacro:if value="${arm_model_right not in ['tiago-pro', 'no-arm']}">
-    <xacro:wrong_arm_model_right />
+  <xacro:if value="${arm_type_right not in ['tiago-pro', 'no-arm']}">
+    <xacro:wrong_arm_type_right />
   </xacro:if>
   <xacro:if value="${end_effector_left not in ['pal-pro-gripper', 'custom', 'no-end-effector']}">
     <xacro:wrong_end_effector_left />
@@ -156,7 +156,7 @@
   <xacro:if value="${has_arm_left}">
 
     <!-- Arm -->
-    <xacro:pal_sea_arm name="arm_left" parent="torso_lift_link" arm_model="${arm_model_left}" reflect="1" arm_1_offset="${arm_left_1_joint_offset}" arm_2_offset="${arm_left_2_joint_offset}" arm_3_offset="${arm_left_3_joint_offset}" arm_4_offset="${arm_left_4_joint_offset}" arm_5_offset="${arm_left_5_joint_offset}" arm_6_offset="${arm_left_6_joint_offset}" arm_7_offset="${arm_left_7_joint_offset}">
+    <xacro:pal_sea_arm name="arm_left" parent="torso_lift_link" arm_type="${arm_type_left}" reflect="1" arm_1_offset="${arm_left_1_joint_offset}" arm_2_offset="${arm_left_2_joint_offset}" arm_3_offset="${arm_left_3_joint_offset}" arm_4_offset="${arm_left_4_joint_offset}" arm_5_offset="${arm_left_5_joint_offset}" arm_6_offset="${arm_left_6_joint_offset}" arm_7_offset="${arm_left_7_joint_offset}">
       <origin xyz="$(arg arm_x) $(arg arm_y) $(arg arm_z)" rpy="$(arg arm_roll) $(arg arm_pitch) $(arg arm_yaw)"/>
     </xacro:pal_sea_arm>
 
@@ -176,7 +176,7 @@
   <xacro:if value="${has_arm_right}">
 
     <!-- Arm -->
-    <xacro:pal_sea_arm name="arm_right" parent="torso_lift_link" arm_model="${arm_model_right}" reflect="1" arm_1_offset="${arm_right_1_joint_offset}" arm_2_offset="${arm_right_2_joint_offset}" arm_3_offset="${arm_right_3_joint_offset}" arm_4_offset="${arm_right_4_joint_offset}" arm_5_offset="${arm_right_5_joint_offset}" arm_6_offset="${arm_right_6_joint_offset}" arm_7_offset="${arm_right_7_joint_offset}">
+    <xacro:pal_sea_arm name="arm_right" parent="torso_lift_link" arm_type="${arm_type_right}" reflect="1" arm_1_offset="${arm_right_1_joint_offset}" arm_2_offset="${arm_right_2_joint_offset}" arm_3_offset="${arm_right_3_joint_offset}" arm_4_offset="${arm_right_4_joint_offset}" arm_5_offset="${arm_right_5_joint_offset}" arm_6_offset="${arm_right_6_joint_offset}" arm_7_offset="${arm_right_7_joint_offset}">
       <origin xyz="$(arg arm_x) ${-1.0*$(arg arm_y)} $(arg arm_z)" rpy="$(arg arm_roll) ${-1.0*$(arg arm_pitch)} ${-3.14159 -$(arg arm_yaw)}"/>
     </xacro:pal_sea_arm>
 
