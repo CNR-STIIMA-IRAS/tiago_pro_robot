@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'omm/feat/arm_name_std' into 'humble-devel'
+  Changed arm_model to arm_type in the URDF
+  See merge request robots/tiago_pro_robot!39
+* Changed arm_model to arm_type in the URDF
+* Contributors: davidterkuile, oscarmartinez
+
 1.0.8 (2024-04-26)
 ------------------
 * Fix typo
