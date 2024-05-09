@@ -14,13 +14,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  -->
-<robot xmlns:xacro="http://ros.org/wiki/xacro"
-       name="tiago_pro" >
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_pro">
 
   <xacro:macro name="tiago_pro_ros2_control" params="use_sim:=^|false">
 
-    <xacro:arg name="arm_model_left" default="tiago-pro"/>
-    <xacro:arg name="arm_model_right" default="tiago-pro"/>
+    <xacro:arg name="arm_type_left" default="tiago-pro"/>
+    <xacro:arg name="arm_type_right" default="tiago-pro"/>
 
     <xacro:arg name="end_effector_left" default="pal-pro-pripper"/>
     <xacro:arg name="end_effector_right" default="pal-pro-gripper"/>
@@ -28,17 +27,18 @@
     <xacro:arg name="ft_sensor_left" default="no-ft-sensor"/>
     <xacro:arg name="ft_sensor_right" default="no-ft-sensor"/>
 
-    <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf/calibration" /> <!-- TODO-->
+    <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf/calibration" />
+    <!-- TODO-->
 
-    <xacro:property name="arm_model_left" value="$(arg arm_model_left)" />
-    <xacro:property name="arm_model_right" value="$(arg arm_model_right)" />
+    <xacro:property name="arm_type_left" value="$(arg arm_type_left)" />
+    <xacro:property name="arm_type_right" value="$(arg arm_type_right)" />
     <xacro:property name="end_effector_left" value="$(arg end_effector_left)" />
     <xacro:property name="end_effector_right" value="$(arg end_effector_right)" />
 
     <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left != 'no-ft-sensor'}" />
     <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right != 'no-ft-sensor'}" />
-    <xacro:property name="has_arm_left" value="${arm_model_left != 'no-arm'}" />
-    <xacro:property name="has_arm_right" value="${arm_model_right != 'no-arm'}" />
+    <xacro:property name="has_arm_left" value="${arm_type_left != 'no-arm'}" />
+    <xacro:property name="has_arm_right" value="${arm_type_right != 'no-arm'}" />
 
     <xacro:include filename="$(find omni_base_description)/urdf/sensors/sensors.ros2_control.xacro" />
     <xacro:include filename="$(find omni_base_description)/urdf/wheels/wheel.ros2_control.xacro" />
@@ -48,7 +48,7 @@
     <xacro:include filename="$(find pal_sea_arm_description)/urdf/arm/arm.ros2_control.xacro" />
 
     <xacro:if value="${end_effector_left == 'pal-pro-gripper' or end_effector_right == 'pal-pro-gripper'}">
-        <xacro:include filename="$(find pal_pro_gripper_description)/urdf/pal_pro_gripper.ros2_control.xacro" />
+      <xacro:include filename="$(find pal_pro_gripper_description)/urdf/pal_pro_gripper.ros2_control.xacro" />
     </xacro:if>
 
     <!-- calibration offsets -->
@@ -101,7 +101,7 @@
           <xacro:ros2_control_pal_pro_gripper name="gripper_left" reduction="1.0" />
         </xacro:if>
       </xacro:if>
-      
+
       <!-- arm right -->
       <xacro:if value="${has_arm_right}">
         <xacro:ros2_control_arm name="arm_right_1" reduction="1.0" offset_value="${arm_right_1_joint_offset}" />
@@ -114,7 +114,7 @@
 
         <xacro:if value="${has_ft_sensor_right}">
           <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
-          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>
+          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>s
         </xacro:if>
 
 
