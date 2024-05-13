@@ -150,7 +150,7 @@
     </gazebo>
   
     <!-- Head camera:Intel D435 -->
-    <xacro:sensor_d435 parent="${name}_2_link" name="${name}_d435_camera" topics_ns="${name}_d435_camera" use_nominal_extrinsics="true">
+    <xacro:sensor_d435 parent="${name}_2_link" name="${name}_d435_camera" topics_ns="${name}_d435_camera" use_nominal_extrinsics="${use_sim}">
        <origin xyz="0.03815 0.14750 0.0"
                 rpy="${-90.0 * deg_to_rad} 0.0 0.0"/>
     </xacro:sensor_d435>
