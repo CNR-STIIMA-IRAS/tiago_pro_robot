@@ -2,6 +2,18 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/fix/head-camera-name' into 'humble-devel'
+  Change camera name and topic to head_front_camera
+  See merge request robots/tiago_pro_robot!40
+* Change camera name and topic to head_front_camera
+* Merge branch 'smd/feat/realsense_calibrated' into 'humble-devel'
+  Added calibrated tf realsense for the real robot
+  See merge request robots/tiago_pro_robot!42
+* Added calibrated tf realsense for the real robot
+* Contributors: David ter Kuile, davidterkuile, sergiomoyano
+
 1.0.9 (2024-05-09)
 ------------------
 * Merge branch 'omm/feat/arm_name_std' into 'humble-devel'
