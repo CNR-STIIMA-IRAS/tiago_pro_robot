@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.10 (2024-05-22)
+-------------------
 * Merge branch 'dtk/fix/head-camera-name' into 'humble-devel'
   Change camera name and topic to head_front_camera
   See merge request robots/tiago_pro_robot!40
