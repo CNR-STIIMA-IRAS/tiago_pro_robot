@@ -60,8 +60,8 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     pkg_dir = get_package_share_directory('tiago_pro_bringup')
 
     joy_node = Node(
-        package='joy',
-        executable='joy_node',
+        package='joy_linux',
+        executable='joy_linux_node',
         name='joystick',
         parameters=[os.path.join(pkg_dir, 'config', 'joy_config.yaml')])
 
