@@ -2,7 +2,7 @@ gravity_compensation_controller:
   ros__parameters:
     command_joints: ['arm_right_1_joint', 'arm_right_2_joint', 'arm_right_3_joint', 'arm_right_4_joint', 'arm_right_5_joint', 'arm_right_6_joint', 'arm_right_7_joint', 'arm_left_1_joint', 'arm_left_2_joint', 'arm_left_3_joint', 'arm_left_4_joint', 'arm_left_5_joint', 'arm_left_6_joint', 'arm_left_7_joint']
 
-    root_link: "base_link"
+    root_link: "torso_fixed_column_link"
 
     tip_links: ["gripper_left_base_link", "gripper_right_base_link"]
     
