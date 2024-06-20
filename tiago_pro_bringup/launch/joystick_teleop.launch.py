@@ -24,7 +24,7 @@ from launch.conditions import LaunchConfigurationEquals
 from tiago_pro_description.tiago_pro_launch_utils import get_single_arm_hw_suffix
 
 from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
-from launch_pal.robot_arguments import TiagoProArgs
+from tiago_pro_description.launch_arguments import TiagoProArgs
 
 from dataclasses import dataclass
 
