@@ -42,6 +42,7 @@
 
   <xacro:arg name="use_sim" default="false"/>
   <xacro:arg name="is_public_sim" default="false"/>
+  <xacro:arg name="is_multiple" default="false"/>
   <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
   <xacro:arg name="extrinsic_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
   <xacro:arg name="arm_x" default="0.08976" />
@@ -54,6 +55,7 @@
   <!-- PROPERTIES -->
 
   <xacro:property name="use_sim" value="$(arg use_sim)" />
+  <xacro:property name="is_multiple" value="$(arg is_multiple)" />
   <xacro:property name="laser_model" value="$(arg laser_model)" />
   <xacro:property name="arm_type_left" value="$(arg arm_type_left)" />
   <xacro:property name="arm_type_right" value="$(arg arm_type_right)" />
