@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/move-robot-args' into 'humble-devel'
+  Change import for launch args
+  See merge request robots/tiago_pro_robot!50
+* Change import for launch args
+* Contributors: David ter Kuile, davidterkuile
+
 1.0.10 (2024-05-22)
 -------------------
 

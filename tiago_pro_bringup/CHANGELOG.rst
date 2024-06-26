@@ -2,6 +2,19 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/move-robot-args' into 'humble-devel'
+  Change import for launch args
+  See merge request robots/tiago_pro_robot!50
+* Change import for launch args
+* Merge branch 'dtk/fix/joystick-driver' into 'humble-devel'
+  Add new joy_linux node
+  See merge request robots/tiago_pro_robot!45
+* Add joy linux to launch file
+* Add new joy_linux node
+* Contributors: David ter Kuile, davidterkuile
+
 1.0.10 (2024-05-22)
 -------------------
 

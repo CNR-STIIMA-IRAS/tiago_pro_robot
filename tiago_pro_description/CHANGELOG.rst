@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/move-robot-args' into 'humble-devel'
+  Change import for launch args
+  See merge request robots/tiago_pro_robot!50
+* Add is missing is_multiple xacro arg
+* Change import for launch args
+* Contributors: David ter Kuile, davidterkuile
+
 1.0.10 (2024-05-22)
 -------------------
 * Merge branch 'dtk/fix/head-camera-name' into 'humble-devel'
