@@ -23,8 +23,9 @@ from launch.actions import DeclareLaunchArgument, OpaqueFunction, SetLaunchConfi
 from launch_ros.actions import Node
 from launch_param_builder import load_xacro
 
-from launch_pal.arg_utils import LaunchArgumentsBase, CommonArgs, read_launch_argument
-from launch_pal.robot_arguments import TiagoProArgs
+from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
+from launch_pal.robot_arguments import CommonArgs
+from tiago_pro_description.launch_arguments import TiagoProArgs
 
 from dataclasses import dataclass
 
