@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/fix-gazebo-urdf' into 'humble-devel'
+  Dtk/fix gazebo urdf
+  See merge request robots/tiago_pro_robot!51
+* Add imu sensor broadcaster
+* Contributors: David ter Kuile, davidterkuile
+
 1.0.11 (2024-06-26)
 -------------------
 * Merge branch 'dtk/move-robot-args' into 'humble-devel'
