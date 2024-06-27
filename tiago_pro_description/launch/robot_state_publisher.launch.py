@@ -82,7 +82,7 @@ def create_robot_description_param(context, *args, **kwargs):
         'wrist_model_left': read_launch_argument('wrist_model_left', context),
         'camera_model': read_launch_argument('camera_model', context),
         'laser_model': read_launch_argument('laser_model', context),
-        'use_sim': read_launch_argument('use_sim_time', context),
+        'use_sim_time': read_launch_argument('use_sim_time', context),
         'namespace': read_launch_argument('namespace', context),
         'is_public_sim': read_launch_argument('is_public_sim', context),
     }

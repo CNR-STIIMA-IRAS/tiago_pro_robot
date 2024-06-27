@@ -40,7 +40,7 @@
   <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_right" default="no-ft-sensor" />
 
-  <xacro:arg name="use_sim" default="false"/>
+  <xacro:arg name="use_sim_time" default="false"/>
   <xacro:arg name="is_public_sim" default="false"/>
   <xacro:arg name="is_multiple" default="false"/>
   <xacro:arg name="description_calibration_dir" default="$(find tiago_pro_description)/urdf"/>
@@ -54,7 +54,7 @@
 
   <!-- PROPERTIES -->
 
-  <xacro:property name="use_sim" value="$(arg use_sim)" />
+  <xacro:property name="use_sim_time" value="$(arg use_sim_time)" />
   <xacro:property name="is_multiple" value="$(arg is_multiple)" />
   <xacro:property name="laser_model" value="$(arg laser_model)" />
   <xacro:property name="arm_type_left" value="$(arg arm_type_left)" />
@@ -138,9 +138,6 @@
   <!-- Materials for visualization -->
   <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
 
-  <!-- Generic simulator_gazebo plugins -->
-  <xacro:include filename="$(find tiago_pro_description)/gazebo/gazebo.urdf.xacro" />
-
   <!-- ROS 2 Control -->
   <xacro:include filename="$(find tiago_pro_description)/ros2_control/ros2_control.urdf.xacro" />
 
@@ -196,6 +193,6 @@
   </xacro:if>
 
   <!-- ROS 2 Control -->
-  <xacro:tiago_pro_ros2_control use_sim="$(arg use_sim)" />
+  <xacro:tiago_pro_ros2_control use_sim_time="$(arg use_sim_time)" />
 
 </robot>

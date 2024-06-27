@@ -16,7 +16,7 @@
  -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_pro">
 
-  <xacro:macro name="tiago_pro_ros2_control" params="use_sim:=^|false">
+  <xacro:macro name="tiago_pro_ros2_control" params="use_sim_time:=^|false">
 
     <xacro:arg name="arm_type_left" default="tiago-pro"/>
     <xacro:arg name="arm_type_right" default="tiago-pro"/>
@@ -54,12 +54,22 @@
     <!-- calibration offsets -->
     <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
 
+
+    <!-- Init the ROS 2 control gazebo interface -->
+    <xacro:if value="${use_sim_time}">
+      <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+          <parameters>$(find tiago_pro_description)/ros2_control/gazebo_controller_manager_cfg.yaml</parameters>
+        </plugin>
+      </gazebo>
+    </xacro:if>
+
     <ros2_control name="ros2_control_tiago_pro_system" type="system">
       <hardware>
-        <xacro:if value="$(arg use_sim)">
+        <xacro:if value="$(arg use_sim_time)">
           <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         </xacro:if>
-        <xacro:unless value="$(arg use_sim)">
+        <xacro:unless value="$(arg use_sim_time)">
           <plugin>robot_control/RobotControl</plugin>
         </xacro:unless>
 
@@ -72,7 +82,7 @@
       <xacro:ros2_control_wheel side="rear_left" />
 
       <!-- IMU -->
-      <xacro:if value="$(arg use_sim)">
+      <xacro:if value="$(arg use_sim_time)">
         <xacro:ros2_control_imu name="base_imu_sensor"/>
       </xacro:if>
 
