@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.12 (2024-06-27)
+-------------------
 * Merge branch 'dtk/fix-gazebo-urdf' into 'humble-devel'
   Dtk/fix gazebo urdf
   See merge request robots/tiago_pro_robot!51
