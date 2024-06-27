@@ -54,6 +54,16 @@
     <!-- calibration offsets -->
     <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
 
+
+    <!-- Init the ROS 2 control gazebo interface -->
+    <xacro:if value="${use_sim_time}">
+      <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+          <parameters>$(find tiago_pro_description)/ros2_control/gazebo_controller_manager_cfg.yaml</parameters>
+        </plugin>
+      </gazebo>
+    </xacro:if>
+
     <ros2_control name="ros2_control_tiago_pro_system" type="system">
       <hardware>
         <xacro:if value="$(arg use_sim)">
