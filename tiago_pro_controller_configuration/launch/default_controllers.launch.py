@@ -110,6 +110,19 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
     launch_description.add_action(head_controller)
 
+    # IMU sensor broadcaster
+    imu_sensor_broadcaster = GroupAction(
+        [
+            generate_load_controller_launch_description(
+                controller_name='imu_sensor_broadcaster',
+                controller_type='imu_sensor_broadcaster/IMUSensorBroadcaster',
+                controller_params_file=os.path.join(
+                    pkg_share_folder, 'config', 'imu_sensor_broadcaster.yaml'))
+
+        ],
+    )
+    launch_description.add_action(imu_sensor_broadcaster)
+
     # Add controller of right arm, end-effector and ft-sensor
     launch_description.add_action(OpaqueFunction(
         function=configure_side_controllers, args=['right']))
