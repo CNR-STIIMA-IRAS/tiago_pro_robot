@@ -16,6 +16,55 @@
  -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="tiago_pro">
 
+  <xacro:macro name="ros2_control_wheels">
+    <xacro:ros2_control_wheel side="front_right" />
+    <xacro:ros2_control_wheel side="front_left" />
+    <xacro:ros2_control_wheel side="rear_right" />
+    <xacro:ros2_control_wheel side="rear_left" />
+  </xacro:macro>
+
+  <xacro:macro name="ros2_control_arms">
+      <!-- arm left -->
+      <xacro:if value="${has_arm_left}">
+        <xacro:ros2_control_arm name="arm_left_1" reduction="1.0" offset_value="${arm_left_1_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_left_2" reduction="1.0" offset_value="${arm_left_2_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_left_3" reduction="1.0" offset_value="${arm_left_3_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_left_4" reduction="1.0" offset_value="${arm_left_4_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_left_5" reduction="1.0" offset_value="${arm_left_5_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_left_6" reduction="1.0" offset_value="${arm_left_6_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_left_7" reduction="1.0" offset_value="${arm_left_7_joint_offset}" />
+        <xacro:if value="${has_ft_sensor_left}">
+          <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
+          <xacro:ros2_control_force_torque_sensor name="wrist_left_ft_sensor"/>
+        </xacro:if>
+
+        <xacro:if value="${end_effector_left == 'pal-pro-gripper'}">
+          <xacro:ros2_control_pal_pro_gripper name="gripper_left" reduction="1.0" />
+        </xacro:if>
+      </xacro:if>
+
+      <!-- arm right -->
+      <xacro:if value="${has_arm_right}">
+        <xacro:ros2_control_arm name="arm_right_1" reduction="1.0" offset_value="${arm_right_1_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_right_2" reduction="1.0" offset_value="${arm_right_2_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_right_3" reduction="1.0" offset_value="${arm_right_3_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_right_4" reduction="1.0" offset_value="${arm_right_4_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_right_5" reduction="1.0" offset_value="${arm_right_5_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_right_6" reduction="1.0" offset_value="${arm_right_6_joint_offset}" />
+        <xacro:ros2_control_arm name="arm_right_7" reduction="1.0" offset_value="${arm_right_7_joint_offset}" />
+
+        <xacro:if value="${has_ft_sensor_right}">
+          <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
+          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>s
+        </xacro:if>
+
+        <xacro:if value="${end_effector_right == 'pal-pro-gripper'}">
+          <!-- pal-pro-gripper -->
+          <xacro:ros2_control_pal_pro_gripper name="gripper_right" reduction="1.0" />
+        </xacro:if>
+      </xacro:if>
+  </xacro:macro>
+
   <xacro:macro name="tiago_pro_ros2_control" params="use_sim_time:=^|false">
 
     <xacro:arg name="arm_type_left" default="tiago-pro"/>
@@ -54,86 +103,80 @@
     <!-- calibration offsets -->
     <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
 
-
-    <!-- Init the ROS 2 control gazebo interface -->
-    <xacro:if value="${use_sim_time}">
+    <!-- Simulation -->
+    <xacro:if value="$(arg use_sim_time)">
+      <!-- Init the ROS 2 control gazebo interface -->
       <gazebo>
         <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
           <parameters>$(find tiago_pro_description)/ros2_control/gazebo_controller_manager_cfg.yaml</parameters>
         </plugin>
       </gazebo>
+
+      <ros2_control name="ros2_control_gazebo_system" type="system">
+        <hardware>
+          <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <!-- wheels -->
+        <xacro:ros2_control_wheels/>
+
+        <!-- IMU -->
+        <xacro:ros2_control_imu name="base_imu_sensor"/>
+
+        <!-- torso -->
+        <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
+
+        <!-- head -->
+        <xacro:ros2_control_head name="head_1" reduction="1.0" offset_value="${head_1_joint_offset}" />
+        <xacro:ros2_control_head name="head_2" reduction="1.0" offset_value="${head_2_joint_offset}" />
+
+        <!-- arms -->
+          <xacro:ros2_control_arms/>
+      </ros2_control>
     </xacro:if>
 
-    <ros2_control name="ros2_control_tiago_pro_system" type="system">
-      <hardware>
-        <xacro:if value="$(arg use_sim_time)">
-          <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-        </xacro:if>
-        <xacro:unless value="$(arg use_sim_time)">
+    <!-- Hardware -->
+    <xacro:unless value="$(arg use_sim_time)">
+      <!-- CAN system -->
+      <ros2_control name="ros2_control_tiago_pro_system_can" type="system">
+        <hardware>
           <plugin>robot_control/RobotControl</plugin>
-        </xacro:unless>
+          <param name="group">can</param>
+        </hardware>
 
-      </hardware>
+        <!-- wheels -->
+        <xacro:ros2_control_wheels />
 
-      <!-- wheels -->
-      <xacro:ros2_control_wheel side="front_right" />
-      <xacro:ros2_control_wheel side="front_left" />
-      <xacro:ros2_control_wheel side="rear_right" />
-      <xacro:ros2_control_wheel side="rear_left" />
+        <!-- IMU -->
+        <!-- <xacro:ros2_control_imu name="base_imu_sensor"/> -->
 
-      <!-- IMU -->
-      <xacro:if value="$(arg use_sim_time)">
-        <xacro:ros2_control_imu name="base_imu_sensor"/>
-      </xacro:if>
+        <!-- torso -->
+        <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
+      </ros2_control>
 
-      <!-- torso -->
-      <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
+      <!-- Dynamixels system -->
+      <ros2_control name="ros2_control_tiago_pro_system_dynamixel" type="system">
+        <hardware>
+          <plugin>robot_control/RobotControl</plugin>
+          <param name="group">dynamixel</param>
+        </hardware>
 
-      <!-- head -->
-      <xacro:ros2_control_head name="head_1" reduction="1.0" offset_value="${head_1_joint_offset}" />
-      <xacro:ros2_control_head name="head_2" reduction="1.0" offset_value="${head_2_joint_offset}" />
+        <!-- head -->
+        <xacro:ros2_control_head name="head_1" reduction="1.0" offset_value="${head_1_joint_offset}" />
+        <xacro:ros2_control_head name="head_2" reduction="1.0" offset_value="${head_2_joint_offset}" />
+      </ros2_control>
 
-      <!-- arm left -->
-      <xacro:if value="${has_arm_left}">
-        <xacro:ros2_control_arm name="arm_left_1" reduction="1.0" offset_value="${arm_left_1_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_2" reduction="1.0" offset_value="${arm_left_2_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_3" reduction="1.0" offset_value="${arm_left_3_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_4" reduction="1.0" offset_value="${arm_left_4_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_5" reduction="1.0" offset_value="${arm_left_5_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_6" reduction="1.0" offset_value="${arm_left_6_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_7" reduction="1.0" offset_value="${arm_left_7_joint_offset}" />
-        <xacro:if value="${has_ft_sensor_left}">
-          <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
-          <xacro:ros2_control_force_torque_sensor name="wrist_left_ft_sensor"/>
-        </xacro:if>
+      <!-- Ethercat system -->
+      <ros2_control name="ros2_control_tiago_pro_system_ethercat" type="system">
+        <hardware>
+          <plugin>robot_control/RobotControl</plugin>
+          <param name="group">ethercat</param>
+        </hardware>
 
-        <xacro:if value="${end_effector_left == 'pal-pro-gripper'}">
-          <xacro:ros2_control_pal_pro_gripper name="gripper_left" reduction="1.0" />
-        </xacro:if>
-      </xacro:if>
+        <!-- arms -->
+        <xacro:ros2_control_arms/>
+      </ros2_control>
 
-      <!-- arm right -->
-      <xacro:if value="${has_arm_right}">
-        <xacro:ros2_control_arm name="arm_right_1" reduction="1.0" offset_value="${arm_right_1_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_2" reduction="1.0" offset_value="${arm_right_2_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_3" reduction="1.0" offset_value="${arm_right_3_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_4" reduction="1.0" offset_value="${arm_right_4_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_5" reduction="1.0" offset_value="${arm_right_5_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_6" reduction="1.0" offset_value="${arm_right_6_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_7" reduction="1.0" offset_value="${arm_right_7_joint_offset}" />
-
-        <xacro:if value="${has_ft_sensor_right}">
-          <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
-          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>s
-        </xacro:if>
-
-
-        <xacro:if value="${end_effector_right == 'pal-pro-gripper'}">
-          <!-- pal-pro-gripper -->
-          <xacro:ros2_control_pal_pro_gripper name="gripper_right" reduction="1.0" />
-        </xacro:if>
-      </xacro:if>
-
-    </ros2_control>
+    </xacro:unless>
   </xacro:macro>
 </robot>
