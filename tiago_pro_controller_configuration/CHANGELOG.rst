@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.13 (2024-07-09)
+-------------------
 * Add warning for pal_module_cmake not found
 * change module name into 20\_*
 * Contributors: Aina, Noel Jimenez
