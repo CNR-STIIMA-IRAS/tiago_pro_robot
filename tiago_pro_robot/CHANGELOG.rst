@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add warning for pal_module_cmake not found
+* Contributors: Noel Jimenez
+
 1.0.12 (2024-06-27)
 -------------------
 

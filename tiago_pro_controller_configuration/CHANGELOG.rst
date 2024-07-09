@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add warning for pal_module_cmake not found
+* change module name into 20\_*
+* Contributors: Aina, Noel Jimenez
+
 1.0.12 (2024-06-27)
 -------------------
 * Merge branch 'dtk/fix-gazebo-urdf' into 'humble-devel'
