@@ -63,7 +63,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         package='joy_linux',
         executable='joy_linux_node',
         name='joystick',
-        parameters=[os.path.join(pkg_dir, 'config', 'joy_config.yaml')])
+        parameters=[os.path.join(pkg_dir, 'config', 'joy_teleop', 'joy_config.yaml')])
 
     launch_description.add_action(joy_node)
 
