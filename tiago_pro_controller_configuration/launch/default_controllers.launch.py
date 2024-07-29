@@ -117,14 +117,14 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         ],
     )
     launch_description.add_action(imu_sensor_broadcaster)
+    if launch_args.use_sim_time:
+        # Add controller of right arm, end-effector and ft-sensor
+        launch_description.add_action(OpaqueFunction(
+            function=configure_side_controllers, args=['right']))
 
-    # Add controller of right arm, end-effector and ft-sensor
-    launch_description.add_action(OpaqueFunction(
-        function=configure_side_controllers, args=['right']))
-
-    # Add controller of left arm, end-effector and ft-sensor
-    launch_description.add_action(OpaqueFunction(
-        function=configure_side_controllers, args=['left']))
+        # Add controller of left arm, end-effector and ft-sensor
+        launch_description.add_action(OpaqueFunction(
+            function=configure_side_controllers, args=['left']))
 
     return
 
