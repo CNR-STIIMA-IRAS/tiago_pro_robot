@@ -1,7 +1,6 @@
 mobile_base_controller:
   ros__parameters:
     type: omni_drive_controller/OmniDriveController
-    use_stamped_vel: False
     left_front_wheel  : 'wheel_front_left_joint'
     left_back_wheel  : 'wheel_rear_left_joint'
     right_front_wheel : 'wheel_front_right_joint'
