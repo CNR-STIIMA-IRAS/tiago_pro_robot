@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update gravity compensation conf file
+* fix typo on reduction_ratio param
+* root link changed
+* controller name not the same as defined in the launch file
+* Remove use_stamped_vel parameter
+* Contributors: Noel Jimenez, ileniaperrella
+
 1.0.13 (2024-07-09)
 -------------------
 * Add warning for pal_module_cmake not found

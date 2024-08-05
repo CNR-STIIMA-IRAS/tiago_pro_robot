@@ -2,6 +2,13 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* enabled y-axis base movements
+* Fix path
+* Fix default device
+* Contributors: andreacapodacqua, thomas.peyrucain
+
 1.0.13 (2024-07-09)
 -------------------
 * Add warning for pal_module_cmake not found

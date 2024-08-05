@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Split ros2_control hardware into three RobotControl components
+* Contributors: Noel Jimenez
+
 1.0.13 (2024-07-09)
 -------------------
 * Add warning for pal_module_cmake not found
