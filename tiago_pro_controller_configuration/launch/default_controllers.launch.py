@@ -63,7 +63,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     mobile_base_controller = GroupAction(
         [generate_load_controller_launch_description(
             controller_name='mobile_base_controller',
-            controller_type='omni_drive_controller/OmniDriveController',
             controller_params_file=params_file)
          ],
         forwarding=False,
@@ -75,7 +74,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     joint_state_broadcaster = GroupAction(
         [generate_load_controller_launch_description(
             controller_name='joint_state_broadcaster',
-            controller_type='joint_state_broadcaster/JointStateBroadcaster',
             controller_params_file=os.path.join(
                 pkg_share_folder,
                 'config', 'joint_state_broadcaster.yaml'))
@@ -88,7 +86,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     torso_controller = GroupAction(
         [generate_load_controller_launch_description(
             controller_name='torso_controller',
-            controller_type='joint_trajectory_controller/JointTrajectoryController',
             controller_params_file=os.path.join(
                 pkg_share_folder,
                 'config', 'torso_controller.yaml'))
@@ -101,7 +98,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     head_controller = GroupAction(
         [generate_load_controller_launch_description(
             controller_name='head_controller',
-            controller_type='joint_trajectory_controller/JointTrajectoryController',
             controller_params_file=os.path.join(
                 pkg_share_folder,
                 'config', 'head_controller.yaml'))
@@ -115,7 +111,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         [
             generate_load_controller_launch_description(
                 controller_name='imu_sensor_broadcaster',
-                controller_type='imu_sensor_broadcaster/IMUSensorBroadcaster',
                 controller_params_file=os.path.join(
                     pkg_share_folder, 'config', 'imu_sensor_broadcaster.yaml'))
 
