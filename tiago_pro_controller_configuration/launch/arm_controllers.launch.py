@@ -28,7 +28,6 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class LaunchArguments(LaunchArgumentsBase):
-    base_type: DeclareLaunchArgument = TiagoProArgs.base_type
     arm_type_right: DeclareLaunchArgument = TiagoProArgs.arm_type_right
     arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
     end_effector_right: DeclareLaunchArgument = TiagoProArgs.end_effector_right
