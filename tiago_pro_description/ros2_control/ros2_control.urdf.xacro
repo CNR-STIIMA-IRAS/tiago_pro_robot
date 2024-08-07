@@ -138,7 +138,7 @@
     <!-- Hardware -->
     <xacro:unless value="$(arg use_sim_time)">
       <!-- CAN system -->
-      <ros2_control name="ros2_control_tiago_pro_system_can" type="system">
+      <ros2_control name="ros2_control_tiago_pro_system_can" type="system" rw_rate="100">
         <hardware>
           <plugin>robot_control/RobotControl</plugin>
           <param name="group">can</param>
@@ -155,7 +155,7 @@
       </ros2_control>
 
       <!-- Dynamixels system -->
-      <ros2_control name="ros2_control_tiago_pro_system_dynamixel" type="system">
+      <ros2_control name="ros2_control_tiago_pro_system_dynamixel" type="system" rw_rate="100">
         <hardware>
           <plugin>robot_control/RobotControl</plugin>
           <param name="group">dynamixel</param>
@@ -167,7 +167,7 @@
       </ros2_control>
 
       <!-- Ethercat system -->
-      <ros2_control name="ros2_control_tiago_pro_system_ethercat" type="system">
+      <ros2_control name="ros2_control_tiago_pro_system_ethercat" type="system" rw_rate="1000">
         <hardware>
           <plugin>robot_control/RobotControl</plugin>
           <param name="group">ethercat</param>
