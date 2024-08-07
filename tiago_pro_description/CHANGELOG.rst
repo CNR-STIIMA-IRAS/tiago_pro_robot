@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Set different read/write rates for hardware components
+  https://github.com/ros-controls/ros2_control/pull/1570
+* Contributors: Noel Jimenez
+
 1.1.0 (2024-08-05)
 ------------------
 * Split ros2_control hardware into three RobotControl components

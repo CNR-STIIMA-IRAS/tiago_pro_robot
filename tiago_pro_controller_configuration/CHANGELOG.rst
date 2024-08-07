@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Use controller_type from the controllers config
+* Contributors: Noel Jimenez
+
 1.1.0 (2024-08-05)
 ------------------
 * update gravity compensation conf file
