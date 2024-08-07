@@ -1,6 +1,5 @@
 arm_controllers:
   launch: "tiago_pro_controller_configuration arm_controllers.launch.py
-           base_type:=@base_type@
            arm_type_right:=@arm_type_right@
            arm_type_left:=@arm_type_left@
            end_effector_right:=@end_effector_right@
