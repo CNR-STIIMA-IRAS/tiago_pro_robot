@@ -48,8 +48,11 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         'tiago_pro_controller_configuration')
 
     # Mobile base controller
+    base_share_folder = get_package_share_directory(
+        'omni_base_controller_configuration')
+
     default_config = os.path.join(
-        pkg_share_folder,
+        base_share_folder,
         'config', 'mobile_base_controller.yaml')
 
     calibration_config = '/etc/calibration/master_calibration.yaml'
