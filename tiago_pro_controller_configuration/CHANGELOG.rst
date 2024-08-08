@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change arm controllers launch to the arm_controller launch file
+* fix usi_sim_condition
+* Add arm default controller launch file and module
+* Add arm_controller launch file
+* Add condition for arms controllers
+* Contributors: Aina
+
 1.2.0 (2024-08-07)
 ------------------
 * Use controller_type from the controllers config
