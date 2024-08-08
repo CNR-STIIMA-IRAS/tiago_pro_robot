@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.0 (2024-08-08)
+------------------
 * Change arm controllers launch to the arm_controller launch file
 * fix usi_sim_condition
 * Add arm default controller launch file and module
