@@ -11,6 +11,7 @@ play_motion2:
           name: home_relax
           usage: demo
           description: home_relax
+
       home:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 5.0, 10.0]
@@ -21,6 +22,7 @@ play_motion2:
           name: Home
           usage: demo
           description: Go home
+
       home_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [0.0, 5.0, 10.0]
@@ -30,7 +32,8 @@ play_motion2:
         meta:
           name: home_left
           usage: demo
-          description: home_left                    
+          description: home_left   
+                           
       home_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 5.0, 10.0]
@@ -41,6 +44,7 @@ play_motion2:
           name: home_right
           usage: demo
           description: home_right
+
       wave_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0]
@@ -54,7 +58,8 @@ play_motion2:
         meta:
           name: wave_right
           usage: demo
-          description: wave_right                       
+          description: wave_right
+
       wave_with_torso:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0]
@@ -68,7 +73,8 @@ play_motion2:
         meta:
           name: wave_with_torso
           usage: demo
-          description: wave_with_torso                       
+          description: wave_with_torso  
+
       offer:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0]
@@ -77,6 +83,7 @@ play_motion2:
           name: offer
           usage: demo
           description: offer
+
       offer_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [0.0]
@@ -84,7 +91,8 @@ play_motion2:
         meta:
           name: offer_left
           usage: demo
-          description: offer_left          
+          description: offer_left   
+
       offer_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0]
@@ -92,7 +100,8 @@ play_motion2:
         meta:
           name: offer_right
           usage: demo
-          description: offer_right                
+          description: offer_right
+
       shake_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [0.0, 1.0, 2.5, 4.0, 5.5, 7.0]
@@ -105,7 +114,8 @@ play_motion2:
         meta:
           name: shake_left
           usage: demo
-          description: shake_left               
+          description: shake_left
+
       shake_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 1.0, 2.5, 4.0, 5.5, 7.0]
@@ -118,7 +128,8 @@ play_motion2:
         meta:
           name: shake_right
           usage: demo
-          description: shake_right            
+          description: shake_right
+
       tiago_dancing:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
         times_from_start: [0.0, 5.0, 10.0, 15.0, 20.0, 25.0]
@@ -131,7 +142,8 @@ play_motion2:
         meta:
           name: tiago_dancing
           usage: demo
-          description: tiago_dancing             
+          description: tiago_dancing
+
       tiago_dancing_happy:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
         times_from_start: [0.0, 2.0, 6.0, 8.0, 10.0, 13.0, 16.0, 19.0, 21.0, 26.0]
@@ -145,7 +157,6 @@ play_motion2:
                     0.088638, -0.24868, -0.62547, 0.40946, -1.8618, -0.099879, 0.16423, -1.57, 0.24766, -0.64482, -0.71191, -1.8616, -0.099743, 0.16451, -1.57, -1.2263e-05, 0.2,
                     0.13195, -0.25675, -0.58049, 0.50638, -2.0171, -0.099359, 1.1082, -1.5707, 0.25717, -0.58038, -0.50358, -2.0377, -0.098455, 1.1081, -1.5708, 0.22209, -8.2377e-05,
                     0.13195, -0.25675, -0.58049, 0.50638, -2.0171, -0.099359, 1.1082, -1.5707, 0.25717, -0.58038, -0.50358, -2.0377, -0.098455, 1.1081, -1.5708, 0.01908, -4.4499e-05]
-
         meta:
           name: tiago_dancing_happy
           usage: demo
