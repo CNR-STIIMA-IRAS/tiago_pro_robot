@@ -16,13 +16,12 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import GroupAction
-from launch.conditions import IfCondition, UnlessCondition
+from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
-from launch_pal.param_utils import merge_param_files
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from controller_manager.launch_utils import generate_load_controller_launch_description
 from launch_pal.include_utils import include_scoped_launch_py_description
-from launch_pal.arg_utils import LaunchArgumentsBase
+from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
 from launch_pal.robot_arguments import CommonArgs
 from tiago_pro_description.launch_arguments import TiagoProArgs
 
@@ -39,6 +38,7 @@ class LaunchArguments(LaunchArgumentsBase):
     ft_sensor_right: DeclareLaunchArgument = TiagoProArgs.ft_sensor_right
     ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
     namespace: DeclareLaunchArgument = CommonArgs.namespace
 
 
@@ -48,29 +48,8 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         'tiago_pro_controller_configuration')
 
     # Mobile base controller
-    base_share_folder = get_package_share_directory(
-        'omni_base_controller_configuration')
-
-    default_config = os.path.join(
-        base_share_folder,
-        'config', 'mobile_base_controller.yaml')
-
-    calibration_config = '/etc/calibration/master_calibration.yaml'
-
-    if os.path.exists(calibration_config):
-        params_file = merge_param_files([default_config, calibration_config])
-    else:
-        params_file = default_config
-
-    mobile_base_controller = GroupAction(
-        [generate_load_controller_launch_description(
-            controller_name='mobile_base_controller',
-            controller_params_file=params_file)
-         ],
-        forwarding=False,
-        condition=UnlessCondition(LaunchConfiguration('use_sim_time')))
-
-    launch_description.add_action(mobile_base_controller)
+    launch_description.add_action(
+        OpaqueFunction(function=launch_mobile_base_controller))
 
     # Joint state broadcaster
     joint_state_broadcaster = GroupAction(
@@ -139,6 +118,26 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     launch_description.add_action(side_controllers)
 
     return
+
+
+def launch_mobile_base_controller(context, *args, **kwargs):
+
+    base_type = read_launch_argument("base_type", context)
+    use_sim_time = read_launch_argument("use_sim_time", context)
+    is_public_sim = read_launch_argument("is_public_sim", context)
+
+    base_controller_package = base_type + "_controller_configuration"
+
+    mobile_base_controller = include_scoped_launch_py_description(
+        pkg_name=base_controller_package,
+        paths=["launch", "mobile_base_controller.launch.py"],
+        launch_arguments={
+            "use_sim_time": use_sim_time,
+            "is_public_sim": is_public_sim,
+        }
+    )
+
+    return [mobile_base_controller]
 
 
 def generate_launch_description():
