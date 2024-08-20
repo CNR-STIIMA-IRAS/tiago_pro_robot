@@ -75,45 +75,49 @@ def create_play_motion_filename(context):
     )
 
     # Determine the necessary motions
-    ee_motions_file = None
+    ee_motions_files = []
     if arm_right != 'no-arm' and arm_left != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general.yaml'
-        if ee_left != 'no-end-effector' and ee_right != 'no-end-effector':
-            ee_motions_file = "tiago_pro_motions_end_effector_both.yaml"
-        elif ee_right != 'no-end-effector':
-            ee_motions_file = "tiago_pro_motions_end_effector_right.yaml"
-        elif ee_left != 'no-end-effector':
-            ee_motions_file = "tiago_pro_motions_end_effector_left.yaml"
+        if ee_right != 'no-end-effector':
+            ee_motions_files.append(f"tiago_pro_motions_{ee_right}_right.yaml")
+        if ee_left != 'no-end-effector':
+            ee_motions_files.append(f"tiago_pro_motions_{ee_left}_left.yaml")
     elif arm_left != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_arm_left.yaml'
         if ee_left != 'no-end-effector':
-            ee_motions_file = "tiago_pro_motions_end_effector_left.yaml"
+            ee_motions_files.append(f"tiago_pro_motions_{ee_left}_left.yaml")
     elif arm_right != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_arm_right.yaml'
         if ee_right != 'no-end-effector':
-            ee_motions_file = "tiago_pro_motions_end_effector_right.yaml"
+            ee_motions_files.append(f"tiago_pro_motions_{ee_right}_right.yaml")
     else:
-        base_motions_file = 'tiago_pro_motions_fallback.yaml'
+        base_motions_file = 'tiago_pro_motions_no_arms.yaml'
 
-    # Combine the base with the end_effector motions
-    base_motions_yaml = PathJoinSubstitution(
+    # Combine the base with the end_effector motions if any
+    motions_yamls = []
+    base_motions_path = PathJoinSubstitution(
         [pkg_share_dir, 'config', 'motions', base_motions_file])
+    base_motions_yaml = base_motions_path.perform(context)
+    motions_yamls.append(base_motions_yaml)
 
-    if ee_motions_file:
-        ee_motions_yaml = PathJoinSubstitution(
-            [pkg_share_dir, 'config', 'motions', ee_motions_file])
+    if ee_motions_files:
+        ee_motions_yamls = []
+        for ee_motions_file in ee_motions_files:
+            ee_motions_path = PathJoinSubstitution(
+                [pkg_share_dir, 'config', 'motions', ee_motions_file])
+            ee_motions_yamls.append(ee_motions_path.perform(context))
 
-        combined_motion_yaml = merge_param_files(
-            [base_motions_yaml.perform(context), ee_motions_yaml.perform(context)])
-    else:
-        combined_motion_yaml = base_motions_yaml.perform(context)
+        ee_motions_yaml = merge_param_files(ee_motions_yamls)
+        motions_yamls.append(ee_motions_yaml)
+
+    motions_config = merge_param_files(motions_yamls)
 
     motion_planner_file = f"motion_planner{hw_suffix}.yaml"
     motion_planner_config = PathJoinSubstitution([
         pkg_share_dir,
         'config', 'motion_planner', motion_planner_file])
 
-    return [SetLaunchConfiguration("motions_file", combined_motion_yaml),
+    return [SetLaunchConfiguration("motions_file", motions_config),
             SetLaunchConfiguration("motion_planner_config", motion_planner_config)]
 
 
