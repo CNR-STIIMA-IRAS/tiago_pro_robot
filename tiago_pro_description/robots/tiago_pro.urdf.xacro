@@ -110,7 +110,7 @@
   <xacro:include filename="$(find omni_base_description)/urdf/base/base_sensors.urdf.xacro" />
 
   <!-- Torso -->
-  <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso_dual.urdf.xacro" />
+  <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- Calibration constants -->
   <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
