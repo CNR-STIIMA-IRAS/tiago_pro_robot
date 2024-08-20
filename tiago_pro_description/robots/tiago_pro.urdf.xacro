@@ -63,7 +63,6 @@
   <xacro:property name="end_effector_right" value="$(arg end_effector_right)" />
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
-  <xacro:property name="arm_type" value="tiago-pro" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
   <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
 
@@ -80,10 +79,10 @@
   <xacro:property name="end_effector_right_name" value="gripper_right" />
 
   <!-- Properties check -->
-  <xacro:if value="${arm_type_left not in ['tiago-pro', 'no-arm']}">
+  <xacro:if value="${arm_type_left not in ['tiago-pro-prototype', 'tiago-pro', 'no-arm']}">
     <xacro:wrong_arm_type_left />
   </xacro:if>
-  <xacro:if value="${arm_type_right not in ['tiago-pro', 'no-arm']}">
+  <xacro:if value="${arm_type_right not in ['tiago-pro-prototype', 'tiago-pro', 'no-arm']}">
     <xacro:wrong_arm_type_right />
   </xacro:if>
   <xacro:if value="${end_effector_left not in ['pal-pro-gripper', 'custom', 'no-end-effector']}">
