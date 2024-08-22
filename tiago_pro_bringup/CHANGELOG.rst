@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adapted so it is the same as tiago dual
+* Suggested changes
+* Added play motion module
+* Suggested changes
+* Hardware specific motions with grippers
+* Contributors: oscarmartinez
+
 1.3.0 (2024-08-08)
 ------------------
 

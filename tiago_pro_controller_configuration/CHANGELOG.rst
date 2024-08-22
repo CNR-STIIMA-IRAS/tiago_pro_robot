@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add confif file for mobile base from omni_base package
+* Contributors: Aina
+
 1.3.0 (2024-08-08)
 ------------------
 * Change arm controllers launch to the arm_controller launch file
