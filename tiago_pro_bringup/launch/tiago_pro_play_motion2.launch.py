@@ -24,6 +24,8 @@ from launch_pal.robot_arguments import CommonArgs
 from tiago_pro_description.launch_arguments import TiagoProArgs
 from tiago_pro_description.tiago_pro_launch_utils import get_tiago_pro_hw_suffix
 from dataclasses import dataclass
+from launch_pal.param_utils import merge_param_files
+import os
 
 
 @dataclass(frozen=True)
@@ -59,36 +61,44 @@ def create_play_motion_filename(context):
 
     pkg_name = 'tiago_pro_bringup'
     pkg_share_dir = get_package_share_directory(pkg_name)
+    arm_right = read_launch_argument('arm_type_right', context)
+    ee_right = read_launch_argument('end_effector_right', context)
+    arm_left = read_launch_argument('arm_type_left', context)
+    ee_left = read_launch_argument('end_effector_left', context)
 
     hw_suffix = get_tiago_pro_hw_suffix(
-        arm_right=read_launch_argument('arm_type_right', context),
-        arm_left=read_launch_argument('arm_type_left', context),
-        end_effector_right=read_launch_argument('end_effector_right', context),
-        end_effector_left=read_launch_argument('end_effector_left', context),
+        arm_right=arm_right,
+        arm_left=arm_left,
+        end_effector_right=ee_right,
+        end_effector_left=ee_left,
         ft_sensor_right=read_launch_argument('ft_sensor_right', context),
         ft_sensor_left=read_launch_argument('ft_sensor_left', context),
     )
 
-    # hw_config_specific_file = f"tiago_motions{hw_suffix}.yaml"
-
-    # hw_config_specific_yaml = PathJoinSubstitution(
-    #     [pkg_share_dir,
-    #      'config', 'motions', hw_config_specific_file])
-
-    base_motions_file = 'tiago_pro_motions_general.yaml'
-
-    if read_launch_argument('arm_type_right', context) == 'no-arm':
+    # Determine the necessary motions
+    ee_motions = []
+    motions_folder = os.path.join(pkg_share_dir, 'config', 'motions')
+    base_motions_file = 'tiago_pro_motions_no_arms.yaml'
+    # both arms
+    if arm_right != 'no-arm' and arm_left != 'no-arm':
+        base_motions_file = 'tiago_pro_motions_general.yaml'
+    # right arm only
+    elif arm_right != 'no-arm' and arm_left == 'no-arm':
+        base_motions_file = 'tiago_pro_motions_general_arm_right.yaml'
+    # left arm only
+    elif arm_right == 'no-arm' and arm_left != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_arm_left.yaml'
 
-    if read_launch_argument('arm_type_left', context) == 'no-arm':
-        base_motions_file = 'tiago_pro_motions_general_arm_right.yaml'
+    if ee_left != 'no-end-effector' and arm_left != 'no-arm':
+        ee_motions.append(f"tiago_pro_motions_{ee_left}_left.yaml")
+    if ee_right != 'no-end-effector' and arm_right != 'no-arm':
+        ee_motions.append(f"tiago_pro_motions_{ee_right}_right.yaml")
 
-    base_motions_yaml = PathJoinSubstitution(
-        [pkg_share_dir, 'config', 'motions', base_motions_file])
+    motion_files = [base_motions_file]
+    motion_files.extend(ee_motions)
 
-    combined_yaml = base_motions_yaml
-    # combined_yaml = merge_param_files(
-    #     [base_motions_yaml.perform(context), hw_config_specific_yaml.perform(context)])
+    motion_yamls = [os.path.join(motions_folder, f) for f in motion_files]
+    combined_yaml = merge_param_files(motion_yamls)
 
     motion_planner_file = f"motion_planner{hw_suffix}.yaml"
     motion_planner_config = PathJoinSubstitution([
