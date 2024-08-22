@@ -46,3 +46,7 @@ wheel_model:
   description: 'Wheel model'
   choices: ['moog']
   default_value: 'moog'
+has_laptop_tray:
+  description: 'Robot has a laptop tray'
+  choices: ['False', 'True']
+  default_value: 'True'

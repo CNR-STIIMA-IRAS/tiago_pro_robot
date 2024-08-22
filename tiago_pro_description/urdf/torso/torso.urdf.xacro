@@ -22,7 +22,7 @@
   <xacro:property name="torso_max_vel" value="0.07" />
   <xacro:property name="torso_eps" value="0.02" />
 
-  <xacro:macro name="tiago_pro_torso" params="name parent">
+  <xacro:macro name="tiago_pro_torso" params="name parent has_tray">
 
     <!-- Connection with the base -->
     <link name="${name}_base_link">
@@ -109,27 +109,31 @@
           <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
         </material>
       </visual>
-      <visual>
-        <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
-        <geometry>
-          <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray.stl" />
-        </geometry>
-        <material name="">
-          <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
-        </material>
-      </visual>
+      <xacro:if value="${has_tray}">
+        <visual>
+          <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
+          <geometry>
+            <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray.stl" />
+          </geometry>
+          <material name="">
+            <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+          </material>
+        </visual>
+      </xacro:if>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://tiago_pro_description/meshes/torso/torso_lift_link_collision.stl" />
         </geometry>
       </collision>
-      <collision>
-        <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
-        <geometry>
-          <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray_collision.stl" />
-        </geometry>
-      </collision>
+      <xacro:if value="${has_tray}">
+        <collision>
+          <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
+          <geometry>
+            <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray_collision.stl" />
+          </geometry>
+        </collision>
+      </xacro:if>
     </link>
 
     <joint name="${name}_lift_joint" type="prismatic">

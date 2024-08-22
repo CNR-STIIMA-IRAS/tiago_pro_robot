@@ -40,6 +40,9 @@
   <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_right" default="no-ft-sensor" />
 
+  <!-- False, True -->
+  <xacro:arg name="has_laptop_tray" default="False" />
+
   <xacro:arg name="use_sim_time" default="false"/>
   <xacro:arg name="is_public_sim" default="false"/>
   <xacro:arg name="is_multiple" default="false"/>
@@ -63,6 +66,7 @@
   <xacro:property name="end_effector_right" value="$(arg end_effector_right)" />
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
+  <xacro:property name="has_laptop_tray" value="$(arg has_laptop_tray)" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
   <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
 
@@ -145,8 +149,8 @@
   <!-- Base -->
   <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
 
-  <!-- Torso. TODO:change for custom torso -->
-  <xacro:tiago_pro_torso name="torso" parent="base_link"/>
+  <!-- Torso -->
+  <xacro:tiago_pro_torso name="torso" parent="base_link" has_tray="${has_laptop_tray}"/>
 
   <!-- Head -->
   <xacro:tiago_pro_head name="head" parent="torso_lift_link"/>
