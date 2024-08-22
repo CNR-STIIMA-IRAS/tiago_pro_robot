@@ -76,41 +76,36 @@ def create_play_motion_filename(context):
     )
 
     # Determine the necessary motions
-    ee_motions_paths = []
+    ee_motions = []
     motions_folder = os.path.join(pkg_share_dir, 'config', 'motions')
+    base_motions_file = 'tiago_pro_motions_no_arms.yaml'
+    # both arms
     if arm_right != 'no-arm' and arm_left != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general.yaml'
-        if ee_right != 'no-end-effector':
-            ee_motions_paths.append(f"tiago_pro_motions_{ee_right}_right.yaml")
-        if ee_left != 'no-end-effector':
-            ee_motions_paths.append(f"tiago_pro_motions_{ee_left}_left.yaml")
-    elif arm_left != 'no-arm':
-        base_motions_file = 'tiago_pro_motions_general_arm_left.yaml'
-        if ee_left != 'no-end-effector':
-            ee_motions_paths.append(f"tiago_pro_motions_{ee_left}_left.yaml")
-    elif arm_right != 'no-arm':
+    # right arm only
+    elif arm_right != 'no-arm' and arm_left == 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_arm_right.yaml'
-        if ee_right != 'no-end-effector':
-            ee_motions_paths.append(f"tiago_pro_motions_{ee_right}_right.yaml")
-    else:
-        base_motions_file = 'tiago_pro_motions_no_arms.yaml'
+    # left arm only
+    elif arm_right == 'no-arm' and arm_left != 'no-arm':
+        base_motions_file = 'tiago_pro_motions_general_arm_left.yaml'
 
-    ee_motions_yamls = []
-    for ee_motions_path in ee_motions_paths:
-        ee_motions_yamls.append(os.path.join(motions_folder, ee_motions_path))
+    if ee_left != 'no-end-effector' and arm_left != 'no-arm':
+        ee_motions.append(f"tiago_pro_motions_{ee_left}_left.yaml")
+    if ee_right != 'no-end-effector' and arm_right != 'no-arm':
+        ee_motions.append(f"tiago_pro_motions_{ee_right}_right.yaml")
 
-    # Combine all the config file
-    base_motions_yaml = os.path.join(motions_folder, base_motions_file)
-    motions_yamls = [base_motions_yaml]
-    motions_yamls.extend(ee_motions_yamls)
-    motions_config = merge_param_files(motions_yamls)
+    motion_files = [base_motions_file]
+    motion_files.extend(ee_motions)
+
+    motion_yamls = [os.path.join(motions_folder, f) for f in motion_files]
+    combined_yaml = merge_param_files(motion_yamls)
 
     motion_planner_file = f"motion_planner{hw_suffix}.yaml"
     motion_planner_config = PathJoinSubstitution([
         pkg_share_dir,
         'config', 'motion_planner', motion_planner_file])
 
-    return [SetLaunchConfiguration("motions_file", motions_config),
+    return [SetLaunchConfiguration("motions_file", combined_yaml),
             SetLaunchConfiguration("motion_planner_config", motion_planner_config)]
 
 
