@@ -48,9 +48,7 @@ for end_effector_left in end_effectors:
                     arm_right=arm_type_right,
                     arm_left=arm_type_left,
                     end_effector_right=cfg["end_effector_right"],
-                    end_effector_left=cfg["end_effector_left"],
-                    ft_sensor_right=cfg["ft_sensor_right"],
-                    ft_sensor_left=cfg["ft_sensor_left"])
+                    end_effector_left=cfg["end_effector_left"])
 
                 expanded_file_name = no_extension_path + suffix + extension
                 with open(expanded_file_name, "w") as f:
