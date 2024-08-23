@@ -65,8 +65,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "arm_type_left": launch_args.arm_type_left,
                           "end_effector_right": launch_args.end_effector_right,
                           "end_effector_left": launch_args.end_effector_left,
-                          "ft_sensor_right": launch_args.ft_sensor_right,
-                          "ft_sensor_left": launch_args.ft_sensor_left,
                           "use_sim_time": launch_args.use_sim_time})
 
     launch_description.add_action(play_motion2)
