@@ -18,8 +18,6 @@ def get_tiago_pro_hw_suffix(
     arm_left: str = "no-arm",
     end_effector_right: str = "no-end-effector",
     end_effector_left: str = "no-end-effector",
-    ft_sensor_right: str = "no-ft-sensor",
-    ft_sensor_left: str = "no-ft-sensor",
 ):
     """
     Generate a substitution that creates a text suffix combining the specified \
@@ -28,9 +26,9 @@ def get_tiago_pro_hw_suffix(
     The arguments are read as string
     """
     right_suffix = get_single_arm_hw_suffix(
-        arm_right, end_effector_right, ft_sensor_right
+        arm_right, end_effector_right
     )
-    left_suffix = get_single_arm_hw_suffix(arm_left, end_effector_left, ft_sensor_left)
+    left_suffix = get_single_arm_hw_suffix(arm_left, end_effector_left)
 
     suffix = left_suffix + right_suffix
     return suffix
@@ -38,8 +36,7 @@ def get_tiago_pro_hw_suffix(
 
 def get_single_arm_hw_suffix(
         arm: str = 'no-arm',
-        end_effector: str = 'no-ee',
-        ft_sensor: str = 'no-ft-sensor'):
+        end_effector: str = 'no-ee'):
     """
     Generate a substitution that creates a text suffix combining the specified tiago pro arguments.
 
@@ -56,9 +53,6 @@ def get_single_arm_hw_suffix(
 
     components = []
     components.append(end_effector)
-
-    if ft_sensor != 'no-ft-sensor':
-        components.append(ft_sensor)
 
     suffix = '_' + '_'.join(components)
     return suffix
