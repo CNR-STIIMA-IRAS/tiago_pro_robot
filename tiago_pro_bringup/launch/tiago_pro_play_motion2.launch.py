@@ -34,8 +34,6 @@ class LaunchArguments(LaunchArgumentsBase):
     arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
     end_effector_right: DeclareLaunchArgument = TiagoProArgs.end_effector_right
     end_effector_left: DeclareLaunchArgument = TiagoProArgs.end_effector_left
-    ft_sensor_right: DeclareLaunchArgument = TiagoProArgs.ft_sensor_right
-    ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
 
     use_sim_time:  DeclareLaunchArgument = CommonArgs.use_sim_time
 
@@ -71,8 +69,6 @@ def create_play_motion_filename(context):
         arm_left=arm_left,
         end_effector_right=ee_right,
         end_effector_left=ee_left,
-        ft_sensor_right=read_launch_argument('ft_sensor_right', context),
-        ft_sensor_left=read_launch_argument('ft_sensor_left', context),
     )
 
     # Determine the necessary motions
