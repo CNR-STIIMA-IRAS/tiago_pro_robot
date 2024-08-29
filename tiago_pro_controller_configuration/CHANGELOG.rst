@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Refactor mobile_base_controller launch
+* Contributors: David ter Kuile
+
 1.4.0 (2024-08-22)
 ------------------
 * Add confif file for mobile base from omni_base package
