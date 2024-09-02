@@ -24,45 +24,46 @@
   </xacro:macro>
 
   <xacro:macro name="ros2_control_arms">
-      <!-- arm left -->
-      <xacro:if value="${has_arm_left}">
-        <xacro:ros2_control_arm name="arm_left_1" reduction="1.0" offset_value="${arm_left_1_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_2" reduction="1.0" offset_value="${arm_left_2_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_3" reduction="1.0" offset_value="${arm_left_3_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_4" reduction="1.0" offset_value="${arm_left_4_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_5" reduction="1.0" offset_value="${arm_left_5_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_6" reduction="1.0" offset_value="${arm_left_6_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_left_7" reduction="1.0" offset_value="${arm_left_7_joint_offset}" />
-        <xacro:if value="${has_ft_sensor_left}">
-          <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
-          <xacro:ros2_control_force_torque_sensor name="wrist_left_ft_sensor"/>
-        </xacro:if>
-
-        <xacro:if value="${end_effector_left == 'pal-pro-gripper'}">
-          <xacro:ros2_control_pal_pro_gripper name="gripper_left" reduction="1.0" />
-        </xacro:if>
+    <!-- arm left -->
+    <xacro:if value="${has_arm_left}">
+      <xacro:ros2_control_arm name="arm_left_1" reduction="1.0" offset_value="${arm_left_1_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_left_2" reduction="1.0" offset_value="${arm_left_2_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_left_3" reduction="1.0" offset_value="${arm_left_3_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_left_4" reduction="1.0" offset_value="${arm_left_4_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_left_5" reduction="1.0" offset_value="${arm_left_5_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_left_6" reduction="1.0" offset_value="${arm_left_6_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_left_7" reduction="1.0" offset_value="${arm_left_7_joint_offset}" />
+      <xacro:if value="${has_ft_sensor_left}">
+        <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
+        <xacro:ros2_control_force_torque_sensor name="wrist_left_ft_sensor"/>
       </xacro:if>
 
-      <!-- arm right -->
-      <xacro:if value="${has_arm_right}">
-        <xacro:ros2_control_arm name="arm_right_1" reduction="1.0" offset_value="${arm_right_1_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_2" reduction="1.0" offset_value="${arm_right_2_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_3" reduction="1.0" offset_value="${arm_right_3_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_4" reduction="1.0" offset_value="${arm_right_4_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_5" reduction="1.0" offset_value="${arm_right_5_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_6" reduction="1.0" offset_value="${arm_right_6_joint_offset}" />
-        <xacro:ros2_control_arm name="arm_right_7" reduction="1.0" offset_value="${arm_right_7_joint_offset}" />
-
-        <xacro:if value="${has_ft_sensor_right}">
-          <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
-          <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>s
-        </xacro:if>
-
-        <xacro:if value="${end_effector_right == 'pal-pro-gripper'}">
-          <!-- pal-pro-gripper -->
-          <xacro:ros2_control_pal_pro_gripper name="gripper_right" reduction="1.0" />
-        </xacro:if>
+      <xacro:if value="${end_effector_left == 'pal-pro-gripper'}">
+        <xacro:ros2_control_pal_pro_gripper name="gripper_left" reduction="1.0" />
       </xacro:if>
+    </xacro:if>
+
+    <!-- arm right -->
+    <xacro:if value="${has_arm_right}">
+      <xacro:ros2_control_arm name="arm_right_1" reduction="1.0" offset_value="${arm_right_1_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_right_2" reduction="1.0" offset_value="${arm_right_2_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_right_3" reduction="1.0" offset_value="${arm_right_3_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_right_4" reduction="1.0" offset_value="${arm_right_4_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_right_5" reduction="1.0" offset_value="${arm_right_5_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_right_6" reduction="1.0" offset_value="${arm_right_6_joint_offset}" />
+      <xacro:ros2_control_arm name="arm_right_7" reduction="1.0" offset_value="${arm_right_7_joint_offset}" />
+
+      <xacro:if value="${has_ft_sensor_right}">
+        <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/sensors.ros2_control.xacro"/>
+        <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>
+s
+      </xacro:if>
+
+      <xacro:if value="${end_effector_right == 'pal-pro-gripper'}">
+        <!-- pal-pro-gripper -->
+        <xacro:ros2_control_pal_pro_gripper name="gripper_right" reduction="1.0" />
+      </xacro:if>
+    </xacro:if>
   </xacro:macro>
 
   <xacro:macro name="tiago_pro_ros2_control" params="use_sim_time:=^|false">
@@ -97,7 +98,7 @@
     <xacro:include filename="$(find pal_sea_arm_description)/urdf/arm/arm.ros2_control.xacro" />
 
     <xacro:if value="${end_effector_left == 'pal-pro-gripper' or end_effector_right == 'pal-pro-gripper'}">
-      <xacro:include filename="$(find pal_pro_gripper_description)/urdf/pal_pro_gripper.ros2_control.xacro" />
+      <xacro:include filename="$(find pal_pro_gripper_description)/urdf/gripper.ros2_control.xacro" />
     </xacro:if>
 
     <!-- calibration offsets -->
@@ -131,7 +132,7 @@
         <xacro:ros2_control_head name="head_2" reduction="1.0" offset_value="${head_2_joint_offset}" />
 
         <!-- arms -->
-          <xacro:ros2_control_arms/>
+        <xacro:ros2_control_arms/>
       </ros2_control>
     </xacro:if>
 

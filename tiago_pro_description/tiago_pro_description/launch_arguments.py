@@ -33,6 +33,8 @@ class TiagoProArgs:
     arm_type_left: DLA = __arg_creator.get_argument("arm_type_left")
     wrist_model_right: DLA = __arg_creator.get_argument("wrist_model_right")
     wrist_model_left: DLA = __arg_creator.get_argument("wrist_model_left")
+    tool_changer_right: DLA = __arg_creator.get_argument("tool_changer_right")
+    tool_changer_left: DLA = __arg_creator.get_argument("tool_changer_left")
     end_effector_right: DLA = __arg_creator.get_argument("end_effector_right")
     end_effector_left: DLA = __arg_creator.get_argument("end_effector_left")
     ft_sensor_right: DLA = __arg_creator.get_argument("ft_sensor_right")
