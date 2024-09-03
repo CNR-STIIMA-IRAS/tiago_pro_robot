@@ -1,4 +1,4 @@
-play_motion2:
+/play_motion2:
   ros__parameters:
     motions:
       home_relax:
@@ -88,4 +88,4 @@ play_motion2:
         meta:
           name: tiago_dancing
           usage: demo
-          description: tiago_dancing    
+          description: tiago_dancing
