@@ -36,11 +36,11 @@ end_effector_left:
   default_value: 'pal-pro-gripper'
 ft_sensor_right:
   description: 'FT sensor model right arm'
-  choices: ['rokubi', 'no-ft-sensor']
+  choices: ['ati', 'rokubi', 'no-ft-sensor']
   default_value: 'no-ft-sensor'
 ft_sensor_left:
   description: 'FT sensor model left arm'
-  choices: ['rokubi', 'no-ft-sensor']
+  choices: ['ati', 'rokubi', 'no-ft-sensor']
   default_value: 'no-ft-sensor'
 base_type:
   description: 'Base type'

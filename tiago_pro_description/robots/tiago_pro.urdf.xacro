@@ -83,7 +83,6 @@
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
   <xacro:property name="has_laptop_tray" value="$(arg has_laptop_tray)" />
-  <xacro:property name="tool_changer" value="$(arg tool_changer)" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
   <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
 
@@ -112,14 +111,40 @@
   <xacro:if value="${end_effector_right not in ['pal-pro-gripper', 'custom', 'no-end-effector']}">
     <xacro:wrong_end_effector_right />
   </xacro:if>
-  <xacro:if value="${ft_sensor_left not in ['no-ft-sensor', 'rokubi']}">
+  <xacro:if value="${ft_sensor_left not in ['no-ft-sensor', 'rokubi', 'ati']}">
     <xacro:wrong_ft_sensor_left />
   </xacro:if>
-  <xacro:if value="${ft_sensor_right not in ['no-ft-sensor', 'rokubi']}">
+  <xacro:if value="${ft_sensor_right not in ['no-ft-sensor', 'rokubi', 'ati']}">
     <xacro:wrong_ft_sensor_right />
   </xacro:if>
   <xacro:if value="${laser_model not in ['no-laser', 'sick-571']}">
     <xacro:wrong_laser_model />
+  </xacro:if>
+
+  <!-- Compatibility check within TC and ft sensors-->
+  <xacro:if value="${ft_sensor_right == 'rokubi' and wrist_model_right=='straight-wrist'}">
+    <xacro:error_ati_not_compatible_with_straight_wrist />
+  </xacro:if>
+  <xacro:if value="${ft_sensor_left == 'ati' and wrist_model_left=='straight-wrist'}">
+    <xacro:error_rokubi_not_compatible_with_spherical_wrist />
+  </xacro:if>
+  <xacro:if value="${ft_sensor_right == 'rokubi' and tool_changer_right}">
+    <xacro:error_rokubi_not_compatible_with_tc />
+  </xacro:if>
+  <xacro:if value="${ft_sensor_left == 'rokubi' and tool_changer_left}">
+    <xacro:error_rokubi_not_compatible_with_tc />
+  </xacro:if>
+  <xacro:if value="${not tool_changer_right and wrist_model_right=='spherical-wrist'}">
+    <xacro:error_spherical_wrist_always_comes_with_tc />
+  </xacro:if>
+  <xacro:if value="${not tool_changer_left and wrist_model_left=='spherical-wrist'}">
+    <xacro:error_spherical_wrist_always_comes_with_tc />
+  </xacro:if>
+  <xacro:if value="${not tool_changer_left and ft_sensor_left == 'ati'}">
+    <xacro:error_ati_always_comes_with_tc />
+  </xacro:if>
+  <xacro:if value="${not tool_changer_right and ft_sensor_right == 'ati'}">
+    <xacro:error_ati_always_comes_with_tc />
   </xacro:if>
 
   <!-- INCLUDES -->
@@ -148,8 +173,8 @@
 
   <!-- Force Torque sensor -->
   <xacro:if value="${has_ft_sensor_right or has_ft_sensor_left}">
-    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.urdf.xacro" />
-    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor.gazebo.xacro" />
+    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor/ft_sensor.urdf.xacro" />
+    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor/ft_sensor.gazebo.xacro" />
   </xacro:if>
 
   <!-- Head -->
@@ -176,7 +201,7 @@
   <xacro:if value="${has_arm_left}">
 
     <!-- Arm -->
-    <xacro:pal_sea_arm name="arm_left" parent="torso_lift_link" arm_type="${arm_type_left}" wrist_model="${wrist_model_left}" reflect="1" arm_1_offset="${arm_left_1_joint_offset}" arm_2_offset="${arm_left_2_joint_offset}" arm_3_offset="${arm_left_3_joint_offset}" arm_4_offset="${arm_left_4_joint_offset}" arm_5_offset="${arm_left_5_joint_offset}" arm_6_offset="${arm_left_6_joint_offset}" arm_7_offset="${arm_left_7_joint_offset}">
+    <xacro:pal_sea_arm name="arm_left" parent="torso_lift_link" arm_type="${arm_type_left}" wrist_model="${wrist_model_left}" tool_changer="${tool_changer_left}" reflect="1" arm_1_offset="${arm_left_1_joint_offset}" arm_2_offset="${arm_left_2_joint_offset}" arm_3_offset="${arm_left_3_joint_offset}" arm_4_offset="${arm_left_4_joint_offset}" arm_5_offset="${arm_left_5_joint_offset}" arm_6_offset="${arm_left_6_joint_offset}" arm_7_offset="${arm_left_7_joint_offset}">
       <origin xyz="$(arg arm_x) $(arg arm_y) $(arg arm_z)" rpy="$(arg arm_roll) $(arg arm_pitch) $(arg arm_yaw)"/>
     </xacro:pal_sea_arm>
 
@@ -187,7 +212,7 @@
 
     <!-- FT sensors -->
     <xacro:if value="${has_ft_sensor_left}">
-      <xacro:ft_sensor name="wrist_left" parent="arm_left_tool_link"/>
+      <xacro:ft_sensor type="${ft_sensor_left}" name="wrist_left" parent="arm_left_tool_link"/>
     </xacro:if>
 
   </xacro:if>
@@ -196,7 +221,7 @@
   <xacro:if value="${has_arm_right}">
 
     <!-- Arm -->
-    <xacro:pal_sea_arm name="arm_right" parent="torso_lift_link" arm_type="${arm_type_right}" wrist_model="${wrist_model_right}" reflect="1" arm_1_offset="${arm_right_1_joint_offset}" arm_2_offset="${arm_right_2_joint_offset}" arm_3_offset="${arm_right_3_joint_offset}" arm_4_offset="${arm_right_4_joint_offset}" arm_5_offset="${arm_right_5_joint_offset}" arm_6_offset="${arm_right_6_joint_offset}" arm_7_offset="${arm_right_7_joint_offset}">
+    <xacro:pal_sea_arm name="arm_right" parent="torso_lift_link" arm_type="${arm_type_right}" wrist_model="${wrist_model_right}" tool_changer="${tool_changer_right}" reflect="1" arm_1_offset="${arm_right_1_joint_offset}" arm_2_offset="${arm_right_2_joint_offset}" arm_3_offset="${arm_right_3_joint_offset}" arm_4_offset="${arm_right_4_joint_offset}" arm_5_offset="${arm_right_5_joint_offset}" arm_6_offset="${arm_right_6_joint_offset}" arm_7_offset="${arm_right_7_joint_offset}">
       <origin xyz="$(arg arm_x) ${-1.0*$(arg arm_y)} $(arg arm_z)" rpy="$(arg arm_roll) ${-1.0*$(arg arm_pitch)} ${-3.14159 -$(arg arm_yaw)}"/>
     </xacro:pal_sea_arm>
 
@@ -207,7 +232,7 @@
 
     <!-- FT sensors -->
     <xacro:if value="${has_ft_sensor_right}">
-      <xacro:ft_sensor name="wrist_right" parent="arm_right_tool_link"/>
+      <xacro:ft_sensor type="${ft_sensor_right}" name="wrist_right" parent="arm_right_tool_link"/>
     </xacro:if>
 
   </xacro:if>
