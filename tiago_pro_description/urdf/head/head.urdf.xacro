@@ -114,7 +114,7 @@
       <child link="${name}_2_link"/>
       <origin xyz="0.04597 0 0.10075"
       rpy="1.5708 0 0" />
-      <axis xyz="0 0 1" />
+      <axis xyz="0 0 -1" />
       <limit lower="${head_2_lower_limit * deg_to_rad}" upper="${head_2_upper_limit * deg_to_rad}" effort="2.77" velocity="${head_max_vel}" />
       <dynamics damping="${head_damping}" friction="${head_friction}"/>
 
