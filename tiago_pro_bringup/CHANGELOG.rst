@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add slash to node names on parameter files
+* Remove the unnecesary ft_sensor arguments in bringup
+* Remove ft_sensor from play_motion related files
+* Remove ft_sensor related in joy_teleop
+* Remove ft_sensor from HW specific config generation
+* Contributors: Noel Jimenez, oscarmartinez
+
 1.5.0 (2024-08-29)
 ------------------
 * Refactor mobile_base_controller launch

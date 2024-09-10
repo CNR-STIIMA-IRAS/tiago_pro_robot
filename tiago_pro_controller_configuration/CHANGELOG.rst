@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* set head controller to perform open loop control
+* Contributors: lorenzoferrini
+
 1.5.0 (2024-08-29)
 ------------------
 * Refactor mobile_base_controller launch
