@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.6.0 (2024-09-10)
+------------------
 * Add slash to node names on parameter files
 * Remove the unnecesary ft_sensor arguments in bringup
 * Remove ft_sensor from play_motion related files
