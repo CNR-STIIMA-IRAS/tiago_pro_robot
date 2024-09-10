@@ -167,15 +167,17 @@
       </ros2_control>
 
       <!-- Ethercat system -->
-      <ros2_control name="ros2_control_tiago_pro_system_ethercat" type="system" rw_rate="1000">
-        <hardware>
-          <plugin>robot_control/RobotControl</plugin>
-          <param name="group">ethercat</param>
-        </hardware>
+      <xacro:if value="${has_arm_right or has_arm_left}">
+        <ros2_control name="ros2_control_tiago_pro_system_ethercat" type="system" rw_rate="1000">
+          <hardware>
+            <plugin>robot_control/RobotControl</plugin>
+            <param name="group">ethercat</param>
+          </hardware>
 
-        <!-- arms -->
-        <xacro:ros2_control_arms/>
-      </ros2_control>
+          <!-- arms -->
+          <xacro:ros2_control_arms/>
+        </ros2_control>
+      </xacro:if>
 
     </xacro:unless>
   </xacro:macro>
