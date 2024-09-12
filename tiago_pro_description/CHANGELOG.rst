@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.7.0 (2024-09-12)
+------------------
 * Disable ros2_control_tiago_pro_system_ethercat if no arms
 * Contributors: Noel Jimenez
 
