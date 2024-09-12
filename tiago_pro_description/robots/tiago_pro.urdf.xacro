@@ -122,10 +122,16 @@
   </xacro:if>
 
   <!-- Compatibility check within TC and ft sensors-->
-  <xacro:if value="${ft_sensor_right == 'rokubi' and wrist_model_right=='straight-wrist'}">
+  <xacro:if value="${ft_sensor_right == 'ati' and wrist_model_right=='straight-wrist'}">
     <xacro:error_ati_not_compatible_with_straight_wrist />
   </xacro:if>
   <xacro:if value="${ft_sensor_left == 'ati' and wrist_model_left=='straight-wrist'}">
+    <xacro:error_ati_not_compatible_with_straight_wrist />
+  </xacro:if>
+  <xacro:if value="${ft_sensor_right == 'rokubi' and wrist_model_right=='spherical-wrist'}">
+    <xacro:error_rokubi_not_compatible_with_spherical_wrist />
+  </xacro:if>
+  <xacro:if value="${ft_sensor_left == 'rokubi' and wrist_model_left=='spherical-wrist'}">
     <xacro:error_rokubi_not_compatible_with_spherical_wrist />
   </xacro:if>
   <xacro:if value="${ft_sensor_right == 'rokubi' and tool_changer_right}">
