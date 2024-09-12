@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Disable ros2_control_tiago_pro_system_ethercat if no arms
+* Contributors: Noel Jimenez
+
 1.6.0 (2024-09-10)
 ------------------
 * Add slash to node names on parameter files
