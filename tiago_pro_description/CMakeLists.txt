@@ -18,33 +18,43 @@ if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   ament_lint_auto_find_test_dependencies()
 
-  foreach(arm_type_left tiago-pro no-arm)
-    foreach(arm_type_right tiago-pro no-arm)
-        foreach(end_effector_left pal-pro-gripper custom no-end-effector)
-            foreach(end_effector_right pal-pro-gripper custom no-end-effector)
-                foreach(ft_sensor_left no-ft-sensor rokubi)
-                    foreach(ft_sensor_right no-ft-sensor rokubi)
+  foreach(wrist_model_right straight-wrist spherical-wrist)
+    foreach(wrist_model_left straight-wrist spherical-wrist)
+      foreach(end_effector_left pal-pro-gripper no-end-effector)
+        foreach(end_effector_right pal-pro-gripper no-end-effector)
+          foreach(ft_sensor_left no-ft-sensor rokubi ati)
+            foreach(ft_sensor_right no-ft-sensor rokubi ati)
+              foreach(tool_changer_left False True)
+                foreach(tool_changer_right False True)
 
-                        set(left_side "${arm_type_left}_${end_effector_left}_${ft_sensor_left}")
-                        set(right_side "${arm_type_right}_${end_effector_right}_${ft_sensor_right}")
+                  set(left_side "${wrist_model_left}_tiago-pro_${end_effector_left}_${ft_sensor_left}_${tool_changer_left}")
+                  set(right_side "${wrist_model_right}_tiago-pro_${end_effector_right}_${ft_sensor_right}_${tool_changer_right}")
 
-                        add_launch_test(
-                          test/test_description.launch.py
-                          TARGET "tiago_pro_description_${left_side}_${right_side}"
-                          ARGS
-                          "arm_type_left:=${arm_type_left}"
-                          "arm_type_right:=${arm_type_right}"
-                          "end_effector_left:=${end_effector_left}"
-                          "end_effector_right:=${end_effector_right}"
-                          "ft_sensor_left:=${ft_sensor_left}"
-                          "ft_sensor_right:=${ft_sensor_right}"
-                        )
-                    endforeach()
+                  add_launch_test(
+                    test/test_description.launch.py
+                    TARGET "tiago_pro_description_${left_side}_${right_side}"
+                    ARGS
+                      "arm_type_left:=tiago-pro"
+                      "arm_type_right:=tiago-pro"
+                      "end_effector_left:=${end_effector_left}"
+                      "end_effector_right:=${end_effector_right}"
+                      "ft_sensor_left:=${ft_sensor_left}"
+                      "ft_sensor_right:=${ft_sensor_right}"
+                      "wrist_model_right:=${wrist_model_right}"
+                      "wrist_model_left:=${wrist_model_left}"
+                      "tool_changer_right:=${tool_changer_right}"
+                      "tool_changer_left:=${tool_changer_left}"
+                  )
+
                 endforeach()
+              endforeach()
             endforeach()
+          endforeach()
         endforeach()
       endforeach()
     endforeach()
+  endforeach()
+
   foreach(laser_model no-laser sick-571)
     add_launch_test(
       test/test_description.launch.py

@@ -122,7 +122,7 @@
   </xacro:if>
 
   <!-- Compatibility check within TC and ft sensors-->
-  <xacro:if value="${ft_sensor_right == 'ati' and wrist_model_right=='straight-wrist'}">
+  <!-- <xacro:if value="${ft_sensor_right == 'ati' and wrist_model_right=='straight-wrist'}">
     <xacro:error_ati_not_compatible_with_straight_wrist />
   </xacro:if>
   <xacro:if value="${ft_sensor_left == 'ati' and wrist_model_left=='straight-wrist'}">
@@ -151,7 +151,7 @@
   </xacro:if>
   <xacro:if value="${not tool_changer_right and ft_sensor_right == 'ati'}">
     <xacro:error_ati_always_comes_with_tc />
-  </xacro:if>
+  </xacro:if> -->
 
   <!-- INCLUDES -->
 
