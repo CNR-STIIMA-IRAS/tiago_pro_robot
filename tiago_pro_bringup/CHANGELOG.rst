@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* New launch args
+* Support for removable tray
+* Contributors: oscarmartinez
+
 1.7.0 (2024-09-12)
 ------------------
 

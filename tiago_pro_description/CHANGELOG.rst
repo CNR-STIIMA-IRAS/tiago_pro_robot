@@ -2,6 +2,22 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Tests passing
+* Std gripper orientation
+* Suggested changes
+* Support for multiple FT sensors at the same time
+* Added wrist_model and tool_changer args
+* Removing repeated arm
+* Support for removable tray
+* Added head
+* Added torso
+* Support for new old arm naming
+* added frames for sellion and eyes
+* Invert head 2 joint direction
+* Contributors: David ter Kuile, ferrangebelli, oscarmartinez
+
 1.7.0 (2024-09-12)
 ------------------
 * Disable ros2_control_tiago_pro_system_ethercat if no arms
