@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/limit_update' into 'humble-devel'
+  Update pal_sea_arm to add the joint reflect + update the home motion
+  See merge request robots/tiago_pro_robot!74
+* Update pal_sea_arm to add the joint reflect + update the home motion
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 1.8.0 (2024-09-19)
 ------------------
 * New launch args
