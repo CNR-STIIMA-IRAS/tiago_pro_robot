@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/fix_wrist' into 'humble-devel'
+  update motions with new wrist
+  See merge request robots/tiago_pro_robot!75
+* update motions with new wrist
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 1.8.1 (2024-09-27)
 ------------------
 * Merge branch 'tpe/limit_update' into 'humble-devel'
