@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Revert to previous home motion
+* Contributors: thomas.peyrucain
+
 1.8.2 (2024-10-02)
 ------------------
 * Merge branch 'tpe/fix_wrist' into 'humble-devel'

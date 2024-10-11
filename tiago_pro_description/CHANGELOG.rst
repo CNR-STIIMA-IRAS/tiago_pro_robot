@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add reflect on the 5th joint
+* Contributors: thomas.peyrucain
+
 1.8.2 (2024-10-02)
 ------------------
 
