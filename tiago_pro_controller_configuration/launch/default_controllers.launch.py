@@ -17,7 +17,7 @@ from typing import List
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import GroupAction
-from launch.conditions import LaunchConfigurationNotEquals, IfCondition
+from launch.conditions import LaunchConfigurationNotEquals, IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from controller_manager.launch_utils import generate_load_controller_launch_description
@@ -104,6 +104,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     gravity_compensation_controller = include_scoped_launch_py_description(
         pkg_name="tiago_pro_controller_configuration",
         paths=["launch", "gravity_compensation_controller.launch.py"],
+        condition=UnlessCondition(LaunchConfiguration("is_public_sim"))
     )
 
     launch_description.add_action(gravity_compensation_controller)
