@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.10.0 (2024-10-21)
+-------------------
 * load gravity as default controller (only params)
 * Contributors: ileniaperrella
 

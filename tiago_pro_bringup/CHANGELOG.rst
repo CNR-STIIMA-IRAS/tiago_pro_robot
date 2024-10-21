@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.10.0 (2024-10-21)
+-------------------
 * Add new home to arm right and left
 * change home motion as boxing
 * Contributors: Aina
