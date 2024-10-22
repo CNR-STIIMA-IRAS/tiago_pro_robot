@@ -11,8 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import rclpy
 
 from ament_index_python.packages import get_package_share_directory
+from rclpy.logging import get_logger
 from launch import LaunchDescription
 from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
 from launch.actions import DeclareLaunchArgument, SetLaunchConfiguration, OpaqueFunction
@@ -34,7 +36,8 @@ class LaunchArguments(LaunchArgumentsBase):
     arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
     end_effector_right: DeclareLaunchArgument = TiagoProArgs.end_effector_right
     end_effector_left: DeclareLaunchArgument = TiagoProArgs.end_effector_left
-
+    wrist_model_right: DeclareLaunchArgument = TiagoProArgs.wrist_model_right
+    wrist_model_left: DeclareLaunchArgument = TiagoProArgs.wrist_model_left
     use_sim_time:  DeclareLaunchArgument = CommonArgs.use_sim_time
 
 
@@ -63,6 +66,8 @@ def create_play_motion_filename(context):
     ee_right = read_launch_argument('end_effector_right', context)
     arm_left = read_launch_argument('arm_type_left', context)
     ee_left = read_launch_argument('end_effector_left', context)
+    wrist_model_right = read_launch_argument('wrist_model_right', context)
+    wrist_model_left = read_launch_argument('wrist_model_left', context)
 
     hw_suffix = get_tiago_pro_hw_suffix(
         arm_right=arm_right,
@@ -75,9 +80,12 @@ def create_play_motion_filename(context):
     ee_motions = []
     motions_folder = os.path.join(pkg_share_dir, 'config', 'motions')
     base_motions_file = 'tiago_pro_motions_no_arms.yaml'
+
+    if wrist_model_right != wrist_model_left:
+        get_logger("play_motion2").error("Wrist models must be the same for both arms")
     # both arms
-    if arm_right != 'no-arm' and arm_left != 'no-arm':
-        base_motions_file = 'tiago_pro_motions_general.yaml'
+    elif arm_right != 'no-arm' and arm_left != 'no-arm':
+        base_motions_file = 'tiago_pro_motions_general_'+wrist_model_right+'.yaml'
     # right arm only
     elif arm_right != 'no-arm' and arm_left == 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_arm_right.yaml'
@@ -106,7 +114,7 @@ def create_play_motion_filename(context):
 
 
 def generate_launch_description():
-
+    rclpy.init()
     # Create the launch description
     ld = LaunchDescription()
 

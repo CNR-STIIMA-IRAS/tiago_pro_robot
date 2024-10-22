@@ -201,7 +201,7 @@
   <xacro:tiago_pro_torso name="torso" parent="base_link" has_tray="${has_laptop_tray}"/>
 
   <!-- Head -->
-  <xacro:tiago_pro_head name="head" parent="torso_lift_link"/>
+  <xacro:tiago_pro_head name="head" parent="torso_head_link"/>
 
   <!-- Left arm -->
   <xacro:if value="${has_arm_left}">
