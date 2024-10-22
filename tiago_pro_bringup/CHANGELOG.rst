@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/fix_head' into 'humble-devel'
+  Tpe/fix head
+  See merge request robots/tiago_pro_robot!81
+* Add boxing and fix home
+* Update torso up and down and the specific motions for each arm
+* Add 2 different files for motions depending on the writst
+* Contributors: Aina, thomaspeyrucain
+
 1.10.0 (2024-10-21)
 -------------------
 * Add new home to arm right and left

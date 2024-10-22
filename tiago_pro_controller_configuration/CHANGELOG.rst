@@ -2,6 +2,18 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/gravity-spawn' into 'humble-devel'
+  Use Unless condition on the load of gravity compensation
+  See merge request robots/tiago_pro_robot!78
+* Use Unless condition on the load of gravity compensation
+* Merge branch 'air/feat/arm_controllers' into 'humble-devel'
+  Change back the arm controllers into the default controllers
+  See merge request robots/tiago_pro_robot!79
+* Change back the arm controllers into the default controllers
+* Contributors: Aina, ileniaperrella, thomaspeyrucain
+
 1.10.0 (2024-10-21)
 -------------------
 * load gravity as default controller (only params)

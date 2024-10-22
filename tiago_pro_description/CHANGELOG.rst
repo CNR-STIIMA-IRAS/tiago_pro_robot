@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/fix_head' into 'humble-devel'
+  Tpe/fix head
+  See merge request robots/tiago_pro_robot!81
+* Fix head position
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 1.10.0 (2024-10-21)
 -------------------
 
