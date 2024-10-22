@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.10.1 (2024-10-22)
+-------------------
 * Merge branch 'fix/gravity-spawn' into 'humble-devel'
   Use Unless condition on the load of gravity compensation
   See merge request robots/tiago_pro_robot!78
