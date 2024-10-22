@@ -1,27 +1,16 @@
 /play_motion2:
   ros__parameters:
-    motions:
-      home_relax:
-        joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
-        times_from_start: [0.0, 3.0, 4.5]
-        positions: [0.17202, -1.8614, -1.6008, -0.34892, -1.9818, 0.10153, -1.5829, -1.57,
-                    0.1761, -0.26, -1.6008, -0.3489, -1.9818, -0.0, -1.5829, -1.57,
-                    0.095, -0.26, -1.6007, -0.33665, -2.0819, -0.0, -1.6272, -1.7218]
-        meta:
-          name: home_relax
-          usage: demo
-          description: home_relax
-
-      home:
+    motions:                           
+      home_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 5.0, 10.0]
-        positions: [0.17202, -1.8614, -1.6008, -0.34892, -1.9818, 0.10153, -1.5829, -1.57,
-                    0.1761, -0.26, -1.6008, -0.3489, -1.9818, -0.0, -1.5829, -1.57,
-                    0.1, -0.36, -1.83, -0.47, -2.35, -0.0, -1.6272, -1.7218]
+        positions: [0.17202, -1.8614, -1.6008, -0.34892, -1.9818, 0.10153, -1.5829, 0.0,
+                    0.1761, -0.26, -1.6008, -0.3489, -1.9818, -0.0, -1.5829, 0.0,
+                    0.1, -0.36, -1.83, -0.47, -2.35, -0.0, -1.5569, 0.0]
         meta:
-          name: home
+          name: home_right
           usage: demo
-          description: home   
+          description: home_right
 
       wave_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
@@ -36,7 +25,7 @@
         meta:
           name: wave_right
           usage: demo
-          description: wave_right    
+          description: wave_right
 
       wave_with_torso:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
@@ -51,8 +40,8 @@
         meta:
           name: wave_with_torso
           usage: demo
-          description: wave_with_torso   
-        
+          description: wave_with_torso  
+
       offer_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0]
@@ -60,8 +49,8 @@
         meta:
           name: offer_right
           usage: demo
-          description: offer_right  
-              
+          description: offer_right
+
       shake_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 1.0, 2.5, 4.0, 5.5, 7.0]
@@ -74,18 +63,42 @@
         meta:
           name: shake_right
           usage: demo
-          description: shake_right     
+          description: shake_right
 
-      tiago_dancing:
-        joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_2_joint, head_1_joint]
-        times_from_start: [0.0, 5.0, 10.0, 15.0, 20.0, 25.0]
-        positions: [0.09, -0.18048, -1.6015, -0.33339, -2.0637, -0.10264, -1.5525, -1.86, -0.00023861, 1.8879e-05,
-                    0.29223, -0.18048, -1.6015, -0.33339, -2.0637, -0.10264, -1.5525, -1.86, -0.00023893, 1.8906e-05,
-                    0.28861, -0.37, -0.74716, 0.17337, -1.7752, -1.2917, -1.5175, -1.86, -0.00023693, 1.8277e-05,
-                    0.28861, -0.37017, -0.75455, 0.09389, -1.755, -1.312, -1.575, -1.86, -0.00023878, 1.8622e-05,
-                    0.2727, -0.38271, 0.8559, 0.049625, -1.3919, -1.4486, -1.3639, -1.56, -0.0002388, 1.8683e-05,
-                    0.09, -0.18048, -1.6015, -0.33339, -2.0637, -0.10264, -1.5525, -1.86, -0.00023861, 1.8879e-05]
+      horizontal_right:
+          joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+          positions: [0.23, -0.7167, -1.83, -0.1158, -2.35, -0.0, -1.2, 0.0,
+            0.23, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0, 
+            0.23, -1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0,]
+          times_from_start: [0.0, 3.0, 8.0]
+          meta:
+            name: Horizontal Right
+            usage: Demo
+            description: horizontal right
+
+      reach_floor_right:
+        joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_1_joint, head_2_joint]
+        positions: [0.25, -0.36, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0,  -0.7, 0.0,
+                    0.25, -0.36, -0.73997, 0.3, -0.26, 0.43571, -0.1, 0.0, 0.0, 0.0]
+        times_from_start: [0.0, 5.0]
         meta:
-          name: tiago_dancing
-          usage: demo
-          description: tiago_dancing
+          name: Reach Floor Right
+          usage: Demo
+          description: reach floor right
+
+      torso_up:
+        joints: [torso_lift_joint]
+        positions: [0.35]
+        times_from_start: [5.0]
+        meta:
+          name: Torso Up
+          usage: Demo
+          description: torso up
+      torso_down:
+        joints: [torso_lift_joint]
+        positions: [0.0]
+        times_from_start: [0.0]
+        meta:
+          name: Torso Down
+          usage: Demo
+          description: torso down

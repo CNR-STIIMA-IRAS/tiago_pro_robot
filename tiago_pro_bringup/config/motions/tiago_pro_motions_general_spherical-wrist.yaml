@@ -229,7 +229,7 @@
 
       torso_up:
         joints: [torso_lift_joint]
-        positions: [0.32]
+        positions: [0.35]
         times_from_start: [5.0]
         meta:
           name: Torso Up
@@ -237,7 +237,7 @@
           description: torso up
       torso_down:
         joints: [torso_lift_joint]
-        positions: [0.01]
+        positions: [0.0]
         times_from_start: [0.0]
         meta:
           name: Torso Down
