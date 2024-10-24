@@ -19,7 +19,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--Constant parameters-->
-  <xacro:property name="torso_max_vel" value="0.07" />
+  <xacro:property name="torso_max_vel" value="0.035" />
   <xacro:property name="torso_eps" value="0.02" />
 
   <xacro:macro name="tiago_pro_torso" params="name parent has_tray">
@@ -141,10 +141,10 @@
       <parent link="${name}_base_link" />
       <child link="${name}_lift_link" />
       <axis xyz="0 0 1" />
-      <limit effort="2000" lower="0" upper="0.35" velocity="${torso_max_vel}" />
+      <limit effort="2000" lower="0" upper="0.33" velocity="${torso_max_vel}" />
       <calibration rising="0.0" />
       <dynamics damping="1000" />
-      <safety_controller k_position="20" k_velocity="20" soft_lower_limit="0.0" soft_upper_limit="0.35" />
+      <safety_controller k_position="20" k_velocity="20" soft_lower_limit="0.0" soft_upper_limit="0.33" />
     </joint>
 
     <gazebo reference="${name}_lift_joint">
