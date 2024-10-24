@@ -54,17 +54,19 @@
           name: Reach Floor Left
           usage: Demo
           description: reach floor left
+
       torso_up:
         joints: [torso_lift_joint]
-        positions: [0.35]
+        positions: [0.33]
         times_from_start: [5.0]
         meta:
           name: Torso Up
           usage: Demo
           description: torso up
+
       torso_down:
         joints: [torso_lift_joint]
-        positions: [0.0]
+        positions: [0.02]
         times_from_start: [0.0]
         meta:
           name: Torso Down
