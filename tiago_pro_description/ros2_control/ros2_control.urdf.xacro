@@ -151,8 +151,6 @@ s
         <!-- IMU -->
         <!-- <xacro:ros2_control_imu name="base_imu_sensor"/> -->
 
-        <!-- torso -->
-        <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
       </ros2_control>
 
       <!-- Dynamixels system -->
@@ -177,6 +175,8 @@ s
 
           <!-- arms -->
           <xacro:ros2_control_arms/>
+          <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
+
         </ros2_control>
       </xacro:if>
 
