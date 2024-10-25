@@ -11,75 +11,72 @@ gravity_compensation_controller:
 
     parameters:
       arm_right_1_joint:
-        motor_torque_constant: -0.05
-        reduction_ratio: 101.0
+        motor_torque_constant: -0.103
+        reduction_ratio: 121.0
         static_friction: 0.05
         viscous_friction: 0.05
       arm_right_2_joint:
-        motor_torque_constant: -0.04
+        motor_torque_constant: -0.103
         reduction_ratio: 121.0
-        static_friction: -1.0 
+        static_friction: -1.0
         viscous_friction: 0.05
       arm_right_3_joint:
-        motor_torque_constant: -0.03
+        motor_torque_constant: -0.06
         reduction_ratio: 101.0
         static_friction: 0.05
-        viscous_friction: 0.05        
+        viscous_friction: 0.05
       arm_right_4_joint:
-        motor_torque_constant: -0.03
-        reduction_ratio: 101.0
-        static_friction: -1.0
-        viscous_friction: 0.05        
-      arm_right_5_joint:
-        motor_torque_constant: 0.05
-        reduction_ratio: 101.0
-        static_friction: 0.0
-        viscous_friction: 0.0
-      arm_right_6_joint:
-        motor_torque_constant: -0.02
-        reduction_ratio: 101.0
-        static_friction: -0.05
-        viscous_friction: 0.0        
-      arm_right_7_joint:
-        motor_torque_constant: 0.103
+        motor_torque_constant: -0.06
         reduction_ratio: 101.0
         static_friction: 0.05
-        viscous_friction: 0.05        
+        viscous_friction: 0.05
+      arm_right_5_joint:
+        motor_torque_constant: -1.0
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
+      arm_right_6_joint:
+        motor_torque_constant: -0.06
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
+      arm_right_7_joint:
+        motor_torque_constant: -0.06
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
       arm_left_1_joint:
         motor_torque_constant: -0.103
-        reduction_ratio: 101.0
+        reduction_ratio: 121.0
         static_friction: 0.05
         viscous_friction: 0.05
       arm_left_2_joint:
-        motor_torque_constant: -0.081
+        motor_torque_constant: -0.103
         reduction_ratio: 121.0
-        static_friction: -1.5
+        static_friction: -1.0
         viscous_friction: 0.05
       arm_left_3_joint:
-        motor_torque_constant: -0.042
-        reduction_ratio: 101.0
-        static_friction: 0.05
-        viscous_friction: 0.05        
-      arm_left_4_joint:
-        motor_torque_constant: -0.03
-        reduction_ratio: 101.0
-        static_friction: 0.05
-        viscous_friction: 0.05        
-      arm_left_5_joint:
-        motor_torque_constant: -1.2
-        reduction_ratio: 101.0
-        static_friction: 0.0
-        viscous_friction: 0.0        
-      arm_left_6_joint:
-        motor_torque_constant: -0.03
-        reduction_ratio: 101.0
-        static_friction: 0.0
-        viscous_friction: 0.0        
-      arm_left_7_joint:
-        motor_torque_constant: 0.103
+        motor_torque_constant: -0.06
         reduction_ratio: 101.0
         static_friction: 0.05
         viscous_friction: 0.05
-
-
-     
+      arm_left_4_joint:
+        motor_torque_constant: -0.06
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
+      arm_left_5_joint:
+        motor_torque_constant: -0.06
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
+      arm_left_6_joint:
+        motor_torque_constant: -0.06
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
+      arm_left_7_joint:
+        motor_torque_constant: -0.06
+        reduction_ratio: 101.0
+        static_friction: 0.05
+        viscous_friction: 0.05
