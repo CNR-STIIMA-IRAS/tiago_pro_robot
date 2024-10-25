@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.11.0 (2024-10-25)
+-------------------
 * delete CAN ros2_control for torso_lift
 * Add xacro tests
 * Contributors: Aina, ileniaperrella
