@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix typo
+* update params for gravity compensation
+* delete wrong joint impedance controller
+* open loop arg set as true
+* add dependency for omni_base_controller_configuration
+* Contributors: ileniaperrella
+
 1.10.1 (2024-10-22)
 -------------------
 * Merge branch 'fix/gravity-spawn' into 'humble-devel'

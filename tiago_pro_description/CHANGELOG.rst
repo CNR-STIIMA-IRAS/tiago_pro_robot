@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* delete CAN ros2_control for torso_lift
+* Add xacro tests
+* Contributors: Aina, ileniaperrella
+
 1.10.1 (2024-10-22)
 -------------------
 * Merge branch 'tpe/fix_head' into 'humble-devel'
