@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'vmo/inertias' into 'humble-devel'
+  Modifying inertia of torso
+  See merge request robots/tiago_pro_robot!86
+* Modifying inertia of torso
+* Contributors: thomaspeyrucain, vivianamorlando
+
 1.12.0 (2024-10-28)
 -------------------
 * Put back safety controller for the torso + change motions
