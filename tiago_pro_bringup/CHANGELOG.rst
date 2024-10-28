@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Put back safety controller for the torso + change motions
+* Contributors: thomas.peyrucain
+
 1.11.0 (2024-10-25)
 -------------------
 
