@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Set update_rate for joint_state_broadcaster
+* Contributors: Noel Jimenez
+
 1.12.1 (2024-10-28)
 -------------------
 

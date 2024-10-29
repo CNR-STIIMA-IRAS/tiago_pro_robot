@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.12.1 (2024-10-28)
 -------------------
 * Merge branch 'vmo/inertias' into 'humble-devel'
