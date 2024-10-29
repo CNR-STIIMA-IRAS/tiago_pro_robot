@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add wrist models to play_motion2 module
+* Contributors: Noel Jimenez
+
 1.13.0 (2024-10-29)
 -------------------
 

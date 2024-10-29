@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add gravity compensation dependency
+* Contributors: ileniaperrella
+
 1.13.0 (2024-10-29)
 -------------------
 * Set update_rate for joint_state_broadcaster
