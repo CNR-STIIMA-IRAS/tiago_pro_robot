@@ -2,6 +2,15 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'air/fix/motions' into 'humble-devel'
+  Fix home motion for straight wrist
+  See merge request robots/tiago_pro_robot!90
+* Add head joints
+* Fix home motion for straight wrist
+* Contributors: Aina, thomaspeyrucain
+
 1.14.0 (2024-10-29)
 -------------------
 * Add wrist models to play_motion2 module
