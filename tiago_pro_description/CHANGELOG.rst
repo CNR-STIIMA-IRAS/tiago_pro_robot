@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.14.2 (2024-11-06)
+-------------------
 * set rw rate less than 200 to avoid spam and ros2control errors
 * Contributors: ileniaperrella
 
