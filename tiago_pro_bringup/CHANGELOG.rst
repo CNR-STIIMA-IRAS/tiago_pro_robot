@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Disable torso control with joystick
+* Contributors: David ter Kuile
+
 1.14.1 (2024-10-30)
 -------------------
 * Merge branch 'air/fix/motions' into 'humble-devel'
