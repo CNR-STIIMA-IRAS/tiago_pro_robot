@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update motor torque constant for pal-pro-gripper (temporary)
+* Contributors: ileniaperrella
+
 1.14.2 (2024-11-06)
 -------------------
 

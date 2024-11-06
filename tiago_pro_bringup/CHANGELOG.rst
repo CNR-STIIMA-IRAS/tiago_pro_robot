@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fixing pipeline
+* Adding safe command to joystick
+* Contributors: vivianamorlando
+
 1.14.2 (2024-11-06)
 -------------------
 * Disable torso control with joystick
