@@ -56,22 +56,6 @@
       action_name: joy_turbo_reset
       buttons: [10, 11]
 
-    torso_up:
-      type: action
-      interface_type: teleop_tools_msgs/action/Increment
-      action_name: /torso_controller/increment
-      action_goal:
-        increment_by: [0.05]
-      buttons: [4] # right pad, top button
-
-    torso_down:
-      type: action
-      interface_type: teleop_tools_msgs/action/Increment
-      action_name: /torso_controller/increment
-      action_goal:
-        increment_by: [-0.05]
-      buttons: [6] # right pad, bottom button
-
     head_down:
       type: action
       interface_type: teleop_tools_msgs/action/Increment
