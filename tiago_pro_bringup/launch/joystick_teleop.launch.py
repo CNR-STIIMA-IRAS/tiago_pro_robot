@@ -97,7 +97,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         namespace='torso_controller',
         remappings=[('joint_trajectory', 'safe_command')])
 
-
     launch_description.add_action(torso_incrementer_server)
 
     head_incrementer_server = Node(

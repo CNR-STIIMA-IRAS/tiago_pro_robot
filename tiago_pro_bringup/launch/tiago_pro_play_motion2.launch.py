@@ -82,7 +82,8 @@ def create_play_motion_filename(context):
     base_motions_file = 'tiago_pro_motions_no_arms.yaml'
 
     if wrist_model_right != wrist_model_left:
-        get_logger("play_motion2").error("Wrist models must be the same for both arms")
+        get_logger("play_motion2").error(
+            "Wrist models must be the same for both arms")
     # both arms
     elif arm_right != 'no-arm' and arm_left != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_'+wrist_model_right+'.yaml'
