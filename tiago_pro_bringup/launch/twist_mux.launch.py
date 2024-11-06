@@ -37,7 +37,8 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         pkg_dir, 'config', 'twist_mux', 'twist_mux_locks.yaml')
     config_topics_file = os.path.join(
         pkg_dir, 'config', 'twist_mux', 'twist_mux_topics.yaml')
-    joystick_file = os.path.join(pkg_dir, 'config', 'twist_mux', 'joystick.yaml')
+    joystick_file = os.path.join(
+        pkg_dir, 'config', 'twist_mux', 'joystick.yaml')
 
     twist_mux = include_scoped_launch_py_description(
         pkg_name='twist_mux', paths=['launch', 'twist_mux_launch.py'],
