@@ -154,7 +154,7 @@ s
       </ros2_control>
 
       <!-- Dynamixels system -->
-      <ros2_control name="ros2_control_tiago_pro_system_dynamixel" type="system" rw_rate="200">
+      <ros2_control name="ros2_control_tiago_pro_system_dynamixel" type="system" rw_rate="100">
         <hardware>
           <plugin>robot_control/RobotControl</plugin>
           <param name="group">dynamixel</param>
