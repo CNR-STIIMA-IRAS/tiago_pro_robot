@@ -93,7 +93,7 @@
     <xacro:include filename="$(find omni_base_description)/urdf/wheels/wheel.ros2_control.xacro" />
 
     <xacro:include filename="$(find tiago_pro_description)/urdf/torso/torso.ros2_control.xacro" />
-    <xacro:include filename="$(find tiago_pro_description)/urdf/head/head.ros2_control.xacro" />
+    <xacro:include filename="$(find tiago_pro_head_description)/urdf/head.ros2_control.xacro" />
     <xacro:include filename="$(find pal_sea_arm_description)/urdf/arm/arm.ros2_control.xacro" />
 
     <xacro:if value="${end_effector_left == 'pal-pro-gripper' or end_effector_right == 'pal-pro-gripper'}">
