@@ -127,8 +127,7 @@
         <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
 
         <!-- head -->
-        <xacro:ros2_control_head name="head_1" reduction="1.0" offset_value="${head_1_joint_offset}" />
-        <xacro:ros2_control_head name="head_2" reduction="1.0" offset_value="${head_2_joint_offset}" />
+        <xacro:ros2_control_head />
 
         <!-- arms -->
         <xacro:ros2_control_arms/>
@@ -159,9 +158,9 @@
           <param name="group">dynamixel</param>
         </hardware>
 
-        <!-- head -->
-        <xacro:ros2_control_head name="head_1" reduction="1.0" offset_value="${head_1_joint_offset}" />
-        <xacro:ros2_control_head name="head_2" reduction="1.0" offset_value="${head_2_joint_offset}" />
+        <!-- head -->        
+        <xacro:ros2_control_head />
+
       </ros2_control>
 
       <!-- Ethercat system -->
