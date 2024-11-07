@@ -56,7 +56,6 @@
       <xacro:if value="${has_ft_sensor_right}">
         <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor/sensor.ros2_control.xacro"/>
         <xacro:ros2_control_force_torque_sensor name="wrist_right_ft_sensor"/>
-s
       </xacro:if>
 
       <xacro:if value="${end_effector_right == 'pal-pro-gripper'}">
