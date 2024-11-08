@@ -77,16 +77,11 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     launch_description.add_action(torso_controller)
 
     # Head controller
-    head_controller = GroupAction(
-        [generate_load_controller_launch_description(
-            controller_name='head_controller',
-            controller_params_file=os.path.join(
-                pkg_share_folder,
-                'config', 'head_controller.yaml'))
-         ],
-        forwarding=False)
+    head_controller = include_scoped_launch_py_description(
+        pkg_name="tiago_pro_head_controller_configuration",
+        paths=["launch", "default_controllers.launch.py"])
 
-    launch_description.add_action(head_controller)
+    # launch_description.add_action(head_controller)
 
     # IMU sensor broadcaster
     imu_sensor_broadcaster = GroupAction(
