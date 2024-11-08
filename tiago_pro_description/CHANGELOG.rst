@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.16.0 (2024-11-08)
+-------------------
 * Remove mistake on ros2_control xacro
 * Contributors: Aina Irisarri
 

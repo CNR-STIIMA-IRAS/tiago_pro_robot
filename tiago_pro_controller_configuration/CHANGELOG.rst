@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.16.0 (2024-11-08)
+-------------------
 * Remove unused arm config files
   Config files are taken from pal_sea_arm on its launcher
 * Contributors: Noel Jimenez
