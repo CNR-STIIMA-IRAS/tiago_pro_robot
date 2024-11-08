@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.15.0 (2024-11-06)
 -------------------
 * Fixing pipeline

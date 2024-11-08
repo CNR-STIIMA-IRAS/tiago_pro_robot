@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove unused arm config files
+  Config files are taken from pal_sea_arm on its launcher
+* Contributors: Noel Jimenez
+
 1.15.0 (2024-11-06)
 -------------------
 * update motor torque constant for pal-pro-gripper (temporary)
