@@ -41,6 +41,7 @@ class LaunchArguments(LaunchArgumentsBase):
     ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
     wrist_model_right: DeclareLaunchArgument = TiagoProArgs.wrist_model_right
     wrist_model_left: DeclareLaunchArgument = TiagoProArgs.wrist_model_left
+    camera_model: DeclareLaunchArgument = TiagoProArgs.camera_model
     laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
     has_laptop_tray: DeclareLaunchArgument = TiagoProArgs.has_laptop_tray
     tool_changer_right: DeclareLaunchArgument = TiagoProArgs.tool_changer_right
@@ -82,6 +83,7 @@ def create_robot_description_param(context, *args, **kwargs):
         'ft_sensor_left': read_launch_argument('ft_sensor_left', context),
         'wrist_model_right': read_launch_argument('wrist_model_right', context),
         'wrist_model_left': read_launch_argument('wrist_model_left', context),
+        'camera_model': read_launch_argument('camera_model', context),
         'laser_model': read_launch_argument('laser_model', context),
         'has_laptop_tray': read_launch_argument('has_laptop_tray', context),
         'tool_changer_right': read_launch_argument('tool_changer_right', context),

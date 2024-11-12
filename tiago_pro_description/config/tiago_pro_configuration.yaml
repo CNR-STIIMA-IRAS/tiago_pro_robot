@@ -6,6 +6,10 @@ arm_type_left:
   description: 'Arm type left'
   choices: ['tiago-pro', 'no-arm']
   default_value: 'tiago-pro'
+camera_model:
+  description: 'Head camera model'
+  choices: ['realsense-d435']
+  default_value: 'realsense-d435'
 wrist_model_right:
   description: 'Wrist model right'
   choices: ['spherical-wrist', 'straight-wrist']

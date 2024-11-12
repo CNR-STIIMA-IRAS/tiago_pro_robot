@@ -39,6 +39,7 @@ class LaunchArguments(LaunchArgumentsBase):
     ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
     wrist_model_right: DeclareLaunchArgument = TiagoProArgs.wrist_model_right
     wrist_model_left: DeclareLaunchArgument = TiagoProArgs.wrist_model_left
+    camera_model: DeclareLaunchArgument = TiagoProArgs.camera_model
     laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
     has_laptop_tray: DeclareLaunchArgument = TiagoProArgs.has_laptop_tray
     tool_changer_right: DeclareLaunchArgument = TiagoProArgs.tool_changer_right
@@ -61,6 +62,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "wrist_model_right": launch_args.wrist_model_right,
                           "wrist_model_left": launch_args.wrist_model_left,
                           "laser_model": launch_args.laser_model,
+                          "camera_model": launch_args.camera_model,
                           "base_type": launch_args.base_type,
                           'has_laptop_tray': launch_args.has_laptop_tray,
                           'tool_changer_right': launch_args.tool_changer_right,

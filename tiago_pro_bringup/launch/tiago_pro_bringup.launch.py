@@ -37,6 +37,7 @@ class LaunchArguments(LaunchArgumentsBase):
     wrist_model_left: DeclareLaunchArgument = TiagoProArgs.wrist_model_left
     tool_changer_right: DeclareLaunchArgument = TiagoProArgs.tool_changer_right
     tool_changer_left: DeclareLaunchArgument = TiagoProArgs.tool_changer_left
+    camera_model: DeclareLaunchArgument = TiagoProArgs.camera_model
     laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
     has_laptop_tray: DeclareLaunchArgument = TiagoProArgs.has_laptop_tray
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
@@ -65,6 +66,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         paths=['launch', 'tiago_pro_play_motion2.launch.py'],
         launch_arguments={"arm_type_right": launch_args.arm_type_right,
                           "arm_type_left": launch_args.arm_type_left,
+                          "camera_model": launch_args.camera_model,
                           "end_effector_right": launch_args.end_effector_right,
                           "end_effector_left": launch_args.end_effector_left,
                           "wrist_model_right": launch_args.wrist_model_right,
@@ -95,6 +97,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "tool_changer_right": launch_args.tool_changer_right,
                           "tool_changer_left": launch_args.tool_changer_left,
                           "laser_model": launch_args.laser_model,
+                          "camera_model": launch_args.camera_model,
                           "base_type": launch_args.base_type,
                           "has_laptop_tray": launch_args.has_laptop_tray,
                           "namespace": launch_args.namespace,

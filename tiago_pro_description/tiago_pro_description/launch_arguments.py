@@ -39,5 +39,6 @@ class TiagoProArgs:
     end_effector_left: DLA = __arg_creator.get_argument("end_effector_left")
     ft_sensor_right: DLA = __arg_creator.get_argument("ft_sensor_right")
     ft_sensor_left: DLA = __arg_creator.get_argument("ft_sensor_left")
+    camera_model: DLA = __arg_creator.get_argument("camera_model")
     laser_model: DLA = __arg_creator.get_argument("laser_model")
     has_laptop_tray: DLA = __arg_creator.get_argument("has_laptop_tray")
