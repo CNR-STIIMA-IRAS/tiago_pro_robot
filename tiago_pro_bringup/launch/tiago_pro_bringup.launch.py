@@ -66,7 +66,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         paths=['launch', 'tiago_pro_play_motion2.launch.py'],
         launch_arguments={"arm_type_right": launch_args.arm_type_right,
                           "arm_type_left": launch_args.arm_type_left,
-                          "camera_model": launch_args.camera_model,
                           "end_effector_right": launch_args.end_effector_right,
                           "end_effector_left": launch_args.end_effector_left,
                           "wrist_model_right": launch_args.wrist_model_right,
