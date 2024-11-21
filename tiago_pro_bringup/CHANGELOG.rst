@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.17.0 (2024-11-21)
+-------------------
 * Apply elif condition
 * Fix enter between planning_groups & exclude_from_planning_joints
 * Remove unneeded planning groups
