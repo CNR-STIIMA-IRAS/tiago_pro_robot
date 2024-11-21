@@ -12,9 +12,9 @@
 @[if has_arm_right and not has_arm_left]@
         - arm_right_torso
 @[end if]@
-@[if not has_arm_left and not has_arm_right]
+@[if not has_arm_left and not has_arm_right]@
         - torso
-@[end if]
+@[end if]@
       exclude_from_planning_joints:
         - head_1_joint
         - head_2_joint
