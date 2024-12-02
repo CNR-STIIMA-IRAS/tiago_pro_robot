@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add head controller
+* Change head controller path
+* Contributors: Aina
+
 1.17.0 (2024-11-21)
 -------------------
 

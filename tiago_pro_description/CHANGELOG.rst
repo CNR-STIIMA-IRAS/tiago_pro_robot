@@ -2,6 +2,18 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove camera model as parameter for pm2 launch file
+* Add camera model as parameter to check in head urdf
+* Keep camera in tiago pro
+* Rebase on head fixes
+* Fix ros2 control macro for tiago_head
+* Remove camera model arg from tiago_pro_robot
+* Remove camera model and add tiago_pro_head dependency
+* Change head meshes to tiago_pro_head package
+* Contributors: Aina
+
 1.17.0 (2024-11-21)
 -------------------
 

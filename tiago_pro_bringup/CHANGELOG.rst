@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add head motions
+* Add prefix to pm2 module
+* Remove camera model as parameter for pm2 launch file
+* Keep camera in tiago pro
+* Remove camera model as arg
+* Change head controller path
+* Contributors: Aina
+
 1.17.0 (2024-11-21)
 -------------------
 * Apply elif condition
