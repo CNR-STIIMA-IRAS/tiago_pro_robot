@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.18.0 (2024-12-02)
+-------------------
 * Remove camera model as parameter for pm2 launch file
 * Add camera model as parameter to check in head urdf
 * Keep camera in tiago pro

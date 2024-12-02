@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.18.0 (2024-12-02)
+-------------------
 * Add head motions
 * Add prefix to pm2 module
 * Remove camera model as parameter for pm2 launch file
