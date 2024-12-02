@@ -98,11 +98,16 @@ def create_play_motion_filename(context):
         ee_motions.append(f"tiago_pro_motions_{ee_left}_left.yaml")
     if ee_right != 'no-end-effector' and arm_right != 'no-arm':
         ee_motions.append(f"tiago_pro_motions_{ee_right}_right.yaml")
+    head_pkg = get_package_share_directory('tiago_pro_head_bringup')
+
+    head_motions = [os.path.join(head_pkg, 'config', 'motions',
+                                 'head_motions.yaml')]
 
     motion_files = [base_motions_file]
     motion_files.extend(ee_motions)
 
     motion_yamls = [os.path.join(motions_folder, f) for f in motion_files]
+    motion_yamls.extend(head_motions)
     combined_yaml = merge_param_files(motion_yamls)
 
     motion_planner_file = f"motion_planner{hw_suffix}.yaml"
