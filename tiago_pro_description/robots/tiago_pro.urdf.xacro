@@ -52,6 +52,9 @@
   <!-- no-ft-sensor, rokubi -->
   <xacro:arg name="ft_sensor_right" default="no-ft-sensor" />
 
+  <!-- realsense-d435 -->
+  <xacro:arg name="camera_model" default="realsense-d435" />
+
   <!-- False, True -->
   <xacro:arg name="has_laptop_tray" default="False" />
 
@@ -83,6 +86,7 @@
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
   <xacro:property name="has_laptop_tray" value="$(arg has_laptop_tray)" />
+  <xacro:property name="camera_model" value="$(arg camera_model)" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
   <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
 
@@ -184,7 +188,7 @@
   </xacro:if>
 
   <!-- Head -->
-  <xacro:include filename="$(find tiago_pro_description)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find tiago_pro_head_description)/urdf/head.urdf.xacro" />
 
   <!-- Materials for visualization -->
   <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
@@ -201,7 +205,7 @@
   <xacro:tiago_pro_torso name="torso" parent="base_link" has_tray="${has_laptop_tray}"/>
 
   <!-- Head -->
-  <xacro:tiago_pro_head name="head" parent="torso_head_link"/>
+  <xacro:tiago_pro_head name="head" parent="torso_head_link" camera_model="$(arg camera_model)"/>
 
   <!-- Left arm -->
   <xacro:if value="${has_arm_left}">

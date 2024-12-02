@@ -45,12 +45,16 @@ gripper_args = (
     TiagoProArgs.end_effector_left,
 )
 
-test_xacro_base = define_xacro_test(xacro_file_path, arm_args, TiagoProArgs.base_type)
-test_xacro_laser = define_xacro_test(xacro_file_path, arm_args, TiagoProArgs.laser_model)
-test_xacro_camera = define_xacro_test(xacro_file_path, arm_args, TiagoProArgs.camera_model)
+test_xacro_base = define_xacro_test(
+    xacro_file_path, arm_args, TiagoProArgs.base_type)
+test_xacro_laser = define_xacro_test(
+    xacro_file_path, arm_args, TiagoProArgs.laser_model)
 test_xacro_ee = define_xacro_test(xacro_file_path, arm_args, gripper_args)
-test_xacro_ee = define_xacro_test(xacro_file_path, TiagoProArgs.arm_type_left, wrist_args_left)
-test_xacro_ee = define_xacro_test(xacro_file_path, TiagoProArgs.arm_type_right, wrist_args_right)
-test_xacro_ee = define_xacro_test(xacro_file_path, TiagoProArgs.end_effector_left, wrist_args_left)
+test_xacro_ee = define_xacro_test(
+    xacro_file_path, TiagoProArgs.arm_type_left, wrist_args_left)
+test_xacro_ee = define_xacro_test(
+    xacro_file_path, TiagoProArgs.arm_type_right, wrist_args_right)
+test_xacro_ee = define_xacro_test(
+    xacro_file_path, TiagoProArgs.end_effector_left, wrist_args_left)
 test_xacro_ee = define_xacro_test(
     xacro_file_path, TiagoProArgs.end_effector_right, wrist_args_right)
