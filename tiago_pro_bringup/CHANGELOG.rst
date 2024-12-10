@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove safety-eps form torso and update boxing motion
+* Contributors: David ter Kuile
+
 1.18.0 (2024-12-02)
 -------------------
 * Add head motions
