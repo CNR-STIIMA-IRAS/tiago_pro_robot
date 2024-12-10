@@ -20,7 +20,7 @@
 
   <!--Constant parameters-->
   <xacro:property name="torso_max_vel" value="0.035" />
-  <xacro:property name="torso_eps" value="0.02" />
+  <xacro:property name="torso_eps" value="0.00" />
 
   <xacro:macro name="tiago_pro_torso" params="name parent has_tray">
 
