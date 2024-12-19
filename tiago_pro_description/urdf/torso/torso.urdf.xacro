@@ -22,7 +22,7 @@
   <xacro:property name="torso_max_vel" value="0.035" />
   <xacro:property name="torso_eps" value="0.00" />
 
-  <xacro:macro name="tiago_pro_torso" params="name parent has_tray">
+  <xacro:macro name="tiago_pro_torso" params="name parent">
 
     <!-- Connection with the base -->
     <link name="${name}_base_link">
@@ -109,31 +109,18 @@
           <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
         </material>
       </visual>
-      <xacro:if value="${has_tray}">
-        <visual>
-          <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
-          <geometry>
-            <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray.stl" />
-          </geometry>
-          <material name="">
-            <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
-          </material>
-        </visual>
-      </xacro:if>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://tiago_pro_description/meshes/torso/torso_lift_link_collision.stl" />
         </geometry>
       </collision>
-      <xacro:if value="${has_tray}">
-        <collision>
-          <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
-          <geometry>
-            <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray_collision.stl" />
-          </geometry>
-        </collision>
-      </xacro:if>
+      <collision>
+        <origin xyz="-0.226436438571948 3.12797385809451E-05 0.00524038105676683" rpy="0 0 -1.5707963267949" />
+        <geometry>
+          <mesh filename="package://tiago_pro_description/meshes/torso/laptop_tray_collision.stl" />
+        </geometry>
+      </collision>
     </link>
 
     <joint name="${name}_lift_joint" type="prismatic">
@@ -172,28 +159,7 @@
     </gazebo>
 
     <!-- Torso arm left link-->
-    <link name="${name}_arm_left_link">
-      <inertial>
-        <origin xyz="0.0266347705878543 -1.34103746878278E-05 -0.0312554093037512" rpy="0 0 0" />
-        <mass value="0.230474445227561" />
-        <inertia ixx="0.000275825000057028" ixy="-2.98026741879157E-05" ixz="9.19765678097319E-05" iyy="0.000347873534928455" iyz="-2.2471230906564E-05" izz="0.00040318881619739" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://tiago_pro_description/meshes/torso/arm_left_link.stl" />
-        </geometry>
-        <material name="">
-          <color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
-        </material>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://tiago_pro_description/meshes/torso/arm_left_link_collision.stl" />
-        </geometry>
-      </collision>
-    </link>
+    <link name="${name}_arm_left_link"/>
 
     <joint name="${name}_arm_left_joint" type="fixed">
       <origin xyz="0.0898413194899453 0.159181203216899 -0.0920547375491735" rpy="-2.06788770984932 0 -1.22173047639603" />
@@ -207,28 +173,7 @@
     </gazebo>
 
     <!-- Torso arm right link -->
-    <link name="${name}_arm_right_link">
-      <inertial>
-        <origin xyz="-0.0266370901965068 -1.33503761214904E-05 -0.031255858525246" rpy="0 0 0" />
-        <mass value="0.230469561959048" />
-        <inertia ixx="0.000275821597759927" ixy="2.98126984098988E-05" ixz="-9.19722502498065E-05" iyy="0.000347870269485856" iyz="-2.24681274957806E-05" izz="0.000403186347482453" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://tiago_pro_description/meshes/torso/arm_right_link.stl" />
-        </geometry>
-        <material name="">
-          <color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
-        </material>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://tiago_pro_description/meshes/torso/arm_right_link_collision.stl" />
-        </geometry>
-      </collision>
-    </link>
+    <link name="${name}_arm_right_link"/>
 
     <joint name="${name}_arm_right_joint" type="fixed">
       <origin xyz="0.0898413194899453 -0.1591812032169 -0.0920547375491731" rpy="-2.06788770984932 0 -1.91986217719377" />

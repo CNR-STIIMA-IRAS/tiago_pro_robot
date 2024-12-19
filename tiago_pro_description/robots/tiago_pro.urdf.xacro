@@ -55,9 +55,6 @@
   <!-- realsense-d435 -->
   <xacro:arg name="camera_model" default="realsense-d435" />
 
-  <!-- False, True -->
-  <xacro:arg name="has_laptop_tray" default="False" />
-
   <xacro:arg name="use_sim_time" default="false"/>
   <xacro:arg name="is_public_sim" default="false"/>
   <xacro:arg name="is_multiple" default="false"/>
@@ -85,7 +82,6 @@
   <xacro:property name="end_effector_right" value="$(arg end_effector_right)" />
   <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)" />
   <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)" />
-  <xacro:property name="has_laptop_tray" value="$(arg has_laptop_tray)" />
   <xacro:property name="camera_model" value="$(arg camera_model)" />
   <xacro:property name="description_calibration_dir" value="${arg description_calibration_dir}"/>
   <xacro:property name="is_public_sim" value="$(arg is_public_sim)" />
@@ -202,7 +198,7 @@
   <xacro:base_sensors name="base" front_laser_model="$(arg laser_model)" rear_laser_model="$(arg laser_model)"/>
 
   <!-- Torso -->
-  <xacro:tiago_pro_torso name="torso" parent="base_link" has_tray="${has_laptop_tray}"/>
+  <xacro:tiago_pro_torso name="torso" parent="base_link"/>
 
   <!-- Head -->
   <xacro:tiago_pro_head name="head" parent="torso_head_link" camera_model="$(arg camera_model)"/>
