@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.20.0 (2025-01-07)
+-------------------
 * Remove unused base_type argument
 * Remove unused robot_name argument
 * Contributors: Noel Jimenez
