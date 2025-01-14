@@ -36,9 +36,7 @@
         <geometry>
           <mesh filename="package://tiago_pro_description/meshes/torso/base_link.stl" />
         </geometry>
-        <material name="">
-          <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
-        </material>
+        <material name="pal/DarkGrey"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -95,11 +93,11 @@
 
     <!-- Lift torso -->
     <link name="${name}_lift_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.24266045177967" />
-        <inertia ixx="0.0295369723560087" ixy="-7.85101789883696E-07" ixz="-8.58576921315497E-05" iyy="0.0170989395656347" iyz="-8.17944373020342E-06" izz="0.0290055792681799" />
-    </inertial>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+          <mass value="3.24266045177967" />
+          <inertia ixx="0.0295369723560087" ixy="-7.85101789883696E-07" ixz="-8.58576921315497E-05" iyy="0.0170989395656347" iyz="-8.17944373020342E-06" izz="0.0290055792681799" />
+      </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -145,6 +143,21 @@
         <mass value="0.19541960582329" />
         <inertia ixx="0.000439179732174765" ixy="5.76286393008048E-20" ixz="1.09094748941927E-18" iyy="0.000498456551929403" iyz="-1.60059406264224E-19" izz="0.000881920896131913" />
       </inertial>
+      <visual>
+        <origin xyz="0 0 0.01085" rpy="0 0 0" />
+        <geometry>
+          <box size="0.11 0.092 0.0217" />
+        </geometry>
+        <material name="">
+          <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.01085" rpy="0 0 0" />
+        <geometry>
+          <box size="0.11 0.092 0.0217" />
+        </geometry>
+      </collision>
     </link>
 
     <joint name="${name}_head_joint" type="fixed">
@@ -153,10 +166,6 @@
       <child link="${name}_head_link" />
       <axis xyz="0 0 0" />
     </joint>
-
-    <gazebo reference="${name}_head_link">
-      <material>Gazebo/DarkGrey</material>
-    </gazebo>
 
     <!-- Torso arm left link-->
     <link name="${name}_arm_left_link"/>
@@ -168,10 +177,6 @@
       <axis xyz="0 0 0" />
     </joint>
 
-    <gazebo reference="${name}_arm_left_link">
-      <material>Gazebo/DarkGrey</material>
-    </gazebo>
-
     <!-- Torso arm right link -->
     <link name="${name}_arm_right_link"/>
 
@@ -181,10 +186,6 @@
       <child link="${name}_arm_right_link" />
       <axis xyz="0 0 0" />
     </joint>
-
-    <gazebo reference="${name}_arm_right_link">
-      <material>Gazebo/DarkGrey</material>
-    </gazebo>
 
   </xacro:macro>
 </robot>
