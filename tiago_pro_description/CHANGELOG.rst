@@ -2,6 +2,17 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/simplify-3d-model' into 'humble-devel'
+  Tpe/simplify 3d model
+  See merge request robots/tiago_pro_robot!104
+* Scale sligthly the visual of the base_link of the torso to remove visualization bug + add visual for the head_link
+* Fix test
+* Add simplyfied models
+* Remove has_tray argument
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 1.20.0 (2025-01-07)
 -------------------
 
