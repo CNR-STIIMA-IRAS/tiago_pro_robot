@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.21.0 (2025-01-16)
 -------------------
 * Merge branch 'tpe/simplify-3d-model' into 'humble-devel'

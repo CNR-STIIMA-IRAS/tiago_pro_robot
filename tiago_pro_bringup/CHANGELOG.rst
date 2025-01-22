@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* lock robot if charging
+* Contributors: antoniobrandi
+
 1.21.0 (2025-01-16)
 -------------------
 * Merge branch 'tpe/simplify-3d-model' into 'humble-devel'
