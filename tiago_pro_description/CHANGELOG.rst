@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.22.1 (2025-01-23)
+-------------------
 * Merge branch 'tpe/simplify_3d_models' into 'humble-devel'
   Fix naming + change collision toroso_fixed
   See merge request robots/tiago_pro_robot!108
