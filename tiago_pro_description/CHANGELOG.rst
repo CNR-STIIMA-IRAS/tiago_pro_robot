@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/add_d455' into 'humble-devel'
+  Add Realsense D455 to tiago pro head
+  See merge request robots/tiago_pro_robot!109
+* Add Realsense D455 to tiago pro head
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 1.22.1 (2025-01-23)
 -------------------
 * Merge branch 'tpe/simplify_3d_models' into 'humble-devel'
