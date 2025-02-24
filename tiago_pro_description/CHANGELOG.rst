@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.22.2 (2025-02-18)
 -------------------
 * Merge branch 'tpe/add_d455' into 'humble-devel'
