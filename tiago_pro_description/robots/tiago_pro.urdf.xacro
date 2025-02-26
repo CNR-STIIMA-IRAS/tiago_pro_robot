@@ -29,10 +29,10 @@
   <xacro:arg name="arm_type_right" default="tiago-pro" />
 
   <!-- straight-wrist, spherical-wrist -->
-  <xacro:arg name="wrist_model_left" default="straight-wrist" />
+  <xacro:arg name="wrist_model_left" default="spherical-wrist" />
 
   <!-- straight-wrist, spherical-wrist -->
-  <xacro:arg name="wrist_model_right" default="straight-wrist" />
+  <xacro:arg name="wrist_model_right" default="spherical-wrist" />
 
   <!-- False, True -->
   <xacro:arg name="tool_changer_right" default="True" />
