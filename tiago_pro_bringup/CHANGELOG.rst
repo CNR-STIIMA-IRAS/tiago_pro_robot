@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix boxing for spherical wrist
+* Contributors: Aina
+
 1.23.0 (2025-02-24)
 -------------------
 * update locks and topics to integrate assisted_teleop

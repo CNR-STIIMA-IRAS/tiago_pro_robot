@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change default config of TIAGo Pro
+* Contributors: thomas.peyrucain
+
 1.23.0 (2025-02-24)
 -------------------
 
