@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.23.2 (2025-02-28)
+-------------------
 * Merge branch 'tpe/add_inertia_version' into 'humble-devel'
   Add parameter for the new arm
   See merge request robots/tiago_pro_robot!106
