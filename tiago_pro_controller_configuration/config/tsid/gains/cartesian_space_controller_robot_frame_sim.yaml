@@ -1,0 +1,36 @@
+${ARM_SIDE_PREFIX}_cartesian_space_controller:
+  ros__parameters:
+    joint_pos_gain:
+      ${ARM_SIDE_PREFIX}_1_joint:
+        kp: 100.0
+        kd: 50.0
+      ${ARM_SIDE_PREFIX}_2_joint:
+        kp: 100.0
+        kd: 50.0
+      ${ARM_SIDE_PREFIX}_3_joint:
+        kp: 100.0
+        kd: 50.0
+      ${ARM_SIDE_PREFIX}_4_joint:
+        kp: 100.0
+        kd: 50.0
+      ${ARM_SIDE_PREFIX}_5_joint:
+        kp: 100.0
+        kd: 50.0
+      ${ARM_SIDE_PREFIX}_6_joint:
+        kp: 100.0
+        kd: 50.0
+      ${ARM_SIDE_PREFIX}_7_joint:
+        kp: 100.0
+        kd: 50.0
+
+    cartesian_gain:
+        ${ARM_SIDE_PREFIX}_7_link:
+          kp_x: 1500.0
+          kp_y: 1500.0
+          kp_z: 1500.0
+          kp_roll: 700.0
+          kp_pitch: 700.0
+          kp_yaw: 700.0
+
+          
+
