@@ -1,4 +1,4 @@
-${ARM_SIDE_PREFIX}_joint_space_torso_vel_controller:
+torso_joint_space_torso_vel_controller:
   ros__parameters:
     type: tsid_controllers/JointSpaceVelTsidController
     update_rate: 1000
@@ -10,7 +10,7 @@ ${ARM_SIDE_PREFIX}_joint_space_torso_vel_controller:
       - torso_lift_joint
 
     ee_names:
-      - ${ARM_SIDE_PREFIX}_7_link
+      - arm_right_7_link
 
     velocity_scaling: 1.0
     joint_vel_gain:
