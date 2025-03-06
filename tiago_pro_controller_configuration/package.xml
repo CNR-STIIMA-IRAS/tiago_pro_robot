@@ -15,6 +15,7 @@
 
   <exec_depend>omni_drive_controller</exec_depend>
   <exec_depend>pal_pro_gripper_controller_configuration</exec_depend>
+  <exec_depend>allegro_hand_controller_configuration</exec_depend>
   <exec_depend>pal_sea_arm_controller_configuration</exec_depend>
   <exec_depend>omni_base_controller_configuration</exec_depend>
   <exec_depend>tiago_pro_head_controller_configuration</exec_depend>
