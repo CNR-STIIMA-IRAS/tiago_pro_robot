@@ -23,20 +23,14 @@
     <xacro:ros2_control_wheel side="rear_left" />
   </xacro:macro>
   
-  <xacro:macro name="allegro_ros2_control" params="side allegro_can pid_controllers xela_can">
-    <ros2_control name="ros2_control_allegro_hand_system_${side}" type="system" rw_rate="1000">
+  <xacro:macro name="allegro_ros2_control" params="side allegro_can pid_controllers">
+    <ros2_control name="ros2_control_allegro_hand_system_${side}" type="system" rw_rate="200">
       <hardware>
         <plugin>allegro_hand_system/AllegroHandSystem</plugin> 
         <param name="${can_device_name}">${allegro_can}</param>
         <param name="side">${side}</param>
       </hardware>
       <xacro:ros2_control_allegro_hand name="gripper_${side}" pid_controllers="$(arg pid_controllers)" reduction="1.0" />
-    </ros2_control>
-    <ros2_control name="ros2_control_xela_sensor_${side}" type="sensor" rw_rate="1000">
-      <hardware>
-        <plugin>xela_uskin_sensor/XelaUskinSensor</plugin>
-        <param name="${can_device_name}">${xela_can}</param>
-      </hardware>
     </ros2_control>
   </xacro:macro>
 
@@ -201,10 +195,10 @@
       <xacro:arg name="pid_controllers" default="true"/>
 
       <xacro:if value="${end_effector_right == 'allegro-hand'}">
-        <xacro:allegro_ros2_control side="right" allegro_can="can0" pid_controllers="$(arg pid_controllers)" xela_can="can1"/>
+        <xacro:allegro_ros2_control side="right" allegro_can="can0" pid_controllers="$(arg pid_controllers)"/>
       </xacro:if>
       <xacro:if value="${end_effector_left == 'allegro-hand'}">
-        <xacro:allegro_ros2_control side="left" allegro_can="can2" pid_controllers="$(arg pid_controllers)" xela_can="can3"/>
+        <xacro:allegro_ros2_control side="left" allegro_can="can2" pid_controllers="$(arg pid_controllers)"/>
       </xacro:if>
     </xacro:unless>
   </xacro:macro>
