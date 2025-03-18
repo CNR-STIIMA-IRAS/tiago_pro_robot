@@ -83,18 +83,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
     launch_description.add_action(head_controller)
 
-    # IMU sensor broadcaster
-    imu_sensor_broadcaster = GroupAction(
-        [
-            generate_load_controller_launch_description(
-                controller_name='imu_sensor_broadcaster',
-                controller_params_file=os.path.join(
-                    pkg_share_folder, 'config', 'imu_sensor_broadcaster.yaml'))
-
-        ],
-    )
-    launch_description.add_action(imu_sensor_broadcaster)
-
     # Gravity compensation controller
     gravity_compensation_controller = include_scoped_launch_py_description(
         pkg_name="tiago_pro_controller_configuration",
