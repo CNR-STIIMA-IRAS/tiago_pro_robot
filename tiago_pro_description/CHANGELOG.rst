@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove unused imu broadcaster
+* Contributors: David ter Kuile
+
 1.23.2 (2025-02-28)
 -------------------
 * Merge branch 'tpe/add_inertia_version' into 'humble-devel'
