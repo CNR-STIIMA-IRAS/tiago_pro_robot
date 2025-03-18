@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.23.3 (2025-03-18)
+-------------------
 * Remove unused imu broadcaster
 * Contributors: David ter Kuile
 
