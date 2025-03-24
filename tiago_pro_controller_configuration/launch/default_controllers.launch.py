@@ -38,6 +38,8 @@ class LaunchArguments(LaunchArgumentsBase):
     end_effector_left: DeclareLaunchArgument = TiagoProArgs.end_effector_left
     ft_sensor_right: DeclareLaunchArgument = TiagoProArgs.ft_sensor_right
     ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
+    torque_estimation: DeclareLaunchArgument = TiagoProArgs.torque_estimation
+
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
     namespace: DeclareLaunchArgument = CommonArgs.namespace
@@ -63,6 +65,18 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         forwarding=False)
 
     launch_description.add_action(joint_state_broadcaster)
+
+    joint_torque_state_broadcaster = GroupAction(
+        [generate_load_controller_launch_description(
+            controller_name='joint_torque_state_broadcaster',
+            controller_params_file=os.path.join(
+                pkg_share_folder,
+                'config', 'joint_torque_state_broadcaster.yaml'))
+         ],
+        forwarding=False,
+        condition=IfCondition(LaunchConfiguration("torque_estimation"))
+    )
+    launch_description.add_action(joint_torque_state_broadcaster)
 
     # Torso controller
     torso_controller = GroupAction(
