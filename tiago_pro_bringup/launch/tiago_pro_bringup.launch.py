@@ -39,6 +39,8 @@ class LaunchArguments(LaunchArgumentsBase):
     tool_changer_left: DeclareLaunchArgument = TiagoProArgs.tool_changer_left
     camera_model: DeclareLaunchArgument = TiagoProArgs.camera_model
     laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
+    torque_estimation: DeclareLaunchArgument = TiagoProArgs.torque_estimation
+
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     namespace: DeclareLaunchArgument = CommonArgs.namespace
     is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
@@ -54,6 +56,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "end_effector_left": launch_args.end_effector_left,
                           "ft_sensor_right": launch_args.ft_sensor_right,
                           "ft_sensor_left": launch_args.ft_sensor_left,
+                          "torque_estimation": launch_args.torque_estimation,
                           "use_sim_time": launch_args.use_sim_time,
                           "is_public_sim": launch_args.is_public_sim
                           })
@@ -97,6 +100,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "laser_model": launch_args.laser_model,
                           "camera_model": launch_args.camera_model,
                           "base_type": launch_args.base_type,
+                          "torque_estimation": launch_args.torque_estimation,
                           "namespace": launch_args.namespace,
                           "use_sim_time": launch_args.use_sim_time,
                           "is_public_sim": launch_args.is_public_sim
