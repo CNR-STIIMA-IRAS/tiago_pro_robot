@@ -17,13 +17,11 @@ from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
-from launch.actions import DeclareLaunchArgument, OpaqueFunction, SetLaunchConfiguration
+from launch.actions import DeclareLaunchArgument
 from launch_ros.actions import Node
 from launch.conditions import LaunchConfigurationEquals
 
-from tiago_pro_description.tiago_pro_launch_utils import get_single_arm_hw_suffix
-
-from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
+from launch_pal.arg_utils import LaunchArgumentsBase
 from tiago_pro_description.launch_arguments import TiagoProArgs
 
 from dataclasses import dataclass
@@ -43,14 +41,11 @@ class LaunchArguments(LaunchArgumentsBase):
 
 
 def declare_actions(launch_description: LaunchDescription, launch_args: LaunchArguments):
-
-    launch_description.add_action(OpaqueFunction(
-        function=create_joy_teleop_filename))
-
     joy_teleop_node = Node(
         package='joy_teleop',
         executable='joy_teleop',
-        parameters=[LaunchConfiguration('teleop_config')],
+        parameters=[os.path.join(get_package_share_directory('tiago_pro_bringup'), 'config',
+                                 'joy_teleop', "joy_teleop.yaml")],
         remappings=[('cmd_vel', LaunchConfiguration('cmd_vel'))])
 
     launch_description.add_action(joy_teleop_node)
@@ -118,22 +113,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
     launch_description.add_action(gripper_incrementer_server)
 
     return
-
-
-def create_joy_teleop_filename(context):
-    hw_suffix = get_single_arm_hw_suffix(
-        arm=read_launch_argument('arm_type_right', context),
-        end_effector=read_launch_argument('end_effector_right', context),
-    )
-
-    joy_teleop_file = f"joy_teleop{hw_suffix}.yaml"
-
-    joy_teleop_path = os.path.join(
-        get_package_share_directory('tiago_pro_bringup'), 'config', 'joy_teleop', joy_teleop_file)
-
-    joy_teleop_config = SetLaunchConfiguration(
-        'teleop_config', joy_teleop_path)
-    return [joy_teleop_config]
 
 
 def generate_launch_description():
