@@ -49,6 +49,16 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                                              'arm_type_left', 'no-arm'))
     launch_description.add_action(left_arm_controller)
 
+    param_file = os.path.join(
+        get_package_share_directory('tiago_pro_controller_configuration'),
+        'config', 'tsid', 'torso_joint_space_controller.yaml')
+
+    torso_joint_space_controller = GroupAction([generate_load_controller_launch_description(
+        controller_name="torso_joint_space_controller",
+        controller_params_file=param_file,
+        extra_spawner_args=["--inactive"])], forwarding=False)
+    launch_description.add_action(torso_joint_space_controller)
+
     return
 
 
@@ -81,7 +91,7 @@ def setup_arm_side_controller(context,
     remappings = {"ARM_SIDE_PREFIX": arm_prefix}
 
     param_file = os.path.join(
-        get_package_share_directory('triago_controller_configuration'),
+        get_package_share_directory('tiago_pro_controller_configuration'),
         'config', 'tsid', f'{controller_name}.yaml')
 
     parsed_yaml = parse_parametric_yaml(source_files=[param_file], param_rewrites=remappings)
@@ -91,7 +101,7 @@ def setup_arm_side_controller(context,
         sim_postfix = '_sim' if use_sim_time else ''
 
         gains_file = os.path.join(
-            get_package_share_directory('triago_controller_configuration'),
+            get_package_share_directory('tiago_pro_controller_configuration'),
             'config', 'tsid', 'gains', f'{controller_name}{sim_postfix}.yaml')
 
         parsed_gains = parse_parametric_yaml(source_files=[gains_file], param_rewrites=remappings)
