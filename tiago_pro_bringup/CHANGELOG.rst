@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* removed marker_vel
+* added tab_vel to twist_mux
+* Contributors: andreacapodacqua
+
 1.23.4 (2025-03-25)
 -------------------
 * Restructure joystick config files
