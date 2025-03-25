@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.23.4 (2025-03-25)
+-------------------
 * Restructure joystick config files
 * Contributors: Aina
 
