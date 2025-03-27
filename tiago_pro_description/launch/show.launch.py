@@ -43,6 +43,7 @@ class LaunchArguments(LaunchArgumentsBase):
     laser_model: DeclareLaunchArgument = TiagoProArgs.laser_model
     tool_changer_right: DeclareLaunchArgument = TiagoProArgs.tool_changer_right
     tool_changer_left: DeclareLaunchArgument = TiagoProArgs.tool_changer_left
+    torque_estimation: DeclareLaunchArgument = TiagoProArgs.torque_estimation
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     namespace: DeclareLaunchArgument = CommonArgs.namespace
 
@@ -65,6 +66,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
                           "base_type": launch_args.base_type,
                           'tool_changer_right': launch_args.tool_changer_right,
                           'tool_changer_left': launch_args.tool_changer_left,
+                          'torque_estimation': launch_args.torque_estimation,
                           "namespace": launch_args.namespace,
                           "use_sim_time": launch_args.use_sim_time
                           })

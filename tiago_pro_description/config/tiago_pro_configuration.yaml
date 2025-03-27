@@ -54,3 +54,7 @@ wheel_model:
   description: 'Wheel model'
   choices: ['moog']
   default_value: 'moog'
+torque_estimation:
+  description: 'The arm has torque estimation'
+  choices: ['False', 'True']
+  default_value: 'False'
