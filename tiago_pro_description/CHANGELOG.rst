@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.0 (2025-03-27)
+-------------------
 * Adding proper module config
 * Support for SEA in tiago_pro_description
 * Contributors: oscarmartinez
