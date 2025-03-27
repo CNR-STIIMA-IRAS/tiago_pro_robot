@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding proper module config
+* Support for SEA in the controllers
+* Contributors: oscarmartinez
+
 1.24.0 (2025-03-25)
 -------------------
 

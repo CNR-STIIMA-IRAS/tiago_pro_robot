@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Support for SEA in the bringup
+* Contributors: oscarmartinez
+
 1.24.0 (2025-03-25)
 -------------------
 * removed marker_vel
