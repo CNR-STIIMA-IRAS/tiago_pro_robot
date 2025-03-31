@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.1 (2025-03-31)
+-------------------
 * Simplify arm controllers
 * Contributors: David ter Kuile
 
