@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Create ethercat system even if there are no arms
+* Contributors: Noel Jimenez
+
 1.25.1 (2025-03-31)
 -------------------
 
