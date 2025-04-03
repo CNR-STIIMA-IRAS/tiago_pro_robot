@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Simplify gravity compensation
+* Remove unused param files
+* Contributors: David ter Kuile
+
 1.25.2 (2025-04-02)
 -------------------
 
