@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.3 (2025-04-03)
+-------------------
 * Add missing home motions for single arm
 * Contributors: David ter Kuile
 
