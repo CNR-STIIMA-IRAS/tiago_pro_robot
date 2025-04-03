@@ -97,15 +97,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
     launch_description.add_action(head_controller)
 
-    # Gravity compensation controller
-    gravity_compensation_controller = include_scoped_launch_py_description(
-        pkg_name="tiago_pro_controller_configuration",
-        paths=["launch", "gravity_compensation_controller.launch.py"],
-        condition=UnlessCondition(LaunchConfiguration("is_public_sim"))
-    )
-
-    launch_description.add_action(gravity_compensation_controller)
-
     # Add controller of right arm, end-effector and ft-sensor
     launch_description.add_action(OpaqueFunction(
         function=configure_side_controllers, args=['right'],
@@ -136,6 +127,12 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         paths=['launch', 'arm_controller.launch.py'],
         launch_arguments={"side": end_effector_side})
 
+    gravity_compensation_controller = include_scoped_launch_py_description(
+        pkg_name='pal_sea_arm_controller_configuration',
+        paths=['launch', 'gravity_compensation_controller.launch.py'],
+        launch_arguments={"side": end_effector_side},
+        condition=UnlessCondition(LaunchConfiguration("is_public_sim")))
+
     end_effector = read_launch_argument(end_effector_arg_name, context)
     end_effector_underscore = end_effector.replace('-', '_')
 
@@ -163,7 +160,8 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
 
     )
 
-    return [arm_controller, end_effector_controller, ft_sensor_controller]
+    return [arm_controller, gravity_compensation_controller,
+            end_effector_controller, ft_sensor_controller]
 
 
 def concatenate_strings(strings: List[str], delimiter: str = '', skip_empty: bool = False):
