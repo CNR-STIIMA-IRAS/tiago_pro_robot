@@ -12,7 +12,6 @@ ${ARM_SIDE_PREFIX}_cartesian_space_controller_ee_frame:
       - ${ARM_SIDE_PREFIX}_5_joint
       - ${ARM_SIDE_PREFIX}_6_joint
       - ${ARM_SIDE_PREFIX}_7_joint
-      - torso_lift_joint
 
     joint_command_names:
       - ${ARM_SIDE_PREFIX}_1_joint
