@@ -22,4 +22,4 @@ ${ARM_SIDE_PREFIX}_joint_space_controller:
       ${ARM_SIDE_PREFIX}_7_joint:
         kp: 100.0
         kd: 50.0
-    
+  
