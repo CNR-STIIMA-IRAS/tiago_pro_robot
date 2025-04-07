@@ -26,4 +26,4 @@ ${ARM_SIDE_PREFIX}_joint_space_controller:
     
     interface_name: position
 
-    velocity_scaling: 0.5
+    velocity_scaling: 1.0

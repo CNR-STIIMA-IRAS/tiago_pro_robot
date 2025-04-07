@@ -15,8 +15,4 @@ torso_joint_space_controller:
     interface_name: position
 
     velocity_scaling: 1.0
-    joint_pos_gain:
-      torso_lift_joint:
-        kp: 200.0
-        kd: 500.0
     

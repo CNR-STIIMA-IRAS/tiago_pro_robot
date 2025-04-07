@@ -1,4 +1,4 @@
-${ARM_SIDE_PREFIX}_joint_space_vel_controller:
+${ARM_SIDE_PREFIX}_joint_space_controller_vel:
   ros__parameters:
     type: tsid_controllers/JointSpaceVelTsidController
     update_rate: 1000
@@ -23,36 +23,6 @@ ${ARM_SIDE_PREFIX}_joint_space_vel_controller:
       - ${ARM_SIDE_PREFIX}_7_joint
 
     interface_name: position
-
-    joint_vel_gain:
-      ${ARM_SIDE_PREFIX}_1_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
-      ${ARM_SIDE_PREFIX}_2_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
-      ${ARM_SIDE_PREFIX}_3_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
-      ${ARM_SIDE_PREFIX}_4_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
-      ${ARM_SIDE_PREFIX}_5_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
-      ${ARM_SIDE_PREFIX}_6_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
-      ${ARM_SIDE_PREFIX}_7_joint:
-        kp: 700.0
-        kd: 0.5
-        ki: 50.0
   
     velocity_scaling: 1.0
 
