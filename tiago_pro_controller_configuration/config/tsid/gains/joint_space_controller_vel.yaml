@@ -6,27 +6,27 @@ ${ARM_SIDE_PREFIX}_joint_space_controller_vel:
         kd: 0.5
         ki: 50.0
       ${ARM_SIDE_PREFIX}_2_joint:
-        kp: 70.0
+        kp: 700.0
         kd: 0.5
         ki: 50.0
       ${ARM_SIDE_PREFIX}_3_joint:
-        kp: 70.0
+        kp: 700.0
         kd: 0.5
         ki: 50.0
       ${ARM_SIDE_PREFIX}_4_joint:
-        kp: 70.0
+        kp: 700.0
         kd: 0.5
         ki: 50.0
       ${ARM_SIDE_PREFIX}_5_joint:
-        kp: 70.0
+        kp: 700.0
         kd: 0.5
         ki: 50.0
       ${ARM_SIDE_PREFIX}_6_joint:
-        kp: 70.0
+        kp: 700.0
         kd: 0.5
         ki: 50.0
       ${ARM_SIDE_PREFIX}_7_joint:
-        kp: 70.0
+        kp: 700.0
         kd: 0.5
         ki: 50.0
   
