@@ -22,6 +22,17 @@
     <xacro:ros2_control_wheel side="rear_right" />
     <xacro:ros2_control_wheel side="rear_left" />
   </xacro:macro>
+  
+  <xacro:macro name="allegro_ros2_control" params="side allegro_can pid_controllers">
+    <ros2_control name="ros2_control_allegro_hand_system_${side}" type="system" rw_rate="200">
+      <hardware>
+        <plugin>allegro_hand_system/AllegroHandSystem</plugin> 
+        <param name="${can_device_name}">${allegro_can}</param>
+        <param name="side">${side}</param>
+      </hardware>
+      <xacro:ros2_control_allegro_hand name="gripper_${side}" pid_controllers="$(arg pid_controllers)" reduction="1.0" />
+    </ros2_control>
+  </xacro:macro>
 
   <xacro:macro name="ros2_control_arms">
     <!-- arm left -->
@@ -88,6 +99,7 @@
     <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right != 'no-ft-sensor'}" />
     <xacro:property name="has_arm_left" value="${arm_type_left != 'no-arm'}" />
     <xacro:property name="has_arm_right" value="${arm_type_right != 'no-arm'}" />
+    <xacro:property name="can_device_name" value="can_device" />
 
     <xacro:include filename="$(find omni_base_description)/urdf/sensors/sensors.ros2_control.xacro" />
     <xacro:include filename="$(find omni_base_description)/urdf/wheels/wheel.ros2_control.xacro" />
@@ -100,6 +112,9 @@
       <xacro:include filename="$(find pal_pro_gripper_description)/urdf/gripper.ros2_control.xacro" />
     </xacro:if>
 
+    <xacro:if value="${end_effector_left == 'allegro-hand' or end_effector_right == 'allegro-hand'}">
+      <xacro:include filename="$(find allegro_hand_description)/urdf/allegro_hand.ros2_control.xacro" />
+    </xacro:if>
     <!-- calibration offsets -->
     <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
 
@@ -128,6 +143,14 @@
 
         <!-- arms -->
         <xacro:ros2_control_arms/>
+        <xacro:arg name="pid_controllers" default="false"/>
+
+        <xacro:if value="${end_effector_right == 'allegro-hand'}">
+          <xacro:ros2_control_allegro_hand name="gripper_right" pid_controllers="$(arg pid_controllers)" reduction="1.0" />
+        </xacro:if>
+        <xacro:if value="${end_effector_left == 'allegro-hand'}">
+          <xacro:ros2_control_allegro_hand name="gripper_left" pid_controllers="$(arg pid_controllers)" reduction="1.0" />
+        </xacro:if>
       </ros2_control>
     </xacro:if>
 
@@ -169,7 +192,14 @@
         <xacro:ros2_control_torso name="torso_lift" reduction="1.0" />
 
       </ros2_control>
+      <xacro:arg name="pid_controllers" default="true"/>
 
+      <xacro:if value="${end_effector_right == 'allegro-hand'}">
+        <xacro:allegro_ros2_control side="right" allegro_can="can0" pid_controllers="$(arg pid_controllers)"/>
+      </xacro:if>
+      <xacro:if value="${end_effector_left == 'allegro-hand'}">
+        <xacro:allegro_ros2_control side="left" allegro_can="can2" pid_controllers="$(arg pid_controllers)"/>
+      </xacro:if>
     </xacro:unless>
   </xacro:macro>
 </robot>
