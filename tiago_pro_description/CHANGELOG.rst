@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Delete for now xela components
+* Add dependency for allegro description
+* Add allegro hand as a possible end effector
+* add velocity command interface for the torso
+* Contributors: Aina, ileniaperrella
+
 1.25.3 (2025-04-03)
 -------------------
 

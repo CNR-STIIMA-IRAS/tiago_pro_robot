@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add motion file for allegro and rebase
+* Add motion planner files with allegro
+* Add allegro hand on moveit configuration
+* Add allegro hand as a possible end effector
+* Contributors: Aina
+
 1.25.3 (2025-04-03)
 -------------------
 * Add missing home motions for single arm
