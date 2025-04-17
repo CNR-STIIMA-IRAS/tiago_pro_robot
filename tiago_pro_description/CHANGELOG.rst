@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.4 (2025-04-17)
+-------------------
 * Delete for now xela components
 * Add dependency for allegro description
 * Add allegro hand as a possible end effector

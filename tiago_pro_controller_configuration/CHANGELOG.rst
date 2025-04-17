@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.4 (2025-04-17)
+-------------------
 * Add motion file for allegro and rebase
 * Add allegro hand controller
 * Contributors: Aina
