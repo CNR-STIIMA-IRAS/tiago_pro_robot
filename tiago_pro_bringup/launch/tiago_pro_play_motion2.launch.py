@@ -94,9 +94,9 @@ def create_play_motion_filename(context):
     elif arm_right == 'no-arm' and arm_left != 'no-arm':
         base_motions_file = 'tiago_pro_motions_general_arm_left.yaml'
 
-    if ee_left != 'no-end-effector' and arm_left != 'no-arm' and ee_left != 'allegro-hand':
+    if ee_left != 'no-end-effector' and arm_left != 'no-arm':
         ee_motions.append(f"tiago_pro_motions_{ee_left}_left.yaml")
-    if ee_right != 'no-end-effector' and arm_right != 'no-arm' and ee_right != 'allegro-hand':
+    if ee_right != 'no-end-effector' and arm_right != 'no-arm':
         ee_motions.append(f"tiago_pro_motions_{ee_right}_right.yaml")
     head_pkg = get_package_share_directory('tiago_pro_head_bringup')
 
