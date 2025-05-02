@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.5 (2025-05-02)
+-------------------
 * Update file ros2_control.urdf.xacro
 * Change can bus for allegro right
 * Contributors: Aina Irisarri
