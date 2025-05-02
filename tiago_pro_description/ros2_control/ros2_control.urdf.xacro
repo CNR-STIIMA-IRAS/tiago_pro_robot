@@ -195,10 +195,10 @@
       <xacro:arg name="pid_controllers" default="true"/>
 
       <xacro:if value="${end_effector_right == 'allegro-hand'}">
-        <xacro:allegro_ros2_control side="right" allegro_can="can1" pid_controllers="$(arg pid_controllers)"/>
+        <xacro:allegro_ros2_control side="right" allegro_can="can2" pid_controllers="$(arg pid_controllers)"/>
       </xacro:if>
       <xacro:if value="${end_effector_left == 'allegro-hand'}">
-        <xacro:allegro_ros2_control side="left" allegro_can="can2" pid_controllers="$(arg pid_controllers)"/>
+        <xacro:allegro_ros2_control side="left" allegro_can="can1" pid_controllers="$(arg pid_controllers)"/>
       </xacro:if>
     </xacro:unless>
   </xacro:macro>
