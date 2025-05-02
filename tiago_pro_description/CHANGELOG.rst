@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update file ros2_control.urdf.xacro
+* Change can bus for allegro right
+* Contributors: Aina Irisarri
+
 1.25.4 (2025-04-17)
 -------------------
 * Delete for now xela components
