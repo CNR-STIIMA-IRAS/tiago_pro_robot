@@ -21,7 +21,10 @@ ${ARM_SIDE_PREFIX}_joint_space_controller_vel:
       - ${ARM_SIDE_PREFIX}_5_joint
       - ${ARM_SIDE_PREFIX}_6_joint
       - ${ARM_SIDE_PREFIX}_7_joint
-
+    
+    ee_names:
+      - ${ARM_SIDE_PREFIX}_7_link
+      
     interface_name: position
   
     velocity_scaling: 1.0
