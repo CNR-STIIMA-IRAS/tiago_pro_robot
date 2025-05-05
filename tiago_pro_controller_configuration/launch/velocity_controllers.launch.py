@@ -22,15 +22,15 @@ from controller_manager.launch_utils import generate_load_controller_launch_desc
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.param_utils import parse_parametric_yaml
 from launch_pal.robot_arguments import CommonArgs
-from triago_description.launch_arguments import TriagoArgs
+from tiago_pro_description.launch_arguments import TiagoProArgs
 
 from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
 class LaunchArguments(LaunchArgumentsBase):
-    arm_type_right: DeclareLaunchArgument = TriagoArgs.arm_type_right
-    arm_type_left: DeclareLaunchArgument = TriagoArgs.arm_type_left
+    arm_type_right: DeclareLaunchArgument = TiagoProArgs.arm_type_right
+    arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     namespace: DeclareLaunchArgument = CommonArgs.namespace
 
@@ -77,7 +77,7 @@ def setup_arm_side_controller(
     remappings = {"ARM_SIDE_PREFIX": arm_prefix}
 
     param_file = os.path.join(
-        get_package_share_directory("triago_controller_configuration"),
+        get_package_share_directory("tiago_pro_controller_configuration"),
         "config",
         f"{controller_name}.yaml",
     )
