@@ -185,6 +185,7 @@
         <hardware>
           <plugin>robot_control/RobotControl</plugin>
           <param name="group">ethercat</param>
+          <param name="error_protection">true</param>
         </hardware>
 
         <!-- arms -->
