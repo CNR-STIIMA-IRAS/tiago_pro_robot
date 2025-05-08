@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Enable error_protection
+* Contributors: Jordan Palacios
+
 1.25.5 (2025-05-02)
 -------------------
 * Update file ros2_control.urdf.xacro
