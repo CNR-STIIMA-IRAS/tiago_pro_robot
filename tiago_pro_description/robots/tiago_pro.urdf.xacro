@@ -183,8 +183,8 @@
 
   <!-- Force Torque sensor -->
   <xacro:if value="${has_ft_sensor_right or has_ft_sensor_left}">
-    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor/ft_sensor.urdf.xacro" />
-    <xacro:include filename="$(find pal_sea_arm_description)/urdf/sensors/ft_sensor/ft_sensor.gazebo.xacro" />
+    <xacro:include filename="$(find pal_urdf_utils)/urdf/sensors/ft_sensors/pal_sea_arm/ft_sensor.urdf.xacro" />
+    <xacro:include filename="$(find pal_urdf_utils)/urdf/sensors/ft_sensors/pal_sea_arm/ft_sensor.gazebo.xacro" />
   </xacro:if>
 
   <!-- Head -->
