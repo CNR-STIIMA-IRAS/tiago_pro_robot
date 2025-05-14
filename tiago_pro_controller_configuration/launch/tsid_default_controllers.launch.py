@@ -51,8 +51,7 @@ def declare_actions(
         kwargs={"arm_side": "left"},
         condition=LaunchConfigurationNotEquals("arm_type_left", "no-arm"),
     )
-    launch_description.add_action(left_arm_controller)
-    
+    launch_description.add_action(left_arm_controller)  
     torso_controller = OpaqueFunction(function=setup_torso_controllers)
     launch_description.add_action(torso_controller)
 
@@ -130,8 +129,7 @@ def setup_arm_controllers(context, arm_side, *args, **kwargs):
 
     cartesian_vel_ee_frame = setup_arm_side_controller(
         context, "cartesian_vel_controller_ee_frame", arm_side, load_gains_separately=True
-    )
-    
+    )   
     cartesian_vel_robot_frame = setup_arm_side_controller(
         context, "cartesian_vel_controller_robot_frame", arm_side, load_gains_separately=True
     )
