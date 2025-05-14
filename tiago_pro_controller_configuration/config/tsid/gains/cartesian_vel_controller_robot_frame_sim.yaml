@@ -1,4 +1,4 @@
-${ARM_SIDE_PREFIX}_cartesian_vel_controller:
+${ARM_SIDE_PREFIX}_cartesian_vel_controller_robot_frame:
   ros__parameters:
     cartesian_vel_gain:
         ${ARM_SIDE_PREFIX}_7_link:

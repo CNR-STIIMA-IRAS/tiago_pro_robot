@@ -1,4 +1,4 @@
-${ARM_SIDE_PREFIX}_cartesian_vel_controller:
+${ARM_SIDE_PREFIX}_cartesian_vel_controller_ee_frame:
   ros__parameters:
     type: tsid_controllers/CartesianVelocityController
     
@@ -28,7 +28,7 @@ ${ARM_SIDE_PREFIX}_cartesian_vel_controller:
     velocity_scaling: 1.0
 
     posture_gain: 1.0
-
+    local_frame: true
     manipulation_cube:
          arm_right_7_link:      
           x_min: -0.2
