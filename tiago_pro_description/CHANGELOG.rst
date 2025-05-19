@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.25.6 (2025-05-08)
 -------------------
 * Enable error_protection
