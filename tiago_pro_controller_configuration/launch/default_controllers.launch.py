@@ -17,7 +17,7 @@ from typing import List
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import GroupAction
-from launch.conditions import LaunchConfigurationNotEquals, LaunchConfigurationEquals, IfCondition, UnlessCondition
+from launch.conditions import LaunchConfigurationNotEquals, IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from controller_manager.launch_utils import generate_load_controller_launch_description
@@ -153,7 +153,8 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         pkg_name=ee_pkg_name,
         paths=['launch', ee_launch_file],
         launch_arguments={"side": end_effector_side},
-        condition=LaunchConfigurationNotEquals(end_effector_arg_name, 'no-end-effector')
+        condition=LaunchConfigurationNotEquals(
+            end_effector_arg_name, 'no-end-effector')
     )
 
     # Setup ft-sensor controller
@@ -166,7 +167,8 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         paths=['launch', ft_launch_file],
         launch_arguments={"side": end_effector_side,
                           "ft_sensor": ft_sensor},
-        condition=LaunchConfigurationNotEquals(ft_sensor_arg_name, 'no-ft-sensor')
+        condition=LaunchConfigurationNotEquals(
+            ft_sensor_arg_name, 'no-ft-sensor')
 
     )
 
