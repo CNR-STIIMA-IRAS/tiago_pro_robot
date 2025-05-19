@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.7 (2025-05-19)
+-------------------
 * Merge branch 'omm/inertia_shaping_controllers' into 'humble-devel'
   Launching the inertia shaping controllers if torque_estimation enabled
   See merge request robots/tiago_pro_robot!125
