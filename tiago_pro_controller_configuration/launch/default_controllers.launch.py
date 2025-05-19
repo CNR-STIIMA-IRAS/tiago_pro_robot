@@ -134,6 +134,12 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         condition=UnlessCondition(LaunchConfiguration("is_public_sim")))
     use_sim_time = read_launch_argument("use_sim_time", context)
 
+    inertia_shaping_controllers = include_scoped_launch_py_description(
+        pkg_name='pal_sea_arm_controller_configuration',
+        paths=['launch', 'inertia_shaping_controllers.launch.py'],
+        launch_arguments={"side": end_effector_side},
+        condition=IfCondition(LaunchConfiguration("torque_estimation")))
+
     end_effector = read_launch_argument(end_effector_arg_name, context)
     end_effector_underscore = end_effector.replace('-', '_')
 
@@ -147,7 +153,8 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         pkg_name=ee_pkg_name,
         paths=['launch', ee_launch_file],
         launch_arguments={"side": end_effector_side},
-        condition=LaunchConfigurationNotEquals(end_effector_arg_name, 'no-end-effector')
+        condition=LaunchConfigurationNotEquals(
+            end_effector_arg_name, 'no-end-effector')
     )
 
     # Setup ft-sensor controller
@@ -160,12 +167,13 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         paths=['launch', ft_launch_file],
         launch_arguments={"side": end_effector_side,
                           "ft_sensor": ft_sensor},
-        condition=LaunchConfigurationNotEquals(ft_sensor_arg_name, 'no-ft-sensor')
+        condition=LaunchConfigurationNotEquals(
+            ft_sensor_arg_name, 'no-ft-sensor')
 
     )
 
     return [arm_controller, gravity_compensation_controller,
-            end_effector_controller, ft_sensor_controller]
+            inertia_shaping_controllers, end_effector_controller, ft_sensor_controller]
 
 
 def concatenate_strings(strings: List[str], delimiter: str = '', skip_empty: bool = False):
