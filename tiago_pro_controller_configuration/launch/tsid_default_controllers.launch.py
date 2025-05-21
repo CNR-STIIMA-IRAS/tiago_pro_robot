@@ -77,7 +77,8 @@ def setup_torso_controller(context, controller_name, load_gains_separately=False
         "tsid",
         f"{controller_name}.yaml",
     )
-    parsed_yaml = parse_parametric_yaml(source_files=[param_file], param_rewrites={})
+    parsed_yaml = parse_parametric_yaml(
+        source_files=[param_file], param_rewrites={})
 
     use_sim_time = read_launch_argument("use_sim_time", context)
     if load_gains_separately:
@@ -129,7 +130,7 @@ def setup_arm_controllers(context, arm_side, *args, **kwargs):
 
     cartesian_vel_ee_frame = setup_arm_side_controller(
         context, "cartesian_vel_controller_ee_frame", arm_side, load_gains_separately=True
-    )   
+    )
     cartesian_vel_robot_frame = setup_arm_side_controller(
         context, "cartesian_vel_controller_robot_frame", arm_side, load_gains_separately=True
     )
