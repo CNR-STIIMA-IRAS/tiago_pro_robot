@@ -51,7 +51,7 @@ def declare_actions(
         kwargs={"arm_side": "left"},
         condition=LaunchConfigurationNotEquals("arm_type_left", "no-arm"),
     )
-    launch_description.add_action(left_arm_controller)  
+    launch_description.add_action(left_arm_controller)
     torso_controller = OpaqueFunction(function=setup_torso_controllers)
     launch_description.add_action(torso_controller)
 
