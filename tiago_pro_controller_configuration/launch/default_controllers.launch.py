@@ -127,6 +127,11 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         paths=['launch', 'arm_controller.launch.py'],
         launch_arguments={"side": end_effector_side})
 
+    sea_state_broadcaster_controller = include_scoped_launch_py_description(
+        pkg_name='pal_sea_arm_controller_configuration',
+        paths=['launch', 'sea_state_broadcaster_controller.launch.py'],
+        launch_arguments={"side": end_effector_side})
+
     gravity_compensation_controller = include_scoped_launch_py_description(
         pkg_name='pal_sea_arm_controller_configuration',
         paths=['launch', 'gravity_compensation_controller.launch.py'],
@@ -172,7 +177,7 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
 
     )
 
-    return [arm_controller, gravity_compensation_controller,
+    return [arm_controller, sea_state_broadcaster_controller, gravity_compensation_controller,
             inertia_shaping_controllers, end_effector_controller, ft_sensor_controller]
 
 
