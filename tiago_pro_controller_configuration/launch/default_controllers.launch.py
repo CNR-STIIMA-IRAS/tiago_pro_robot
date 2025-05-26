@@ -132,11 +132,18 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         paths=['launch', 'sea_state_broadcaster_controller.launch.py'],
         launch_arguments={"side": end_effector_side})
 
-    gravity_compensation_controller = include_scoped_launch_py_description(
+    gravity_compensation_controller_effort = include_scoped_launch_py_description(
         pkg_name='pal_sea_arm_controller_configuration',
         paths=['launch', 'gravity_compensation_controller.launch.py'],
         launch_arguments={"side": end_effector_side},
         condition=UnlessCondition(LaunchConfiguration("is_public_sim")))
+
+    gravity_compensation_controller_torque = include_scoped_launch_py_description(
+        pkg_name='pal_sea_arm_controller_configuration',
+        paths=['launch', 'gravity_compensation_controller.launch.py'],
+        launch_arguments={"side": end_effector_side, "mode": "torque"},
+        condition=IfCondition(LaunchConfiguration("torque_estimation")))
+
     use_sim_time = read_launch_argument("use_sim_time", context)
 
     inertia_shaping_controllers = include_scoped_launch_py_description(
@@ -177,8 +184,9 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
 
     )
 
-    return [arm_controller, sea_state_broadcaster_controller, gravity_compensation_controller,
-            inertia_shaping_controllers, end_effector_controller, ft_sensor_controller]
+    return [arm_controller, sea_state_broadcaster_controller, gravity_compensation_controller_effort,
+            gravity_compensation_controller_torque, inertia_shaping_controllers,
+            end_effector_controller, ft_sensor_controller]
 
 
 def concatenate_strings(strings: List[str], delimiter: str = '', skip_empty: bool = False):
