@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.25.8 (2025-05-28)
+-------------------
 * reduce to 1cm
 * update trajectory tolerance
 * update torso controller with trajectory constraint
