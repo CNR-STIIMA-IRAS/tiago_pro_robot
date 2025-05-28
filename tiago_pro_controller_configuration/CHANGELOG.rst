@@ -2,6 +2,37 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* reduce to 1cm
+* update trajectory tolerance
+* update torso controller with trajectory constraint
+* fix pipeline
+* delete whitespace
+* fix whitespace
+* add cartesian vel diff local frame
+* update manipulation cube
+* update x of the manipulation cube
+* update gains for joint_space_controller_vel
+* update gains for cartesian velocity
+* remove torso_lift_joint for cartesian controller
+* fix name from triago to tiagopro
+* update yaml with new gains and namespaces
+* separate cartesian_vel gains
+* add manipulation cube
+* update tsid_default_controllers launch file
+* update gains
+* Fix typo in module
+* Add torso joint space controller
+* Add tsid controllers dependency
+* Rename torso param files
+* Add tsid controllers module
+* Add launch file to load tsid controllers
+* Add tsid controller param files, templated
+* fix tiago pro instead of triago
+* add forward velocity control for the arms
+* Contributors: David ter Kuile, ileniaperrella
+
 1.25.7 (2025-05-19)
 -------------------
 * Merge branch 'omm/inertia_shaping_controllers' into 'humble-devel'
