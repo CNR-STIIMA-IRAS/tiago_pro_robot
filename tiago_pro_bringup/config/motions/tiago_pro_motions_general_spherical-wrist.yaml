@@ -256,3 +256,44 @@
           name: Boxing
           usage: demo
           description: Go boxing
+      
+      calibration_position_left:
+        joints: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+        times_from_start: [10.0]
+        positions: [1.65, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        meta:
+          name: Calibration position left
+          usage: calibration
+          description: Position for SEA calibration of the left arm
+      
+      calibration_safety_position_left:
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+        times_from_start: [5.0, 15.0, 17.0]
+        positions: [0.25, 1.5, -1.83, 0.47, -2.34, 0.0, -1.2, 0.0,
+                    0.25, 0.36, -1.83, 0.47, 0.82, 0.0, 1.5, 0.0,
+                    0.17, 0.36, -1.83, 0.47, 0.82, 0.0, 1.5, 0.0]
+        meta:
+          name: Calibration safey position left
+          usage: calibration
+          description: Safety position for SEA calibration of the left arm
+
+      calibration_position_right:
+        joints: [arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+        times_from_start: [10.0]
+        positions: [-1.65, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        meta:
+          name: Calibration position right
+          usage: calibration
+          description: Position for SEA calibration of the right arm
+      
+      calibration_safety_position_right:
+        joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+        times_from_start: [5.0, 15.0, 17.0]
+        positions: [0.25, -1.5, -1.83, 0.47, -2.34, 0.0, -1.2, 0.0,
+                    0.25, -0.36, -1.82, -0.47, 0.82, 0.0, 1.5, 0.0,
+                    0.17, -0.36, -1.82, -0.47, 0.82, 0.0, 1.5, 0.0]
+        meta:
+          name: Calibration safey position left
+          usage: calibration
+          description: Safety position for SEA calibration of the left arm
+      
