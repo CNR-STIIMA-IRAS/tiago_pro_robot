@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Better calibration motions
+* Launching the SEA broadcaster and basic calibration movements
+* Contributors: oscarmartinez
+
 1.25.8 (2025-05-28)
 -------------------
 

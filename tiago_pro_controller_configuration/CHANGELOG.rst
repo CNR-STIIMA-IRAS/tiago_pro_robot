@@ -2,6 +2,13 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding check to the broadcaster
+* Adding missing launch of the gravity controller in torque mode
+* Launching the SEA broadcaster and basic calibration movements
+* Contributors: oscarmartinez
+
 1.25.8 (2025-05-28)
 -------------------
 * reduce to 1cm
