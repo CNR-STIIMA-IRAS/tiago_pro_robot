@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'air/fix/head_motions' into 'humble-devel'
+  Remove head motions
+  See merge request robots/tiago_pro_robot!132
+* Remove head motions
+* Contributors: Aina, thomaspeyrucain
+
 1.26.0 (2025-05-29)
 -------------------
 * Better calibration motions
