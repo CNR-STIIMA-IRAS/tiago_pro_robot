@@ -18,7 +18,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import GroupAction
 from launch.conditions import LaunchConfigurationNotEquals, IfCondition, UnlessCondition
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from controller_manager.launch_utils import generate_load_controller_launch_description
 from launch_pal.include_utils import include_scoped_launch_py_description
@@ -131,7 +131,12 @@ def configure_side_controllers(context, end_effector_side='right', *args, **kwar
         pkg_name='pal_sea_arm_controller_configuration',
         paths=['launch', 'sea_state_broadcaster_controller.launch.py'],
         launch_arguments={"side": end_effector_side},
-        condition=IfCondition(LaunchConfiguration("torque_estimation")))
+        condition=IfCondition(
+            PythonExpression(
+                ["'", LaunchConfiguration('use_sim_time'), "' == 'False' and '",
+                 LaunchConfiguration('torque_estimation'), "' == 'True'"]
+            )
+        ))
 
     gravity_compensation_controller_effort = include_scoped_launch_py_description(
         pkg_name='pal_sea_arm_controller_configuration',
