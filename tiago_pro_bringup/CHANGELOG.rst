@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.26.1 (2025-06-03)
 -------------------
 * Merge branch 'air/fix/head_motions' into 'humble-devel'
