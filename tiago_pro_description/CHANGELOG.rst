@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove imu
+* Change sensors paths according to pal_urdf_utils
+* Change path for imu ros2 control urdf
+* Change path for ftsensor ros2_control xacro
+* Contributors: Aina, Aina Irisarri
+
 1.26.3 (2025-06-05)
 -------------------
 * Enabling idle_mode_on_stop for ethercat system
