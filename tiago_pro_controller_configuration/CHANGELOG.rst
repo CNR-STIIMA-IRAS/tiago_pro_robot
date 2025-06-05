@@ -2,6 +2,9 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.26.2 (2025-06-04)
 -------------------
 * Adding conditions to properly start the SEA broadcaster

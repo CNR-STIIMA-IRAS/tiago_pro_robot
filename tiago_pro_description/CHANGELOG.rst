@@ -2,6 +2,12 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Enabling idle_mode_on_stop for ethercat system
+* Removing trailing spaces
+* Contributors: Jordan Palacios
+
 1.26.2 (2025-06-04)
 -------------------
 
