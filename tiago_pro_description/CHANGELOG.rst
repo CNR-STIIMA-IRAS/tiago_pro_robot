@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.26.4 (2025-06-05)
+-------------------
 * Remove imu
 * Change sensors paths according to pal_urdf_utils
 * Change path for imu ros2 control urdf
