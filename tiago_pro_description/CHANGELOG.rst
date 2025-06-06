@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Uniform namespace
+* Contributors: antoniobrandi
+
 1.26.4 (2025-06-05)
 -------------------
 * Remove imu
