@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Temporal fix for torso tolerance
+* Contributors: Aina Irisarri
+
 1.27.0 (2025-06-06)
 -------------------
 
