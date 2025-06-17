@@ -1,4 +1,4 @@
-/play_motion2:
+/**:
   ros__parameters:
     motions:
       close_left:
@@ -9,7 +9,7 @@
           name: Close Left Gripper
           usage: demo
           description: 'Closes left gripper'
-      
+
       close_left_half:
         joints: [gripper_left_finger_joint]
         positions: [0.40]

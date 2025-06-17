@@ -1,4 +1,4 @@
-/play_motion2:
+/**:
   ros__parameters:
     motions:
       home_relax:
@@ -32,8 +32,8 @@
         meta:
           name: home_left
           usage: demo
-          description: home_left   
-                           
+          description: home_left
+
       home_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [0.0, 5.0, 10.0]
@@ -73,7 +73,7 @@
         meta:
           name: wave_with_torso
           usage: demo
-          description: wave_with_torso  
+          description: wave_with_torso
 
       offer:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
@@ -91,7 +91,7 @@
         meta:
           name: offer_left
           usage: demo
-          description: offer_left   
+          description: offer_left
 
       offer_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
@@ -163,7 +163,7 @@
           description: tiago_dancing_happy
 
       horizontal:
-        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_1_joint, head_2_joint]       
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_1_joint, head_2_joint]
         positions: [0.23, 0.7167, -1.83, 0.1158, -2.35, 0.0, -1.2, 0.0, -0.7167, -1.83, -0.1158, -2.35, -0.0, -1.2, 0.0, 0.7, 0.0,
           0.23, 1.75, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0, -0.7, 0.0,
           0.23, 1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0, -1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,]
@@ -176,7 +176,7 @@
       horizontal_right:
           joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
           positions: [0.23, -0.7167, -1.83, -0.1158, -2.35, -0.0, -1.2, 0.0,
-            0.23, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0, 
+            0.23, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0,
             0.23, -1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0,]
           times_from_start: [0.0, 3.0, 8.0]
           meta:
@@ -187,14 +187,14 @@
       horizontal_left:
         joints: [torso_lift_joint,  arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         positions: [0.23, 0.7167, -1.83, 0.1158,-2.35,0.0, -1.2, 0.0,
-          0.23, 1.75, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0, 
+          0.23, 1.75, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0,
           0.23, 1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0,]
         times_from_start: [0.0, 3.0, 8.0]
         meta:
           name: Horizontal Left
           usage: Demo
           description: horizontal left
-      
+
       reach_floor:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint, head_1_joint, head_2_joint]
         positions: [0.23, 0.36, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0, -0.36, -1.83, -0.47, -2.35, 0.0, -1.20, 0.0, 0.0, 0.0,
@@ -256,7 +256,7 @@
           name: Boxing
           usage: demo
           description: Go boxing
-      
+
       calibration_position_left:
         joints: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [10.0]
@@ -265,7 +265,7 @@
           name: Calibration position left
           usage: calibration
           description: Position for SEA calibration of the left arm
-      
+
       calibration_safety_position_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [5.0, 15.0, 17.0]
@@ -285,7 +285,7 @@
           name: Calibration position right
           usage: calibration
           description: Position for SEA calibration of the right arm
-      
+
       calibration_safety_position_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         times_from_start: [5.0, 15.0, 17.0]
@@ -296,4 +296,4 @@
           name: Calibration safey position left
           usage: calibration
           description: Safety position for SEA calibration of the left arm
-      
+
