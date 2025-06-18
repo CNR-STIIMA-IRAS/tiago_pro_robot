@@ -1,4 +1,4 @@
-/play_motion2:
+/**:
   ros__parameters:
     motions:
       home:
@@ -10,7 +10,7 @@
         meta:
           name: home
           usage: demo
-          description: home   
+          description: home
       home_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [0.0, 5.0, 10.0]
@@ -20,7 +20,7 @@
         meta:
           name: home_left
           usage: demo
-          description: home_left   
+          description: home_left
 
       offer_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
@@ -29,7 +29,7 @@
         meta:
           name: offer_left
           usage: demo
-          description: offer_left   
+          description: offer_left
       shake_left:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         times_from_start: [0.0, 1.0, 2.5, 4.0, 5.5, 7.0]
@@ -47,7 +47,7 @@
       horizontal_left:
         joints: [torso_lift_joint,  arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
         positions: [0.23, 0.7167, -1.83, 0.1158,-2.35,0.0, -1.2, 0.0,
-          0.23, 1.75, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0, 
+          0.23, 1.75, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0,
           0.23, 1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0,]
         times_from_start: [0.0, 3.0, 8.0]
         meta:

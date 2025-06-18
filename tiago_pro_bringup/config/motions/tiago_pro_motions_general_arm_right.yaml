@@ -1,4 +1,4 @@
-/play_motion2:
+/**:
   ros__parameters:
     motions:
       home:
@@ -51,7 +51,7 @@
         meta:
           name: wave_with_torso
           usage: demo
-          description: wave_with_torso  
+          description: wave_with_torso
 
       offer_right:
         joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
@@ -79,7 +79,7 @@
       horizontal_right:
           joints: [torso_lift_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
           positions: [0.23, -0.7167, -1.83, -0.1158, -2.35, -0.0, -1.2, 0.0,
-            0.23, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0, 
+            0.23, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0,
             0.23, -1.75, -1.27, 0.0, 0.0, 0.0, 0.0, 0.0,]
           times_from_start: [0.0, 3.0, 8.0]
           meta:
