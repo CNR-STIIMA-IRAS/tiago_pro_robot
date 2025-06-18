@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.28.0 (2025-06-18)
+-------------------
 * Adapt to changes in play_motion2
 * Contributors: davidfernandez
 
