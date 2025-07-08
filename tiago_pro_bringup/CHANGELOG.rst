@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.29.0 (2025-07-08)
+-------------------
 * Add diagnostic analyzers
 * Contributors: Noel Jimenez
 
