@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.29.2 (2025-07-10)
+-------------------
 * Fix missing quote for tsid_default_controllers module
 * Contributors: Noel Jimenez
 
