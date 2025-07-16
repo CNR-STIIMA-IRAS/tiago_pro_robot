@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.29.3 (2025-07-16)
+-------------------
 * Add remappings for removing robot_description namespace
 * Contributors: Noel Jimenez
 
