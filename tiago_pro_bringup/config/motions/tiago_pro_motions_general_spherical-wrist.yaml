@@ -296,6 +296,18 @@
           name: Calibration safey position left
           usage: calibration
           description: Safety position for SEA calibration of the left arm
+      reach_front:
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+        positions: [
+          0.14, -0.25843, -0.57522, 0.50314, -2.0337, 0.0, 1.0543, 1.5708, 0.25843, -0.57522, -0.50314, -2.0337, 0.0, 1.0543, -1.5708,
+          0.14, 0.0, 0.15, 0.15, -2.0, 0.0, 1.0, 1.562, 0.0, 0.15, -0.15, -2.0, 0.0, 1.0, -1.562,
+          0.14, 0.11, 0.36, 0.0, -0.25, 0.0, -0.0, 1.56, -0.11, 0.36, -0.0, -0.25, 0.0, 0.0, -1.56
+        ]
+        times_from_start: [0.0, 3.0, 6.0]
+        meta:
+          name: Reach Front
+          usage: Demo
+          description: reach front
       reach_up:
         joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
         positions: [
@@ -306,6 +318,18 @@
           0.34, 3.13, -2.2, -0.28, -0.1, -0.2, 0.0, 0.0, -3.13, -2.2, 0.28, -0.1, 0.2, 0.0, 0.0]
         times_from_start: [0.0, 3.0, 6.0, 9.0, 12.0]
         meta:
-          name: reach up
+          name: Reach up
           usage: Demo
           description: reach up
+      reach_down:
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint, arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+        positions: [
+          0.23, 0.7167, -1.83, 0.1158, -2.35, 0.0, -1.2, 0.0, -0.7167, -1.83, -0.1158, -2.35, -0.0, -1.2, 0.0,
+          0.23, 1.75, -1.83, 0.47, -2.35, 0.0, -1.20, 0.0, -1.75, -1.83, -0.47, -2.35, -0.0, -1.20, 0.0,
+          0.34, 3.38, 0.89, 0.48, -0.19, -0.2, 0.0, 0.0, -3.42, 0.99, -0.43, -0.15, 0.2, 0.0, 0.0
+        ]
+        times_from_start: [0.0, 3.0, 12.0]
+        meta:
+          name: Reach down
+          usage: Demo
+          description: reach down
