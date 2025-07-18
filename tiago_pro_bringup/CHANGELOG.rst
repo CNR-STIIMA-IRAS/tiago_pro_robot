@@ -2,6 +2,14 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix home sides motions to updateit as the home motion
+* Add explore motion
+* Add reach motions
+* Add reach up motion
+* Contributors: Aina
+
 1.29.3 (2025-07-16)
 -------------------
 * Add remappings for removing robot_description namespace
