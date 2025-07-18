@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.29.4 (2025-07-18)
+-------------------
 * Fix home sides motions to updateit as the home motion
 * Add explore motion
 * Add reach motions
