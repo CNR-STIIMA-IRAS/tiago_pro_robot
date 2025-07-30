@@ -108,6 +108,17 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
     launch_description.add_action(robot_state_publisher)
 
+    gripper_wrapper = include_scoped_launch_py_description(
+        pkg_name='pal_pro_gripper_wrapper',
+        paths=['launch', 'pal_pro_gripper_wrapper.launch.py'],
+        launch_arguments={"arm_type_right": launch_args.arm_type_right,
+                          "arm_type_left": launch_args.arm_type_left,
+                          "end_effector_right": launch_args.end_effector_right,
+                          "end_effector_left": launch_args.end_effector_left,
+                          })
+
+    launch_description.add_action(gripper_wrapper)
+
     return
 
 
