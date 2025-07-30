@@ -1,5 +1,5 @@
 gripper_grasper:
-  launch: "pal_pro_gripper_wrapper pal_pro_gripper_wrapper.launch.py
+  launch: "tiago_pro_bringup tiago_pro_bringup.launch.py
           arm_type_right:=@arm_type_right@
           arm_type_left:=@arm_type_left@
           end_effector_right:=@end_effector_right@
