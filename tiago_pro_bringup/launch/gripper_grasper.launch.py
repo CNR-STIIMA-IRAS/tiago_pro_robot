@@ -13,13 +13,14 @@
 # limitations under the License.
 
 
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch import LaunchDescription
 from launch_pal.arg_utils import LaunchArgumentsBase
 from tiago_pro_description.launch_arguments import TiagoProArgs
+from launch.substitutions import PythonExpression, LaunchConfiguration
+from launch.conditions import IfCondition
 
 from launch_pal.include_utils import include_scoped_launch_py_description
-
 from dataclasses import dataclass
 
 
@@ -33,17 +34,37 @@ class LaunchArguments(LaunchArgumentsBase):
 
 def declare_actions(launch_description: LaunchDescription, launch_args: LaunchArguments):
 
+    # Add controller of left gripper
+    launch_description.add_action(OpaqueFunction(
+        function=set_side_gripper, args=['left'],
+        condition=IfCondition(
+            PythonExpression(
+                ["'", LaunchConfiguration('end_effector_left'), "' != 'no-end-effector' and '",
+                 LaunchConfiguration('arm_type_left'), "' != 'no-arm'"]
+            )
+        )))
+
+    # Add controller of right gripper
+    launch_description.add_action(OpaqueFunction(
+        function=set_side_gripper, args=['right'],
+        condition=IfCondition(
+            PythonExpression(
+                ["'", LaunchConfiguration('end_effector_right'), "' != 'no-end-effector' and '",
+                 LaunchConfiguration('arm_type_right'), "' != 'no-arm'"]
+            )
+        )))
+    return
+
+
+def set_side_gripper(context, side='', *args, **kwargs):
+
     gripper_wrapper = include_scoped_launch_py_description(
         pkg_name='pal_pro_gripper_wrapper',
         paths=['launch', 'pal_pro_gripper_wrapper.launch.py'],
-        launch_arguments={"arm_type_right": launch_args.arm_type_right,
-                          "arm_type_left": launch_args.arm_type_left,
-                          "end_effector_right": launch_args.end_effector_right,
-                          "end_effector_left": launch_args.end_effector_left,
-                          })
+        launch_arguments={"side": side}
+        )
 
-    launch_description.add_action(gripper_wrapper)
-    return
+    return [gripper_wrapper]
 
 
 def generate_launch_description():
