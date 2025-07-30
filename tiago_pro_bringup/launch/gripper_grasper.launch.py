@@ -39,7 +39,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         function=set_side_gripper, args=['left'],
         condition=IfCondition(
             PythonExpression(
-                ["'", LaunchConfiguration('end_effector_left'), "' != 'pal-pro-gripper' and '",
+                ["'", LaunchConfiguration('end_effector_left'), "' == 'pal-pro-gripper' and '",
                  LaunchConfiguration('arm_type_left'), "' != 'no-arm'"]
             )
         )))
@@ -49,7 +49,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
         function=set_side_gripper, args=['right'],
         condition=IfCondition(
             PythonExpression(
-                ["'", LaunchConfiguration('end_effector_right'), "' != 'pal-pro-gripper' and '",
+                ["'", LaunchConfiguration('end_effector_right'), "' == 'pal-pro-gripper' and '",
                  LaunchConfiguration('arm_type_right'), "' != 'no-arm'"]
             )
         )))
