@@ -82,3 +82,15 @@
           name: Torso Down
           usage: Demo
           description: torso down
+
+      boxing:
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+        times_from_start: [0.0, 5.0, 10.0, 15.0]
+        positions: [0.17202, 1.8557, -1.5919, 0.35538, -2.0502, 0.10524, -1.5976, 0.0,
+                    0.1761, 0.26, -1.6008, 0.3489, -1.9818, 0.0, -1.5829, 0.0,
+                    0.1, 0.36, -1.83, 0.47, -2.35, 0.0, -1.2, 0.0,
+                    0.0, 0.29, -1.89, 0.48, -2.37, 0.2, -1.25, 1.71]
+        meta:
+          name: Boxing
+          usage: demo
+          description: Go boxing
