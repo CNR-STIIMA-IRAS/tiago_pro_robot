@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.29.5 (2025-08-01)
+-------------------
 * Sim adding boxing motion
 * Contributors: silviamasiello
 
