@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.30.0 (2025-08-01)
+-------------------
 * launch the module not bringup.launch
 * typo
 * checking for EE to be pal-pro-gripper
