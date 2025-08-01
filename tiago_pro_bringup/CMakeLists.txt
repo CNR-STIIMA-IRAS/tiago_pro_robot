@@ -8,6 +8,7 @@ if(pal_module_cmake_FOUND)
     module/joystick.yaml
     module/twist_mux.yaml
     module/20_play_motion2.yaml
+    module/gripper_grasper.yaml
   )
 elseif(DEFINED ENV{PAL_DISTRO})
   message(FATAL_ERROR "The pal_module_cmake package was not found. Modules not registered.")
