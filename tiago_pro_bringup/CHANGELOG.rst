@@ -2,6 +2,16 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* launch the module not bringup.launch
+* typo
+* checking for EE to be pal-pro-gripper
+* moving the side logic
+* deviding launch file to better dbeug and handle different gripper type
+* add gripper_grasper module
+* Contributors: Matteo Villani
+
 1.29.5 (2025-08-01)
 -------------------
 * Sim adding boxing motion
