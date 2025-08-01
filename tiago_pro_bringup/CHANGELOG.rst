@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Sim adding boxing motion
+* Contributors: silviamasiello
+
 1.29.4 (2025-07-18)
 -------------------
 * Fix home sides motions to updateit as the home motion
