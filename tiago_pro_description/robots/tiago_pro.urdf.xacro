@@ -246,7 +246,6 @@
     <xacro:if value="${has_ft_sensor_right}">
       <xacro:ft_sensor type="${ft_sensor_right}" name="wrist_right" parent="arm_right_tool_link"/>
     </xacro:if>
-  
 
   </xacro:if>
 
