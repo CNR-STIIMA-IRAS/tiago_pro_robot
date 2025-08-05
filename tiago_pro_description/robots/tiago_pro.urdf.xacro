@@ -246,10 +246,18 @@
     <xacro:if value="${has_ft_sensor_right}">
       <xacro:ft_sensor type="${ft_sensor_right}" name="wrist_right" parent="arm_right_tool_link"/>
     </xacro:if>
+  
 
   </xacro:if>
 
   <!-- ROS 2 Control -->
   <xacro:tiago_pro_ros2_control use_sim_time="$(arg use_sim_time)" />
 
+  <link name="tip"/>
+
+  <joint name="tool0_to_tip" type="fixed">
+    <parent link="arm_right_tool_link"/>
+    <child link="tip"/>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+  </joint>
 </robot>
