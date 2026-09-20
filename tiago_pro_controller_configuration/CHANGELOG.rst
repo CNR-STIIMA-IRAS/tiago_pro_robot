@@ -2,6 +2,17 @@
 Changelog for package tiago_pro_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.5.1 (2026-08-17)
+------------------
+
+2.5.0 (2026-07-21)
+------------------
+* Control by default the grasping frame
+* Fixing pipeline
+* fixing pep8
+* Adding use_grasping_frame for cartesian controller
+* Contributors: matteovillani, vivianamorlando
+
 2.4.1 (2026-06-17)
 ------------------
 * ci/cd test

@@ -23,19 +23,19 @@ ${ARM_SIDE_PREFIX}_cartesian_space_controller_ee_frame:
         kp: 100.0
         kd: 50.0
     cartesian_gain:
-         ${ARM_SIDE_PREFIX}_7_link:
-          kp_x: 200.0
-          kp_y: 200.0
-          kp_z: 200.0
-          kp_roll: 70.0
-          kp_pitch: 70.0
-          kp_yaw: 70.0
-          kd_x: 20.0
-          kd_y: 20.0
-          kd_z: 20.0
-          kd_roll: 70.0
-          kd_pitch: 70.0
-          kd_yaw: 70.0
+      ${EE_PREFIX}_${SIDE}_${EE_SUFFIX}:
+        kp_x: 200.0
+        kp_y: 200.0
+        kp_z: 200.0
+        kp_roll: 70.0
+        kp_pitch: 70.0
+        kp_yaw: 70.0
+        kd_x: 20.0
+        kd_y: 20.0
+        kd_z: 20.0
+        kd_roll: 70.0
+        kd_pitch: 70.0
+        kd_yaw: 70.0
           
 
           

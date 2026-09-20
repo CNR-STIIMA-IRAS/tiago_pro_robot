@@ -90,7 +90,19 @@
                     0.1761, 0.26, -1.6008, 0.3489, -1.9818, 0.0, -1.5829, 0.0,
                     0.1, 0.36, -1.83, 0.47, -2.35, 0.0, -1.2, 0.0,
                     0.0, 0.29, -1.89, 0.48, -2.37, 0.2, -1.25, 1.71]
+                    0.0, 0.45, -1.89, 0.3, -2.37, -0.2, -1.25, 1.52]
         meta:
           name: Boxing
           usage: demo
           description: Go boxing
+
+      pre_grasp_left:
+        joints: [torso_lift_joint, arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+        positions: [0.18, 0.36, -1.83, 0.47, -2.35, 8.3788e-06, -1.2, -3.087e-06, 
+                    0.20, 1.6358, -2.2016, 0.47, -2.0984, 0.0, -1.0555, -0.0003145, 
+                    0.22, 3.1646, -2.1672, -0.40768, -1.9953, 5.4626e-06, -1.0548, -1.6346e-06]
+        times_from_start: [0.0, 2.5, 4.5]
+        meta:
+          name: Pre Grasp Left
+          usage: ""
+          description: Moves left arm to a pre grasp position

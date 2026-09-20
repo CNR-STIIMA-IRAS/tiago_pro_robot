@@ -23,34 +23,28 @@ ${ARM_SIDE_PREFIX}_cartesian_vel_controller_robot_frame:
     interface_name: position
 
     ee_names:
-      - ${ARM_SIDE_PREFIX}_7_link
+      - ${EE_PREFIX}_${SIDE}_${EE_SUFFIX}
 
     velocity_scaling: 1.0
     local_frame: false
 
     posture_gain: 1.0
     manipulation_cube:
-         arm_right_7_link:      
-          x_min: -0.2
-          x_max: 0.7
-          y_min: -0.75
-          y_max: 0.22
-          z_min: 0.0
-          z_max: 1.4
-         arm_left_7_link:      
-          x_min: -0.2
-          x_max: 0.7
-          y_min: -0.22 
-          y_max: 0.75   
-          z_min: 0.0
-          z_max: 1.4
-         arm_head_7_link:      
-          x_min: -0.5
-          x_max: 0.7
-          y_min: -0.75      
-          y_max: 0.60  
-          z_min: 0.6
-          z_max: 1.7
+      ${EE_PREFIX}_right_${EE_SUFFIX}:      
+        x_min: -0.2
+        x_max: 0.7
+        y_min: -0.75
+        y_max: 0.22
+        z_min: 0.0
+        z_max: 1.4
+      ${EE_PREFIX}_left_${EE_SUFFIX}:      
+        x_min: -0.2
+        x_max: 0.7
+        y_min: -0.22 
+        y_max: 0.75   
+        z_min: 0.0
+        z_max: 1.4
+
 
 
 

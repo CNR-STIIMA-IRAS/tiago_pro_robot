@@ -51,6 +51,12 @@ class LaunchArguments(LaunchArgumentsBase):
     arm_type_left: DeclareLaunchArgument = TiagoProArgs.arm_type_left
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     namespace: DeclareLaunchArgument = CommonArgs.namespace
+    use_grasping_frame: DeclareLaunchArgument = DeclareLaunchArgument(
+        name="use_grasping_frame",
+        default_value="True",
+        choices=["True", "False"],
+        description="If true the cartesian controller is going to move the grasping frame.",
+    )
 
     controllers_to_spawn: DeclareLaunchArgument = DeclareLaunchArgument(
         "controllers_to_spawn",
@@ -134,7 +140,10 @@ def setup_torso_controllers(context, *args, **kwargs):
     return controllers_to_start
 
 
-def setup_torso_controller(context, controller_name, load_gains_separately=False):
+def setup_torso_controller(
+        context,
+        controller_name,
+        load_gains_separately=False):
     param_file = os.path.join(
         get_package_share_directory("tiago_pro_controller_configuration"),
         "config",
@@ -209,7 +218,22 @@ def setup_arm_side_controller(
     arm_prefix = f"arm_{arm_side}"
     side_controller_name = f"{arm_prefix}_{controller_name}"
 
-    remappings = {"ARM_SIDE_PREFIX": arm_prefix}
+    # Check if the end effector frame needs to be the grasping one
+    use_grasping_frame = read_launch_argument("use_grasping_frame", context)
+
+    # Creating the end effector frame name with side
+    if use_grasping_frame == "False":
+        ee_suffix = "7_link"
+        ee_prefix = "arm"
+    elif use_grasping_frame == "True":
+        ee_suffix = "grasping_link"
+        ee_prefix = "gripper"
+
+    remappings = {"ARM_SIDE_PREFIX": arm_prefix,
+                  "SIDE": arm_side,
+                  "EE_PREFIX": ee_prefix,
+                  "EE_SUFFIX": ee_suffix
+                  }
 
     param_file = os.path.join(
         get_package_share_directory("tiago_pro_controller_configuration"),
