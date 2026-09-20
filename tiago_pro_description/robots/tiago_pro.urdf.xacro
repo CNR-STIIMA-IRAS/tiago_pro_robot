@@ -405,4 +405,11 @@
   <!-- ROS 2 Control -->
   <xacro:tiago_pro_ros2_control use_sim_time="$(arg use_sim_time)" has_teleop_arms="${has_teleop_arms}" gazebo_version="${gazebo_version}"/>
 
+  <link name="tip"/>
+
+  <joint name="tool0_to_tip" type="fixed">
+    <parent link="arm_right_tool_link"/>
+    <child link="tip"/>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+  </joint>
 </robot>
